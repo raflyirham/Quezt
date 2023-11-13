@@ -61,6 +61,27 @@ export default function Register({ csrf_token }) {
                                 )}
 
                                 <label
+                                    htmlFor="username"
+                                    className="font-monda font-bold mt-8"
+                                >
+                                    Username:
+                                </label>
+                                <input
+                                    id="username"
+                                    name="username"
+                                    type="text"
+                                    placeholder="Masukkan username kamu..."
+                                    required
+                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
+                                ></input>
+
+                                {errors.username && (
+                                    <div className="font-monda text-[#C70039]">
+                                        {errors.username}
+                                    </div>
+                                )}
+
+                                <label
                                     htmlFor="email"
                                     className="font-monda font-bold mt-8"
                                 >

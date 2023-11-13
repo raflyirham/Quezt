@@ -42,4 +42,9 @@ class PageController extends Controller
     {
         return Inertia::render('Tautan/Kebijakan');
     }
+
+    public function syarat()
+    {
+        return Inertia::render('Tautan/Syarat');
+    }
 }

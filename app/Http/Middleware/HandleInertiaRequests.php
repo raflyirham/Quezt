@@ -48,6 +48,9 @@ class HandleInertiaRequests extends Middleware
             'csrf_token' => [
                 'csrf_token' => csrf_token(),
             ],
+            'uri' => [
+                'uri' => $request->route()->uri(),
+            ],
         ]);
     }
 }
