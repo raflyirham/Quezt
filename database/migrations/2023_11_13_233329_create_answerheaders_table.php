@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questionheaders', function (Blueprint $table) {
-            $table->id('QuestionID');
-            $table->foreignId('UserID')->constrained('users', 'UserID');
-            $table->foreignId('CourseID')->constrained('courses', 'CourseID');
+        Schema::create('answerheaders', function (Blueprint $table) {
+            $table->id('AnswerID');
+            $table->foreignId('TutorID')->constrained('tutors', 'TutorID');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questionheaders');
+        Schema::dropIfExists('answerheaders');
     }
 };

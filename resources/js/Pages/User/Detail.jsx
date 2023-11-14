@@ -4,7 +4,7 @@ import { Head, Link } from "@inertiajs/react";
 
 import { usePage } from "@inertiajs/react";
 
-export default function Detail() {
+export default function Detail({ user }) {
     return (
         <Index>
             <div className="w-[70%] shadow-lg p-8">
@@ -16,26 +16,29 @@ export default function Detail() {
                     <h3 className="font-monda font-bold text-lg text-[#C70039]">
                         Nama:
                     </h3>
-                    <p className="font-monda uppercase">
-                        {usePage().props.user.user.UserName}
-                    </p>
+                    <p className="font-monda uppercase">{user.UserName}</p>
                 </div>
 
                 <div className="mt-3">
                     <h3 className="font-monda font-bold text-lg text-[#C70039]">
                         Email:
                     </h3>
-                    <p className="font-monda">
-                        {usePage().props.user.user.email}
-                    </p>
+                    <p className="font-monda">{user.email}</p>
                 </div>
 
                 <div className="mt-3">
                     <h3 className="font-monda font-bold text-lg text-[#C70039]">
                         Username:
                     </h3>
+                    <p className="font-monda">{user.UserUsername}</p>
+                </div>
+
+                <div className="mt-3">
+                    <h3 className="font-monda font-bold text-lg text-[#C70039]">
+                        Paket:
+                    </h3>
                     <p className="font-monda">
-                        {usePage().props.user.user.UserUsername}
+                        {user.membership.membershiptype.MembershipTypeName}
                     </p>
                 </div>
             </div>

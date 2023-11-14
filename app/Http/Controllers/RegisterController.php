@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Membership;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,11 @@ class RegisterController extends Controller
             'password' => bcrypt($request->password),
             'UserUsername' => $request->username,
             'UserRegisteredDate' => now(),
+        ]);
+
+        Membership::create([
+            'UserID' => $user->UserID,
+            'MembershipTypeID' => 1,
         ]);
 
         return redirect('/masuk')->with('success', 'Pendaftaran berhasil! Silakan masuk.');

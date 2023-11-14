@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 
@@ -25,8 +27,19 @@ Route::post('/daftar', [RegisterController::class, 'store']);
 Route::post('/masuk', [LoginController::class, 'authenticate']);
 Route::post('/keluar', [LoginController::class, 'logout']);
 
-Route::get('/jurusan', [JurusanController::class, 'index']);
+// Jurusan
+Route::prefix('jurusan')->group(function () {
+    Route::get('/', [JurusanController::class, 'index']);
+    Route::get('/{major}', [JurusanController::class, 'detail']);
+});
 
+// Mata Kuliah
+Route::prefix('mata-kuliah')->group(function () {
+    Route::get('/', [MataKuliahController::class, 'index']);
+    Route::get('/{course}', [MataKuliahController::class, 'detail']);
+});
+
+// Dashboard
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('/detail', [UserController::class, 'detail']);
@@ -40,6 +53,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/change-name', [UserController::class, 'change_name']);
     Route::post('/change-name', [UserController::class, 'change_name_post']);
 });
+
+// Pertanyaan
+Route::get('/pertanyaan/{id}', [PertanyaanController::class, 'detail']);
 
 // Tautan
 Route::get('/tentang-kami', [PageController::class, 'tentang']);

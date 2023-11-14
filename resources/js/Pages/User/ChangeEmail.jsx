@@ -3,7 +3,7 @@ import Index from "./Index";
 
 import { usePage } from "@inertiajs/react";
 
-export default function ChangeEmail() {
+export default function ChangeEmail({ user }) {
     const { errors } = usePage().props;
 
     return (
@@ -17,9 +17,7 @@ export default function ChangeEmail() {
                     <h3 className="font-monda font-bold text-lg text-[#C70039]">
                         Email Saat Ini:
                     </h3>
-                    <p className="font-monda">
-                        {usePage().props.user.user.email}
-                    </p>
+                    <p className="font-monda">{user.email}</p>
                 </div>
 
                 <form action="change-email" method="POST">

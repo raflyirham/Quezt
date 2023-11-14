@@ -17,12 +17,16 @@ class UserController extends Controller
 
     public function detail()
     {
-        return Inertia::render('User/Detail');
+        return Inertia::render('User/Detail', [
+            'user' => User::find(Auth::id())->load('membership.membershiptype'),
+        ]);
     }
 
     public function change_email()
     {
-        return Inertia::render('User/ChangeEmail');
+        return Inertia::render('User/ChangeEmail', [
+            'user' => User::find(Auth::id())->load('membership.membershiptype'),
+        ]);
     }
 
     public function change_email_post(Request $request)
@@ -47,7 +51,9 @@ class UserController extends Controller
 
     public function change_password()
     {
-        return Inertia::render('User/ChangePassword');
+        return Inertia::render('User/ChangePassword', [
+            'user' => User::find(Auth::id())->load('membership.membershiptype'),
+        ]);
     }
 
     public function change_password_post(Request $request)
@@ -84,7 +90,9 @@ class UserController extends Controller
 
     public function change_name()
     {
-        return Inertia::render('User/ChangeName');
+        return Inertia::render('User/ChangeName', [
+            'user' => User::find(Auth::id())->load('membership.membershiptype'),
+        ]);
     }
 
     public function change_name_post(Request $request)

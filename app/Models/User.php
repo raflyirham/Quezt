@@ -34,6 +34,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'UserID',
         'password',
         'remember_token',
     ];
@@ -47,4 +48,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function questionheaders()
+    {
+        return $this->hasMany(QuestionHeader::class, 'UserID', 'UserID');
+    }
+
+    public function membership()
+    {
+        return $this->hasOne(Membership::class, 'UserID', 'UserID');
+    }
 }

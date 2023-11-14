@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questionheaders', function (Blueprint $table) {
-            $table->id('QuestionID');
-            $table->foreignId('UserID')->constrained('users', 'UserID');
-            $table->foreignId('CourseID')->constrained('courses', 'CourseID');
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id('CourseID');
+            $table->string('CourseName')->unique();
+            $table->string('CourseSlug')->unique();
+            $table->string('CourseDescription')->unique();
+            $table->foreignId('MajorID')->constrained('majors', 'MajorID');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questionheaders');
+        Schema::dropIfExists('courses');
     }
 };

@@ -35,11 +35,23 @@ export default function Home() {
                         </p>
 
                         <div className="flex flex-row flex-wrap gap-3 mt-4">
-                            <SmallCard text="Alogritma & Pemrograman" />
-                            <SmallCard text="Ilmu Sosial Dasar" />
-                            <SmallCard text="Kecerdasan Buatan" />
-                            <SmallCard text="Ekonomi Mikro" />
-                            <SmallCard text="Kalkulus 2" />
+                            <SmallCard
+                                text="Alogritma dan Pemrograman"
+                                slug="algoritma-dan-pemrograman"
+                            />
+                            <SmallCard
+                                text="Ilmu Sosial Dasar"
+                                slug="ilmu-sosial-dasar"
+                            />
+                            <SmallCard
+                                text="Kecerdasan Buatan"
+                                slug="kecerdasan-buatan"
+                            />
+                            <SmallCard
+                                text="Ekonomi Mikro"
+                                slug="ekonomi-mikro"
+                            />
+                            <SmallCard text="Kalkulus 2" slug="kalkulus-2" />
                         </div>
                     </div>
                 </div>
@@ -64,6 +76,7 @@ export default function Home() {
                         deskripsi={
                             "Jurusan Teknik Informatika merupakan cabang ilmu yang berkaitan dengan pengembangan dan penerapan teknologi informasi dalam berbagai bidang."
                         }
+                        slug={"teknik-informatika"}
                     />
 
                     <JurusanCard
@@ -71,6 +84,7 @@ export default function Home() {
                         deskripsi={
                             "Jurusan Ilmu Ekonomi membahas prinsip-prinsip dasar yang mendasari pengelolaan sumber daya ekonomi di tingkat individual, perusahaan, dan tingkat makroekonomi."
                         }
+                        slug={"ilmu-ekonomi"}
                     />
 
                     <JurusanCard
@@ -78,6 +92,7 @@ export default function Home() {
                         deskripsi={
                             "Jurusan Geografi membahas pemahaman tentang pola spasial dan hubungan antara manusia dan lingkungan fisik."
                         }
+                        slug={"geografi"}
                     />
 
                     <JurusanCard
@@ -85,6 +100,7 @@ export default function Home() {
                         deskripsi={
                             "Jurusan Astronomi memperkenalkan mahasiswa pada penelitian dan eksplorasi luar angkasa serta fenomena-fenomena astronomi."
                         }
+                        slug={"astronomi"}
                     />
                 </div>
 

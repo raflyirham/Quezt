@@ -3,7 +3,7 @@ import Index from "./Index";
 
 import { usePage } from "@inertiajs/react";
 
-export default function ChangeName() {
+export default function ChangeName({ user }) {
     const { errors } = usePage().props;
 
     return (
@@ -17,9 +17,7 @@ export default function ChangeName() {
                     <h3 className="font-monda font-bold text-lg text-[#C70039]">
                         Nama Saat Ini:
                     </h3>
-                    <p className="font-monda uppercase">
-                        {usePage().props.user.user.UserName}
-                    </p>
+                    <p className="font-monda uppercase">{user.UserName}</p>
                 </div>
 
                 <form action="change-name" method="POST">
