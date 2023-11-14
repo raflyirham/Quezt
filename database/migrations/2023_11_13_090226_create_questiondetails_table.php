@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('questiondetails', function (Blueprint $table) {
             $table->foreignId('QuestionID')->constrained('questionheaders', 'QuestionID');
+            $table->string('QuestionTitle');
             $table->text('QuestionDetail');
             $table->timestamp('QuestionDate');
             $table->timestamps();

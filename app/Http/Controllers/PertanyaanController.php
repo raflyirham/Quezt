@@ -17,6 +17,6 @@ class PertanyaanController extends Controller
         }
 
         return Inertia::render('Pertanyaan/Detail', [
-            'pertanyaan' => $pertanyaan->load('course', 'questiondetail', 'questionanswers', 'questionanswers.answerheader', 'user', 'course.major')]);
+            'pertanyaan' => $pertanyaan->load('course', 'questiondetail', 'questionanswers', 'questionanswers.answerheader', 'user', 'course.major', 'questionanswers.answerheader.answerdetail', 'questionanswers.answerheader.tutor')]);
     }
 }

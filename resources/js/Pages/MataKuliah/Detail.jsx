@@ -6,7 +6,6 @@ import JurusanSmallCard from "../../Components/JurusanSmallCard/JurusanSmallCard
 import PertanyaanCard from "../../Components/PertanyaanCard/PertanyaanCard";
 
 export default function Index({ course, pertanyaan }) {
-    // console.log(pertanyaan);
     return (
         <>
             <Head title={`Mata Kuliah ${course.CourseName} | Quezt`} />
@@ -49,7 +48,7 @@ export default function Index({ course, pertanyaan }) {
                                 <PertanyaanCard
                                     id={pertanyaan.questiondetail.QuestionID}
                                     pertanyaan={
-                                        pertanyaan.questiondetail.QuestionDetail
+                                        pertanyaan.questiondetail.QuestionTitle
                                     }
                                     user={pertanyaan.user.UserName}
                                     key={pertanyaan.questiondetail.QuestionID}

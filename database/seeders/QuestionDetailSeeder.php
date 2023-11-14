@@ -15,7 +15,8 @@ class QuestionDetailSeeder extends Seeder
         //
         DB::table('questiondetails')->insert([
             'QuestionID' => 1,
-            'QuestionDetail' => 'Apa itu Laravel?',
+            'QuestionTitle' => 'Apa itu Laravel?',
+            'QuestionDetail' => 'Jelaskan apa itu Laravel secara komprehensif!',
             'QuestionDate' => now(),
         ]);
     }

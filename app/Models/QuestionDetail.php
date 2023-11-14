@@ -15,6 +15,7 @@ class QuestionDetail extends Model
 
     protected $fillable = [
         'QuestionID',
+        'QuestionTitle',
         'QuestionDetail',
         'QuestionDate',
     ];
