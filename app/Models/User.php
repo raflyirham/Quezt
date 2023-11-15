@@ -26,6 +26,7 @@ class User extends Authenticatable
         'UserUsername',
         'password',
         'UserRegisteredDate',
+        'RoleID',
     ];
 
     /**
@@ -34,7 +35,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'UserID',
         'password',
         'remember_token',
     ];
@@ -57,5 +57,15 @@ class User extends Authenticatable
     public function membership()
     {
         return $this->hasOne(Membership::class, 'UserID', 'UserID');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'RoleID', 'RoleID');
+    }
+
+    public function userroles()
+    {
+        return $this->hasMany(UserRole::class, 'UserID', 'UserID');
     }
 }

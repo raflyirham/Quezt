@@ -14,12 +14,12 @@ class AnswerHeader extends Model
     protected $primaryKey = 'AnswerID';
 
     protected $fillable = [
-        'TutorID',
+        'UserID',
     ];
 
-    public function tutor()
+    public function user()
     {
-        return $this->belongsTo(Tutor::class, 'TutorID', 'TutorID');
+        return $this->belongsTo(User::class, 'UserID', 'UserID');
     }
 
     public function answerdetail()

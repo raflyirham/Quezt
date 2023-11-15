@@ -14,9 +14,18 @@ class MembershipSeeder extends Seeder
     {
         //
         DB::table('memberships')->insert([
-            'MembershipID' => 1,
             'UserID' => 1,
             'MembershipTypeID' => 1,
+        ]);
+
+        DB::table('memberships')->insert([
+            'UserID' => 2,
+            'MembershipTypeID' => 1,
+        ]);
+
+        DB::table('memberships')->insert([
+            'UserID' => 3,
+            'MembershipTypeID' => 2,
         ]);
     }
 }

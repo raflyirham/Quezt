@@ -36,7 +36,9 @@ Route::prefix('jurusan')->group(function () {
 // Mata Kuliah
 Route::prefix('mata-kuliah')->group(function () {
     Route::get('/', [MataKuliahController::class, 'index']);
+
     Route::get('/{course}', [MataKuliahController::class, 'detail']);
+    Route::post('/{course}/tanya-materi', [MataKuliahController::class, 'tanya_materi']);
 });
 
 // Dashboard
@@ -52,10 +54,19 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
     Route::get('/change-name', [UserController::class, 'change_name']);
     Route::post('/change-name', [UserController::class, 'change_name_post']);
+
+    Route::get('/detail-role', [UserController::class, 'detail_role']);
+
+    Route::get('/change-role', [UserController::class, 'change_role']);
+    Route::post('/change-role', [UserController::class, 'change_role_post']);
 });
 
 // Pertanyaan
-Route::get('/pertanyaan/{id}', [PertanyaanController::class, 'detail']);
+Route::prefix('pertanyaan')->group(function () {
+    Route::get('/{id}', [PertanyaanController::class, 'detail']);
+    Route::post('/{id}', [PertanyaanController::class, 'jawab_pertanyaan']);
+    Route::delete('/{id}/hapus-jawaban', [PertanyaanController::class, 'hapus_jawaban']);
+});
 
 // Tautan
 Route::get('/tentang-kami', [PageController::class, 'tentang']);

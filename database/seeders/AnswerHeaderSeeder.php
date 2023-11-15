@@ -15,7 +15,7 @@ class AnswerHeaderSeeder extends Seeder
         //
         DB::table('answerheaders')->insert([
             'AnswerID' => 1,
-            'TutorID' => 1,
+            'UserID' => 2,
         ]);
     }
 }

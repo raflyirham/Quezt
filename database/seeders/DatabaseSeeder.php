@@ -12,7 +12,8 @@ use Database\Seeders\MembershipTypeSeeder;
 use Database\Seeders\QuestionAnswerSeeder;
 use Database\Seeders\QuestionDetailSeeder;
 use Database\Seeders\QuestionHeaderSeeder;
-use Database\Seeders\TutorSeeder;
+use Database\Seeders\RoleSeeder;
+use Database\Seeders\UserRoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 
@@ -31,8 +32,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            RoleSeeder::class,
             UserSeeder::class,
-            TutorSeeder::class,
+            UserRoleSeeder::class,
             MembershipTypeSeeder::class,
             MembershipSeeder::class,
             MajorSeeder::class,

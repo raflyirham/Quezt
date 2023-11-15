@@ -19,6 +19,25 @@ class UserSeeder extends Seeder
             'UserName' => 'Quezt User',
             'UserUsername' => 'queztuser',
             'UserRegisteredDate' => now(),
+            'RoleID' => 1,
+        ]);
+
+        DB::table('users')->insert([
+            'email' => 'tutor@quezt.com',
+            'password' => bcrypt('12345'),
+            'UserName' => 'Quezt Tutor',
+            'UserUsername' => 'queztutor',
+            'UserRegisteredDate' => now(),
+            'RoleID' => 1,
+        ]);
+
+        DB::table('users')->insert([
+            'email' => 'premium@quezt.com',
+            'password' => bcrypt('12345'),
+            'UserName' => 'Quezt Premium',
+            'UserUsername' => 'quezpremium',
+            'UserRegisteredDate' => now(),
+            'RoleID' => 1,
         ]);
     }
 }
