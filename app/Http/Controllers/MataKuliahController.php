@@ -31,7 +31,7 @@ class MataKuliahController extends Controller
         return Inertia::render('MataKuliah/Detail', [
             'course' => $matkul->load('major'),
             'pertanyaan' => $pertanyaan->load('questiondetail', 'questionanswers', 'user', 'course'),
-            'user' => User::find(Auth::id())->load('membership'),
+            'user' => User::find(Auth::id())?->load('membership') ?? null,
         ]);
     }
 

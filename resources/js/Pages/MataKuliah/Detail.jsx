@@ -49,8 +49,8 @@ export default function Index({ course, pertanyaan, user }) {
                         Pertanyaan dan Materi
                     </h2>
 
-                    {user.RoleID == 1 &&
-                        user.membership.MembershipTypeID != 1 && (
+                    {user?.RoleID == 1 &&
+                        user?.membership.MembershipTypeID != 1 && (
                             <>
                                 <button
                                     className="bg-[#C70039] text-white font-medium text-base px-5 py-2 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 w-fit"
@@ -62,85 +62,87 @@ export default function Index({ course, pertanyaan, user }) {
                         )}
                 </div>
 
-                {user.RoleID == 1 && user.membership.MembershipTypeID != 1 && (
-                    <>
-                        <div
-                            ref={pertanyaanRef}
-                            className="p-6 shadow-lg mb-8 hidden"
-                        >
-                            <form
-                                action={`/mata-kuliah/${course.CourseSlug}/tanya-materi`}
-                                method="POST"
-                                className="flex flex-col gap-y-6"
+                {user?.RoleID == 1 &&
+                    user?.membership.MembershipTypeID != 1 && (
+                        <>
+                            <div
+                                ref={pertanyaanRef}
+                                className="p-6 shadow-lg mb-8 hidden"
                             >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value={
-                                        usePage().props.csrf_token.csrf_token
-                                    }
-                                />
-
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor="judul_pertanyaan"
-                                        className="font-monda font-bold text-lg text-[#C70039]"
-                                    >
-                                        Judul Pertanyaan
-                                    </label>
+                                <form
+                                    action={`/mata-kuliah/${course.CourseSlug}/tanya-materi`}
+                                    method="POST"
+                                    className="flex flex-col gap-y-6"
+                                >
                                     <input
-                                        id="judul_pertanyaan"
-                                        name="judul_pertanyaan"
-                                        placeholder="Masukkan judul pertanyaan kamu..."
-                                        type="text"
-                                        className="p-2 border-[1px] border-[#000] rounded mt-2"
-                                        required
+                                        type="hidden"
+                                        name="_token"
+                                        value={
+                                            usePage().props.csrf_token
+                                                .csrf_token
+                                        }
                                     />
-                                    {usePage().props.errors
-                                        .judul_pertanyaan && (
-                                        <div className="font-monda text-[#C70039]">
-                                            {
-                                                usePage().props.errors
-                                                    .judul_pertanyaan
-                                            }
-                                        </div>
-                                    )}
-                                </div>
 
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor="detail_pertanyaan"
-                                        className="font-monda font-bold text-lg text-[#C70039]"
-                                    >
-                                        Detail Pertanyaan
-                                    </label>
-                                    <textarea
-                                        name="detail_pertanyaan"
-                                        id="detail_pertanyaan"
-                                        cols="30"
-                                        rows="10"
-                                        className="w-full mt-4 py-4 px-4 border-[1px] border-[#000] rounded resize-none"
-                                        placeholder="Masukkan detail pertanyaan kamu..."
-                                        required
-                                    ></textarea>
-                                    {usePage().props.errors
-                                        .detail_pertanyaan && (
-                                        <div className="font-monda text-[#C70039]">
-                                            {
-                                                usePage().props.errors
-                                                    .detail_pertanyaan
-                                            }
-                                        </div>
-                                    )}
-                                </div>
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="judul_pertanyaan"
+                                            className="font-monda font-bold text-lg text-[#C70039]"
+                                        >
+                                            Judul Pertanyaan
+                                        </label>
+                                        <input
+                                            id="judul_pertanyaan"
+                                            name="judul_pertanyaan"
+                                            placeholder="Masukkan judul pertanyaan kamu..."
+                                            type="text"
+                                            className="p-2 border-[1px] border-[#000] rounded mt-2"
+                                            required
+                                        />
+                                        {usePage().props.errors
+                                            .judul_pertanyaan && (
+                                            <div className="font-monda text-[#C70039]">
+                                                {
+                                                    usePage().props.errors
+                                                        .judul_pertanyaan
+                                                }
+                                            </div>
+                                        )}
+                                    </div>
 
-                                <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-1 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
-                                    Kirim Pertanyaan
-                                </button>
-                            </form>
-                        </div>
-                    </>
-                )}
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="detail_pertanyaan"
+                                            className="font-monda font-bold text-lg text-[#C70039]"
+                                        >
+                                            Detail Pertanyaan
+                                        </label>
+                                        <textarea
+                                            name="detail_pertanyaan"
+                                            id="detail_pertanyaan"
+                                            cols="30"
+                                            rows="10"
+                                            className="w-full mt-4 py-4 px-4 border-[1px] border-[#000] rounded resize-none"
+                                            placeholder="Masukkan detail pertanyaan kamu..."
+                                            required
+                                        ></textarea>
+                                        {usePage().props.errors
+                                            .detail_pertanyaan && (
+                                            <div className="font-monda text-[#C70039]">
+                                                {
+                                                    usePage().props.errors
+                                                        .detail_pertanyaan
+                                                }
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-1 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
+                                        Kirim Pertanyaan
+                                    </button>
+                                </form>
+                            </div>
+                        </>
+                    )}
 
                 <div className="fixed bottom-0 right-0 mr-4 mb-4">
                     {usePage().props.flash.success && (

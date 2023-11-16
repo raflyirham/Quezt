@@ -5,8 +5,6 @@ import { Head, Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
 
 export default function DetailRole({ user }) {
-    console.log(user);
-
     return (
         <Index>
             <div className="w-[70%] shadow-lg p-8">

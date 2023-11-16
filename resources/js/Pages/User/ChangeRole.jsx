@@ -41,7 +41,7 @@ export default function ChangeName({ user }) {
                             className="p-2 border-[2px] rounded mt-1"
                         >
                             {user.userroles.map((role, index) => (
-                                <option value={role.role.RoleName}>
+                                <option value={role.role.RoleName} key={index}>
                                     {role.role.RoleName}
                                 </option>
                             ))}

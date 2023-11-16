@@ -3,7 +3,7 @@ import { Head, Link, usePage } from "@inertiajs/react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
-export default function Index({ pertanyaan }) {
+export default function Detail({ pertanyaan }) {
     const convertDate = (date) => {
         const event = new Date(date);
         const options = {
@@ -73,8 +73,8 @@ export default function Index({ pertanyaan }) {
                             <>
                                 <div className="flex flex-col gap-y-6">
                                     {pertanyaan.questionanswers.map(
-                                        (jawaban) => (
-                                            <div>
+                                        (jawaban, index) => (
+                                            <div key={index}>
                                                 <div
                                                     className="px-8 py-8 shadow-lg h-fit"
                                                     key={jawaban.AnswerID}
