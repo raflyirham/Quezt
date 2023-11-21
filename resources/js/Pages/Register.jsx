@@ -2,11 +2,13 @@ import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
+import { useRecaptcha } from "../Composables/ReCaptcha";
 
 import { usePage } from "@inertiajs/react";
 
 export default function Register({ csrf_token }) {
     const { errors } = usePage().props;
+    useRecaptcha();
 
     return (
         <>
@@ -141,6 +143,19 @@ export default function Register({ csrf_token }) {
                                 {errors.confirmPassword && (
                                     <div className="font-monda text-[#C70039]">
                                         {errors.confirmPassword}
+                                    </div>
+                                )}
+
+                                <div
+                                    className="g-recaptcha mt-4"
+                                    data-sitekey={
+                                        usePage().props.config
+                                            .google_recaptcha_key
+                                    }
+                                ></div>
+                                {errors["g-recaptcha-response"] && (
+                                    <div className="font-monda text-[#C70039]">
+                                        {errors["g-recaptcha-response"]}
                                     </div>
                                 )}
 

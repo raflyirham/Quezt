@@ -2,10 +2,14 @@ import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
+import { useRecaptcha } from "../Composables/ReCaptcha";
 
 import { usePage } from "@inertiajs/react";
 
 export default function Login({ csrf_token }) {
+    const { errors } = usePage().props;
+    useRecaptcha();
+
     return (
         <>
             <Head title="Masuk | Quezt" />
@@ -76,6 +80,19 @@ export default function Login({ csrf_token }) {
                                     required
                                     className="mt-2 border-[1px] border-[#000] p-2 rounded"
                                 ></input>
+
+                                <div
+                                    className="g-recaptcha mt-4"
+                                    data-sitekey={
+                                        usePage().props.config
+                                            .google_recaptcha_key
+                                    }
+                                ></div>
+                                {errors["g-recaptcha-response"] && (
+                                    <div className="font-monda text-[#C70039]">
+                                        {errors["g-recaptcha-response"]}
+                                    </div>
+                                )}
 
                                 <button
                                     type="submit"

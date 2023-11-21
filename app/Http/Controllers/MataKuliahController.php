@@ -64,6 +64,7 @@ class MataKuliahController extends Controller
         $request->validate([
             'judul_pertanyaan' => ['required', 'string', 'min:10', 'max:200'],
             'detail_pertanyaan' => ['required', 'string', 'min:50', 'max:5000'],
+            'g-recaptcha-response' => 'required|recaptcha',
         ], [
             'judul_pertanyaan.required' => 'Judul pertanyaan tidak boleh kosong',
             'judul_pertanyaan.string' => 'Judul pertanyaan harus berupa string',
@@ -73,6 +74,8 @@ class MataKuliahController extends Controller
             'detail_pertanyaan.string' => 'Detail pertanyaan harus berupa string',
             'detail_pertanyaan.min' => 'Detail pertanyaan minimal 50 karakter',
             'detail_pertanyaan.max' => 'Detail pertanyaan maksimal 5000 karakter',
+            'g-recaptcha-response.required' => 'Captcha harus diisi.',
+            'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',
         ]);
 
         $q = QuestionHeader::create([

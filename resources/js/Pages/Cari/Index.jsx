@@ -8,13 +8,13 @@ import Pagination from "../../Components/Pagination/Pagination";
 export default function Index({ questions, materi }) {
     const cariLink = (links) => {
         for (let i = 1; i < links.length - 1; i++) {
-            links[i].url += "&materi=" + materi;
+            if (!links[i].url.includes("&materi=" + materi)) {
+                links[i].url += "&materi=" + materi;
+            }
         }
     };
 
-    useEffect(() => {
-        cariLink(questions.links);
-    }, []);
+    cariLink(questions.links);
 
     return (
         <>

@@ -18,6 +18,7 @@ class RegisterController extends Controller
             'password' => ['required', 'min:5', 'max:255', 'confirmed'],
             'password_confirmation' => ['required', 'min:5', 'max:255'],
             'username' => ['required', 'min:5', 'max:15', 'unique:users,UserUsername', 'alpha', 'lowercase'],
+            'g-recaptcha-response' => 'required|recaptcha',
         ], [
             'name.required' => 'Nama harus diisi.',
             'name.max' => 'Nama tidak boleh lebih dari 255 karakter.',
@@ -38,6 +39,8 @@ class RegisterController extends Controller
             'username.unique' => 'Username sudah terdaftar.',
             'username.alpha' => 'Username hanya boleh berisi huruf.',
             'username.lowercase' => 'Username hanya boleh berisi huruf kecil.',
+            'g-recaptcha-response.required' => 'Captcha harus diisi.',
+            'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',
         ]);
 
         $user = User::create([

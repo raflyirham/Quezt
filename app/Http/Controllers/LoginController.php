@@ -10,6 +10,18 @@ class LoginController extends Controller
     //
     public function authenticate(Request $request)
     {
+        $request->validate([
+            'email' => ['required', 'email:dns'],
+            'password' => ['required'],
+            'g-recaptcha-response' => 'required|recaptcha',
+        ], [
+            'email.required' => 'Email harus diisi.',
+            'email.email' => 'Email tidak valid.',
+            'password.required' => 'Password harus diisi.',
+            'g-recaptcha-response.required' => 'Captcha harus diisi.',
+            'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',
+        ]);
+
         $credentials = $request->validate([
             'email' => ['required', 'email:dns'],
             'password' => ['required'],

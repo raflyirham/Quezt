@@ -5,8 +5,12 @@ import Footer from "../../Components/Footer/Footer";
 import JurusanSmallCard from "../../Components/JurusanSmallCard/JurusanSmallCard";
 import PertanyaanCard from "../../Components/PertanyaanCard/PertanyaanCard";
 import Pagination from "../../Components/Pagination/Pagination";
+import { useRecaptcha } from "@/Composables/ReCaptcha";
 
 export default function Index({ course, questions, user }) {
+    const { errors } = usePage().props;
+    useRecaptcha();
+
     const [pertanyaanTitle, setPertanyaanTitle] = useState("Tanya Materi");
     const pertanyaanRef = useRef(null);
 
@@ -136,6 +140,19 @@ export default function Index({ course, questions, user }) {
                                             </div>
                                         )}
                                     </div>
+
+                                    <div
+                                        className="g-recaptcha mt-4"
+                                        data-sitekey={
+                                            usePage().props.config
+                                                .google_recaptcha_key
+                                        }
+                                    ></div>
+                                    {errors["g-recaptcha-response"] && (
+                                        <div className="font-monda text-[#C70039]">
+                                            {errors["g-recaptcha-response"]}
+                                        </div>
+                                    )}
 
                                     <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-1 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
                                         Kirim Pertanyaan

@@ -2,8 +2,12 @@ import React from "react";
 import { Head, Link, usePage } from "@inertiajs/react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import { useRecaptcha } from "@/Composables/ReCaptcha";
 
 export default function Detail({ pertanyaan }) {
+    const { errors } = usePage().props;
+    useRecaptcha();
+
     const convertDate = (date) => {
         const event = new Date(date);
         const options = {
@@ -198,7 +202,20 @@ export default function Detail({ pertanyaan }) {
                                         </div>
                                     )}
 
-                                    <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-1 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
+                                    <div
+                                        className="g-recaptcha mt-4"
+                                        data-sitekey={
+                                            usePage().props.config
+                                                .google_recaptcha_key
+                                        }
+                                    ></div>
+                                    {errors["g-recaptcha-response"] && (
+                                        <div className="font-monda text-[#C70039]">
+                                            {errors["g-recaptcha-response"]}
+                                        </div>
+                                    )}
+
+                                    <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-4 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
                                         Kirim Jawaban
                                     </button>
                                 </form>

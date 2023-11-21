@@ -29,10 +29,13 @@ class PertanyaanController extends Controller
     {
         $request->validate([
             'jawab' => ['required', 'min:50', 'max:5000'],
+            'g-recaptcha-response' => 'required|recaptcha',
         ], [
             'jawab.required' => 'Jawaban harus diisi.',
             'jawab.min' => 'Jawaban minimal 50 karakter.',
             'jawab.max' => 'Jawaban maksimal 5000 karakter.',
+            'g-recaptcha-response.required' => 'Captcha harus diisi.',
+            'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',
         ]);
 
         $pertanyaan = QuestionHeader::all()->where('QuestionID', $id)->first();
