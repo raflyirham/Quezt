@@ -48,6 +48,7 @@ class PertanyaanController extends Controller
         AnswerDetail::create([
             'AnswerID' => $jawaban->AnswerID,
             'AnswerDetail' => $request->jawab,
+            'AnswerDate' => now(),
         ]);
 
         QuestionAnswer::create([

@@ -10,7 +10,10 @@ class JurusanController extends Controller
     //
     public function index()
     {
-        return Inertia::render('Jurusan/Index');
+        $majors = Major::orderBy('MajorName', 'asc')->paginate(6);
+        return Inertia::render('Jurusan/Index', [
+            'majors' => $majors,
+        ]);
     }
 
     public function detail($major)
@@ -21,9 +24,10 @@ class JurusanController extends Controller
             return redirect('/jurusan');
         }
 
+        $courses = $jurusan->courses()->paginate(6);
         return Inertia::render('Jurusan/Detail', [
             'major' => $jurusan,
-            'courses' => $jurusan->courses()->get(),
+            'courses' => $courses,
         ]);
     }
 }

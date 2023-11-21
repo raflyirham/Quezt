@@ -1,0 +1,57 @@
+import React, { useEffect } from "react";
+import { Head, Link, usePage } from "@inertiajs/react";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
+import PertanyaanCard from "../../Components/PertanyaanCard/PertanyaanCard";
+import Pagination from "../../Components/Pagination/Pagination";
+
+export default function Index({ questions, materi }) {
+    const cariLink = (links) => {
+        for (let i = 1; i < links.length - 1; i++) {
+            links[i].url += "&materi=" + materi;
+        }
+    };
+
+    useEffect(() => {
+        cariLink(questions.links);
+    }, []);
+
+    return (
+        <>
+            <Head title="Hasil Pencarian | Quezt" />
+
+            <Navbar />
+
+            <div className="p-4 mt-40 min-h-screen">
+                <div>
+                    <h1 className="font-jacques font-bold text-4xl text-[#C70039]">
+                        Hasil Pencarian
+                    </h1>
+                </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-3">
+                    {questions.total == 0 ? (
+                        <p className="font-monda">
+                            Tidak ada materi ditemukan.
+                        </p>
+                    ) : (
+                        <>
+                            {questions.data.map((question) => (
+                                <PertanyaanCard
+                                    key={question.QuestionID}
+                                    id={question.QuestionID}
+                                    pertanyaan={question.QuestionTitle}
+                                    user={question.questionheader.user.UserName}
+                                />
+                            ))}
+                        </>
+                    )}
+                </div>
+
+                <Pagination links={questions.links} />
+            </div>
+
+            <Footer />
+        </>
+    );
+}

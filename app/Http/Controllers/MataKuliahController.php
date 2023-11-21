@@ -15,7 +15,10 @@ class MataKuliahController extends Controller
     //
     public function index()
     {
-        return Inertia::render('MataKuliah/Index');
+        $courses = Course::orderBy('CourseName', 'asc')->paginate(6);
+        return Inertia::render('MataKuliah/Index', [
+            'courses' => $courses,
+        ]);
     }
 
     public function detail($course)
@@ -27,11 +30,12 @@ class MataKuliahController extends Controller
         }
 
         $pertanyaan = $matkul->questionheaders()->get();
+        $questions = $matkul->questionheaders()->with('questiondetail', 'questionanswers', 'user', 'course')->paginate(6);
 
         return Inertia::render('MataKuliah/Detail', [
             'course' => $matkul->load('major'),
-            'pertanyaan' => $pertanyaan->load('questiondetail', 'questionanswers', 'user', 'course'),
             'user' => User::find(Auth::id())?->load('membership') ?? null,
+            'questions' => $questions,
         ]);
     }
 

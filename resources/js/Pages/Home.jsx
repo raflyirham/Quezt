@@ -1,5 +1,5 @@
 import React from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import SmallCard from "@/Components/SmallCard/SmallCard";
 import Navbar from "../Components/Navbar/Navbar";
 import JurusanCard from "../Components/JurusanCard/JurusanCard";
@@ -19,14 +19,20 @@ export default function Home() {
                     </h1>
 
                     <div className="flex flex-row mt-4">
-                        <input
-                            className="w-[80%] px-4 py-2 rounded"
-                            placeholder="Cari materi perkuliahanmu..."
-                        ></input>
+                        <form action="cari" method="GET" className="w-full">
+                            <input
+                                id="materi"
+                                name="materi"
+                                type="text"
+                                className="w-[80%] px-4 py-2 rounded"
+                                placeholder="Cari materi perkuliahanmu..."
+                                required
+                            ></input>
 
-                        <button className="bg-[#FF7B7B] w-[15%] p-2 rounded font-monda text-white font-bold ml-2">
-                            Cari
-                        </button>
+                            <button className="bg-[#FF7B7B] w-[15%] p-2 rounded font-monda text-white font-bold ml-2">
+                                Cari
+                            </button>
+                        </form>
                     </div>
 
                     <div className="mt-8">

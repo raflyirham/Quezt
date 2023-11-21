@@ -73,4 +73,7 @@ Route::get('/tentang-kami', [PageController::class, 'tentang']);
 Route::get('/kebijakan-privasi', [PageController::class, 'kebijakan']);
 Route::get('/syarat-ketentuan', [PageController::class, 'syarat']);
 
+Route::get('/cari', [PageController::class, 'cari'])->name('cari');
+// Route::post('/cari', [PageController::class, 'cari']);
+
 Route::any('{catchall}', [PageController::class, 'notFound'])->where('catchall', '.*');

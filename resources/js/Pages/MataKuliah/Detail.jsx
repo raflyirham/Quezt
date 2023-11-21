@@ -4,8 +4,9 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import JurusanSmallCard from "../../Components/JurusanSmallCard/JurusanSmallCard";
 import PertanyaanCard from "../../Components/PertanyaanCard/PertanyaanCard";
+import Pagination from "../../Components/Pagination/Pagination";
 
-export default function Index({ course, pertanyaan, user }) {
+export default function Index({ course, questions, user }) {
     const [pertanyaanTitle, setPertanyaanTitle] = useState("Tanya Materi");
     const pertanyaanRef = useRef(null);
 
@@ -158,13 +159,13 @@ export default function Index({ course, pertanyaan, user }) {
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 mt-2">
-                    {pertanyaan.length == 0 ? (
+                    {questions.total == 0 ? (
                         <p className="font-monda">
                             Mata kuliah ini belum ada pertanyaan dan materi.
                         </p>
                     ) : (
                         <>
-                            {pertanyaan.map((pertanyaan) => (
+                            {questions.data.map((pertanyaan) => (
                                 <PertanyaanCard
                                     id={pertanyaan.questiondetail.QuestionID}
                                     pertanyaan={
@@ -177,6 +178,8 @@ export default function Index({ course, pertanyaan, user }) {
                         </>
                     )}
                 </div>
+
+                <Pagination links={questions.links} />
             </div>
 
             <Footer />

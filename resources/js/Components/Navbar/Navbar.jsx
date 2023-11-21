@@ -21,6 +21,24 @@ export default function Navbar() {
                             <p className="">Tutor</p>
                         </div>
                     )}
+
+                <div className="flex flex-row gap-x-6 justify-center items-center ml-4">
+                    <Link href="/">
+                        <p className="font-monda font-bold text-lg text-[#C70039] hover:text-[#d50a43] hover:underline active:text-[#bb073a] duration-500">
+                            Beranda
+                        </p>
+                    </Link>
+                    <Link href="/jurusan">
+                        <p className="font-monda font-bold text-lg text-[#C70039] hover:text-[#d50a43] hover:underline active:text-[#bb073a] duration-500">
+                            Jurusan
+                        </p>
+                    </Link>
+                    <Link href="/mata-kuliah">
+                        <p className="font-monda font-bold text-lg text-[#C70039] hover:text-[#d50a43] hover:underline active:text-[#bb073a] duration-500">
+                            Mata Kuliah
+                        </p>
+                    </Link>
+                </div>
             </div>
 
             <div>
