@@ -12,24 +12,28 @@ export default function Home() {
 
             <Navbar />
 
-            <div className="flex flex-row items-center bg-[#C70039] min-h-screen p-4">
-                <div className="flex flex-col w-[45%]">
-                    <h1 className="text-6xl text-white font-bold font-monda">
+            <div className="flex flex-row items-center bg-[#C70039] min-h-screen p-4 max-lg:flex-col max-lg:items-start max-lg:pt-[100px] max-lg:justify-center">
+                <div className="flex flex-col w-[45%] max-lg:w-full">
+                    <h1 className="text-6xl text-white font-bold font-monda max-lg:text-4xl">
                         Temukan Materi Mata Kuliah Kamu
                     </h1>
 
-                    <div className="flex flex-row mt-4">
-                        <form action="cari" method="GET" className="w-full">
+                    <div className="flex flex-row mt-4 max-lg:flex-col max-lg:w-full">
+                        <form
+                            action="cari"
+                            method="GET"
+                            className="w-full max-lg:flex-col max-lg:w-full"
+                        >
                             <input
                                 id="materi"
                                 name="materi"
                                 type="text"
-                                className="w-[80%] px-4 py-2 rounded"
+                                className="w-[80%] px-4 py-2 rounded max-lg:w-full"
                                 placeholder="Cari materi perkuliahanmu..."
                                 required
                             ></input>
 
-                            <button className="bg-[#FF7B7B] w-[15%] p-2 rounded font-monda text-white font-bold ml-2">
+                            <button className="bg-[#FF7B7B] w-[15%] p-2 rounded font-monda text-white font-bold ml-2 max-lg:w-full max-lg:ml-0">
                                 Cari
                             </button>
                         </form>
@@ -62,7 +66,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="flex flex-col w-[55%]">
+                <div className="flex flex-col w-[55%] max-lg:hidden">
                     <img src="assets/img/home/illustration.png" />
                 </div>
             </div>
@@ -76,7 +80,7 @@ export default function Home() {
                     kuliah kamu.
                 </p>
 
-                <div className="grid grid-cols-4 gap-4 mt-6">
+                <div className="grid grid-cols-4 gap-4 mt-6 max-lg:grid-cols-1">
                     <JurusanCard
                         jurusan={"Teknik Informatika"}
                         deskripsi={

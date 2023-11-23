@@ -67,5 +67,17 @@ class MajorSeeder extends Seeder
             'MajorDescription' => 'Teknik Geologi merupakan jurusan yang mempelajari tentang teknik geologi.',
         ]);
 
+        DB::table('majors')->insert([
+            'MajorName' => 'Sosiologi',
+            'MajorSlug' => 'sosiologi',
+            'MajorDescription' => 'Sosiologi merupakan jurusan yang mempelajari tentang sosiologi.',
+        ]);
+
+        DB::table('majors')->insert([
+            'MajorName' => 'Matematika',
+            'MajorSlug' => 'matematika',
+            'MajorDescription' => 'Matematika merupakan jurusan yang mempelajari tentang matematika.',
+        ]);
+
     }
 }

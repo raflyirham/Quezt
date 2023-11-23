@@ -32,7 +32,7 @@ export default function Index({ major, courses }) {
                     <p className="font-monda">{`Terdapat ${courses.total} mata kuliah pada jurusan ini.`}</p>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-3 gap-3 max-lg:grid-cols-1">
                     {courses.total == 0 ? (
                         <p className="font-monda">Tidak ada mata kuliah.</p>
                     ) : (

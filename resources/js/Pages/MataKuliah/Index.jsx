@@ -20,7 +20,7 @@ export default function Index({ courses }) {
                     </h1>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-3 gap-3 max-lg:grid-cols-1">
                     {courses.length == 0 ? (
                         <p className="font-monda">
                             Tidak ada data mata kuliah.

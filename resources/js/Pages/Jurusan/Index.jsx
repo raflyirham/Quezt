@@ -21,7 +21,7 @@ export default function Index() {
                     </h1>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-3 gap-3 max-lg:grid-cols-1">
                     {majors.total == 0 ? (
                         <p className="font-monda">Tidak ada data jurusan.</p>
                     ) : (

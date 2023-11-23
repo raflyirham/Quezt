@@ -21,12 +21,14 @@ class MataKuliahController extends Controller
         ]);
     }
 
-    public function detail($course)
+    public function detail(Request $request, $course)
     {
         $matkul = Course::all()->where('CourseSlug', $course)->first();
 
         if ($matkul == null) {
-            return redirect('/mata-kuliah');
+            return Inertia::render('Error', [
+                'status' => 404,
+            ])->toResponse($request)->setStatusCode(404);
         }
 
         $pertanyaan = $matkul->questionheaders()->get();

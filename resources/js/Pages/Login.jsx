@@ -19,12 +19,12 @@ export default function Login({ csrf_token }) {
             <div className="flex flex-row min-h-screen">
                 <div
                     className="flex flex-col justify-center
-                 bg-[#C70039] min-h-screen w-[50%] p-4"
+                 bg-[#C70039] min-h-screen w-[50%] p-4 max-lg:hidden"
                 >
                     <img src="assets/img/masuk/illustration.png" />
                 </div>
 
-                <div className="flex flex-col mt-40 px-16 py-4 w-[50%]">
+                <div className="flex flex-col mt-40 px-16 py-4 w-[50%] max-lg:w-[100%] max-lg:mt-32 max-lg:px-4">
                     <h1 className="font-monda font-bold text-3xl text-[#C70039]">
                         Masuk ke Quezt
                     </h1>

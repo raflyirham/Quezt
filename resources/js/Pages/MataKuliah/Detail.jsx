@@ -49,7 +49,7 @@ export default function Index({ course, questions, user }) {
                     />
                 </div>
 
-                <div className="flex flex-row justify-between mt-10">
+                <div className="flex flex-row justify-between mt-10 max-lg:flex-col">
                     <h2 className="font-monda font-bold text-2xl text-[#C70039]">
                         Pertanyaan dan Materi
                     </h2>
@@ -58,7 +58,7 @@ export default function Index({ course, questions, user }) {
                         user?.membership.MembershipTypeID != 1 && (
                             <>
                                 <button
-                                    className="bg-[#C70039] text-white font-medium text-base px-5 py-2 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 w-fit"
+                                    className="bg-[#C70039] text-white font-medium text-base px-5 py-2 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 w-fit max-lg:mt-2 max-lg:mb-2"
                                     onClick={showPertanyaanForm}
                                 >
                                     {pertanyaanTitle}
@@ -175,7 +175,7 @@ export default function Index({ course, questions, user }) {
                     )}
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 mt-2">
+                <div className="grid grid-cols-3 gap-3 mt-2 max-lg:grid-cols-1">
                     {questions.total == 0 ? (
                         <p className="font-monda">
                             Mata kuliah ini belum ada pertanyaan dan materi.

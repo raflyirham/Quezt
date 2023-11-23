@@ -8,7 +8,7 @@ export default function ChangeName({ user }) {
 
     return (
         <Index>
-            <div className="w-[70%] shadow-lg p-8">
+            <div className="w-[70%] shadow-lg p-8 max-lg:w-full">
                 <h2 className="font-monda font-bold text-xl text-[#C70039]">
                     Ubah Role
                 </h2>

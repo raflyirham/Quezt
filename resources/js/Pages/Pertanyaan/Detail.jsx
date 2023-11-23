@@ -41,7 +41,7 @@ export default function Detail({ pertanyaan }) {
                         </div>
                     )}
                 </div>
-                <div className="px-8 py-8 shadow-lg w-[80%] h-fit">
+                <div className="px-8 py-8 shadow-lg w-[80%] h-fit max-lg:w-[100%]">
                     <div>
                         <h1 className="font-monda font-bold text-2xl text-[#C70039]">
                             {pertanyaan.questiondetail.QuestionTitle}
@@ -52,7 +52,7 @@ export default function Detail({ pertanyaan }) {
                         </p>
                     </div>
 
-                    <div className="flex flex-row justify-between items-center mt-4">
+                    <div className="flex flex-row justify-between items-center mt-4 max-lg:flex-col max-lg:justify-start max-lg:items-start">
                         <p className="font-monda font-bold text-sm text-[#C70039]">{`${pertanyaan.course.CourseName} | ${pertanyaan.course.major.MajorName}`}</p>
 
                         <p className="font-monda mt-2 text-sm">
@@ -63,7 +63,7 @@ export default function Detail({ pertanyaan }) {
                     </div>
                 </div>
 
-                <div className="mt-14 w-[80%]">
+                <div className="mt-14 w-[80%] max-lg:w-[100%]">
                     <h2 className="font-monda font-bold text-xl text-[#C70039]">
                         Jawaban
                     </h2>
@@ -94,7 +94,7 @@ export default function Detail({ pertanyaan }) {
                                                         </p>
                                                     </div>
 
-                                                    <div className="flex flex-row justify-between items-center mt-4">
+                                                    <div className="flex flex-row justify-between items-center mt-4 max-lg:flex-col max-lg:justify-start max-lg:items-start">
                                                         <p className="font-monda font-bold text-sm text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
 
                                                         <p className="font-monda text-sm">
@@ -169,7 +169,7 @@ export default function Detail({ pertanyaan }) {
                 {usePage().props.user_data &&
                     usePage().props.user_data.RoleID === 2 && (
                         <>
-                            <div className="px-8 py-8 shadow-lg w-[80%] h-fit mt-10">
+                            <div className="px-8 py-8 shadow-lg w-[80%] h-fit mt-10 max-lg:w-[100%]">
                                 <h3 className="font-monda font-bold text-lg">
                                     Jawab Pertanyaan
                                 </h3>

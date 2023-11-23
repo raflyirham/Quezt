@@ -8,7 +8,7 @@ export default function ChangePassword() {
 
     return (
         <Index>
-            <div className="w-[70%] shadow-lg p-8">
+            <div className="w-[70%] shadow-lg p-8 max-lg:w-full">
                 <h2 className="font-monda font-bold text-xl text-[#C70039]">
                     Ubah Password
                 </h2>
