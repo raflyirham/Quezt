@@ -71,7 +71,10 @@ export default function Navbar() {
                                         <li>
                                             <Link
                                                 className="bg-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 py-2 px-4 block whitespace-no-wrap"
-                                                href="/profile"
+                                                href={`/profile/${
+                                                    usePage().props.user_data
+                                                        .UserUsername
+                                                }`}
                                             >
                                                 Profile
                                             </Link>

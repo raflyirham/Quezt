@@ -172,4 +172,20 @@ class UserController extends Controller
 
         return redirect('/dashboard/change-role')->with('success', 'Role berhasil diubah.');
     }
+
+    public function profile(Request $request, $user)
+    {
+        // dd($user);
+        $u = User::all()->where('UserUsername', $user)->first();
+
+        if ($u == null) {
+            return Inertia::render('Error', [
+                'status' => 404,
+            ])->toResponse($request)->setStatusCode(404);
+        }
+
+        return Inertia::render('User/Profile', [
+            'user' => $u->load('membership.membershiptype', 'userroles', 'userroles.role', 'role'),
+        ]);
+    }
 }

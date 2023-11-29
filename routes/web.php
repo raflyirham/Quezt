@@ -41,6 +41,14 @@ Route::prefix('mata-kuliah')->group(function () {
     Route::post('/{course}/tanya-materi', [MataKuliahController::class, 'tanya_materi']);
 });
 
+// Profile
+Route::prefix('profile')->group(function () {
+    Route::get('/{user}', [UserController::class, 'profile']);
+    Route::get('/{user}/pertanyaan', [UserController::class, 'pertanyaan']);
+    Route::get('/{user}/jawaban', [UserController::class, 'jawaban']);
+    Route::get('/{user}/materi', [UserController::class, 'materi']);
+});
+
 // Dashboard
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [UserController::class, 'index']);
