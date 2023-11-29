@@ -8,3 +8,7 @@
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+.disable-tailwind {
+  all: unset;
+}

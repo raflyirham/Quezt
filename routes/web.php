@@ -8,6 +8,10 @@ use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 
+use Inertia\Inertia;
+
+use function Termwind\render;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +22,11 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+
+//! Testing Purpose Only, DELETE LATER
+Route::get('/Admin', function(){
+  return Inertia::render('Admin/Index');
+});
 
 Route::get('/', [PageController::class, 'index']);
 Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
