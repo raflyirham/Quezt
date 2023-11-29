@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <>
       <Head title="Admin | Quezt" />
-      <nav className="disable-tailwind navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="disable- navbar navbar-expand-lg bg-body-tertiary">
         <div className="disable-tailwind container-fluid">
           <a className="disable-tailwind navbar-brand" href="#">Navbar</a>
           <button className="disable-tailwind navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
