@@ -21,7 +21,7 @@ export default function Index() {
           </h1>
         </div>
 
-        <div className="tw-mt-6 tw-grid tw-grid-cols-3 tw-gap-3 tw-max-lg:grid-cols-1">
+        <div className="tw-mt-6 tw-grid tw-grid-cols-3 tw-gap-3 max-lg:tw-grid-cols-1">
           {majors.total == 0 ? (
             <p className="tw-font-monda">Tidak ada data jurusan.</p>
           ) : (

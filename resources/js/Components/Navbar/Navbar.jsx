@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="tw-shadow-lg tw-flex tw-flex-row tw-p-4 tw-justify-between tw-fixed tw-top-0 tw-z-50 tw-bg-white tw-w-full">
         <div className="tw-flex tw-flex-row tw-gap-x-2 tw-items-baseline">
           <Link href="/">
-            <p className="tw-font-jacques tw-font-medium tw-text-3xl tw-text-[#C70039] tw-hover:text-[#d50a43] tw-active:text-[#bb073a]">
+            <p className="tw-font-jacques tw-font-medium tw-text-3xl tw-text-[#C70039] tw-hover:text-[#d50a43] active:tw-text-[#bb073a]">
               Quezt
             </p>
           </Link>
@@ -23,19 +23,19 @@ export default function Navbar() {
               </div>
             )}
 
-          <div className="tw-flex tw-flex-row tw-gap-x-6 tw-justify-center tw-items-center tw-ml-4 tw-max-lg:hidden">
+          <div className="tw-flex tw-flex-row tw-gap-x-6 tw-justify-center tw-items-center tw-ml-4 max-lg:tw-hidden">
             <Link href="/">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500">
                 Beranda
               </p>
             </Link>
             <Link href="/jurusan">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500">
                 Jurusan
               </p>
             </Link>
             <Link href="/mata-kuliah">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500">
                 Mata Kuliah
               </p>
             </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
                   <ul className="tw-dropdown-menu tw-absolute tw-hidden tw-text-white tw-pt-1 tw-shadow-lg">
                     <li>
                       <Link
-                        className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
+                        className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
                         href="/dashboard"
                       >
                         Dashboard
@@ -70,7 +70,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link
-                        className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
+                        className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
                         href={`/profile/${
                           usePage().props.user_data
                             .UserUsername
@@ -95,7 +95,7 @@ export default function Navbar() {
                         />
                         <button
                           type="submit"
-                          className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap tw-w-full tw-text-left"
+                          className="tw-bg-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap tw-w-full tw-text-left"
                         >
                           Keluar
                         </button>
@@ -108,13 +108,13 @@ export default function Navbar() {
           ) : (
             <>
               <Link href="/masuk">
-                <button className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-ml-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:border-[#d50a43] tw-active:border-[#bb073a]">
+                <button className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-ml-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:border-[#d50a43] active:tw-border-[#bb073a]">
                   Masuk
                 </button>
               </Link>
 
               <Link href="/daftar">
-                <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-ml-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
+                <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-ml-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                   Daftar
                 </button>
               </Link>
@@ -123,11 +123,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] tw-max-lg:block">
+      <div className="tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] max-lg:tw-block">
         <div className="tw-flex tw-flex-row tw-justify-evenly tw-items-center tw-px-6 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">
           <Link
             href="/"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500"
+            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500"
           >
             <i className="fa-solid fa-house fa-2xl"></i>
             <p className="tw-mt-1">Beranda</p>
@@ -135,7 +135,7 @@ export default function Navbar() {
 
           <Link
             href="/jurusan"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500"
+            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500"
           >
             <i className="fa-solid fa-graduation-cap fa-2xl"></i>
             <p className="tw-mt-1">Jurusan</p>
@@ -143,7 +143,7 @@ export default function Navbar() {
 
           <Link
             href="/mata-kuliah"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline tw-active:text-[#bb073a] tw-duration-500"
+            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] tw-hover:text-[#d50a43] tw-hover:underline active:tw-text-[#bb073a] tw-duration-500"
           >
             <i className="fa-solid fa-book fa-2xl"></i>
             <p className="tw-mt-1">Mata Kuliah</p>
