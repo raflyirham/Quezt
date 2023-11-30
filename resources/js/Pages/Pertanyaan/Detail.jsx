@@ -44,7 +44,7 @@ export default function Detail({ pertanyaan }) {
                         </div>
                     )}
                 </div>
-                <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit tw-max-lg:w-[100%]">
+                <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit max-lg:tw-w-[100%]">
                     <div>
                         <h1 className="tw-font-monda tw-font-bold tw-text-2xl tw-text-[#C70039]">
                             {pertanyaan.questiondetail.QuestionTitle}
@@ -55,7 +55,7 @@ export default function Detail({ pertanyaan }) {
                         </p>
                     </div>
 
-                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 tw-max-lg:flex-col tw-max-lg:justify-start tw-max-lg:items-start">
+                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
                         <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${pertanyaan.course.CourseName} | ${pertanyaan.course.major.MajorName}`}</p>
 
                         <p className="tw-font-monda tw-mt-2 tw-text-sm">
@@ -66,7 +66,7 @@ export default function Detail({ pertanyaan }) {
                     </div>
                 </div>
 
-                <div className="tw-mt-14 tw-w-[80%] tw-max-lg:w-[100%]">
+                <div className="tw-mt-14 tw-w-[80%] max-lg:tw-w-[100%]">
                     <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                         Jawaban
                     </h2>
@@ -97,7 +97,7 @@ export default function Detail({ pertanyaan }) {
                                                         </p>
                                                     </div>
 
-                                                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 tw-max-lg:flex-col tw-max-lg:justify-start tw-max-lg:items-start">
+                                                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
                                                         <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
 
                                                         <p className="tw-font-monda tw-text-sm">
@@ -152,7 +152,7 @@ export default function Detail({ pertanyaan }) {
                                                                         }
                                                                     />
 
-                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
+                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                                                                         Hapus
                                                                         Jawaban
                                                                     </button>
@@ -172,7 +172,7 @@ export default function Detail({ pertanyaan }) {
                 {usePage().props.user_data &&
                     usePage().props.user_data.RoleID === 2 && (
                         <>
-                            <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit tw-mt-10 tw-max-lg:w-[100%]">
+                            <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit tw-mt-10 max-lg:tw-w-[100%]">
                                 <h3 className="tw-font-monda tw-font-bold tw-text-lg">
                                     Jawab Pertanyaan
                                 </h3>
@@ -218,7 +218,7 @@ export default function Detail({ pertanyaan }) {
                                         </div>
                                     )}
 
-                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
+                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                                         Kirim Jawaban
                                     </button>
                                 </form>

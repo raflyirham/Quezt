@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="tw-grid tw-grid-cols-5 tw-gap-8 tw-px-4 tw-py-10 tw-border-t-[2px] tw-border-t-[#C70039] tw-max-lg:grid-cols-1">
+    <div className="tw-grid tw-grid-cols-5 tw-gap-8 tw-px-4 tw-py-10 tw-border-t-[2px] tw-border-t-[#C70039] max-lg:tw-grid-cols-1">
       <div>
         <p className="tw-font-jacques tw-font-bold tw-text-2xl tw-text-[#C70039]">
           Quezt
