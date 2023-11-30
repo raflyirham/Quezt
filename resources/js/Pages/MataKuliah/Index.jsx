@@ -22,9 +22,7 @@ export default function Index({ courses }) {
 
         <div className="tw-mt-6 tw-grid tw-grid-cols-3 tw-gap-3 max-lg:tw-grid-cols-1">
           {courses.length == 0 ? (
-            <p className="tw-font-monda">
-              Tidak ada data mata kuliah.
-            </p>
+            <p className="tw-font-monda">Tidak ada data mata kuliah.</p>
           ) : (
             <>
               {courses.data.map((course) => (
