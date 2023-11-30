@@ -2,20 +2,20 @@ import { Link } from "@inertiajs/react";
 import React from "react";
 
 export default function MataKuliah({ mata_kuliah, deskripsi, slug }) {
-    return (
-        <Link href={`/mata-kuliah/${slug}`}>
-            <div className="bg-[#C70039] px-5 py-6 hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 cursor-pointer w-full h-full">
-                <p className="font-monda font-bold text-lg text-white">
-                    {mata_kuliah}
-                </p>
-                <p className="font-monda text-sm text-white mt-2">
-                    {deskripsi}
-                </p>
+  return (
+    <Link href={`/mata-kuliah/${slug}`}>
+      <div className="tw-bg-[#C70039] tw-px-5 tw-py-6 tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-cursor-pointer tw-w-full tw-h-full">
+        <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-white">
+          {mata_kuliah}
+        </p>
+        <p className="tw-font-monda tw-text-sm tw-text-white tw-mt-2">
+          {deskripsi}
+        </p>
 
-                <p className="font-monda font-bold text-sm text-white mt-4">
-                    {"Lihat Mata Kuliah >"}
-                </p>
-            </div>
-        </Link>
-    );
+        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-white tw-mt-4">
+          {"Lihat Mata Kuliah >"}
+        </p>
+      </div>
+    </Link>
+  );
 }

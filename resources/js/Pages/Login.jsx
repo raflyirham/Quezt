@@ -7,113 +7,113 @@ import { useRecaptcha } from "../Composables/ReCaptcha";
 import { usePage } from "@inertiajs/react";
 
 export default function Login({ csrf_token }) {
-    const { errors } = usePage().props;
-    useRecaptcha();
+  const { errors } = usePage().props;
+  useRecaptcha();
 
-    return (
-        <>
-            <Head title="Masuk | Quezt" />
+  return (
+    <>
+      <Head title="Masuk | Quezt" />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="flex flex-row min-h-screen">
-                <div
-                    className="flex flex-col justify-center
-                 bg-[#C70039] min-h-screen w-[50%] p-4 max-lg:hidden"
+      <div className="tw-flex tw-flex-row tw-min-h-screen">
+        <div
+          className="tw-flex tw-flex-col tw-justify-center
+         tw-bg-[#C70039] tw-min-h-screen tw-w-[50%] tw-p-4 tw-max-lg:hidden"
+        >
+          <img src="assets/img/masuk/illustration.png" />
+        </div>
+
+        <div className="tw-flex tw-flex-col tw-mt-40 tw-px-16 tw-py-4 tw-w-[50%] tw-max-lg:w-[100%] tw-max-lg:mt-32 tw-max-lg:px-4">
+          <h1 className="tw-font-monda tw-font-bold tw-text-3xl tw-text-[#C70039]">
+            Masuk ke Quezt
+          </h1>
+          <div className="tw-flex tw-flex-col tw-p-8 tw-shadow-lg tw-w-[100%] tw-mt-4">
+            {usePage().props.flash.success && (
+              <div className="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded">
+                {usePage().props.flash.success}
+              </div>
+            )}
+            {usePage().props.flash.error && (
+              <div className="tw-py-2 tw-px-3 tw-bg-red-500 tw-text-white tw-font-monda tw-font-bold tw-rounded">
+                {usePage().props.flash.error}
+              </div>
+            )}
+            <div className="tw-flex tw-flex-col tw-mt-4">
+              <form
+                action="masuk"
+                method="POST"
+                className="tw-flex tw-flex-col"
+              >
+                <input
+                  type="hidden"
+                  name="_token"
+                  value={csrf_token}
+                />
+
+                <label
+                  htmlFor="email"
+                  className="tw-font-monda tw-font-bold"
                 >
-                    <img src="assets/img/masuk/illustration.png" />
-                </div>
+                  Email:
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Masukkan email kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                <div className="flex flex-col mt-40 px-16 py-4 w-[50%] max-lg:w-[100%] max-lg:mt-32 max-lg:px-4">
-                    <h1 className="font-monda font-bold text-3xl text-[#C70039]">
-                        Masuk ke Quezt
-                    </h1>
-                    <div className="flex flex-col p-8 shadow-lg w-[100%] mt-4">
-                        {usePage().props.flash.success && (
-                            <div className="py-2 px-3 bg-green-500 text-white font-monda font-bold rounded">
-                                {usePage().props.flash.success}
-                            </div>
-                        )}
-                        {usePage().props.flash.error && (
-                            <div className="py-2 px-3 bg-red-500 text-white font-monda font-bold rounded">
-                                {usePage().props.flash.error}
-                            </div>
-                        )}
-                        <div className="flex flex-col mt-4">
-                            <form
-                                action="masuk"
-                                method="POST"
-                                className="flex flex-col"
-                            >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value={csrf_token}
-                                />
+                <label
+                  htmlFor="password"
+                  className="tw-font-monda tw-font-bold tw-mt-8"
+                >
+                  Password:
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Masukkan password kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                                <label
-                                    htmlFor="email"
-                                    className="font-monda font-bold"
-                                >
-                                    Email:
-                                </label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Masukkan email kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <div
+                  className="tw-g-recaptcha tw-mt-4"
+                  data-sitekey={
+                    usePage().props.config
+                      .google_recaptcha_key
+                  }
+                ></div>
+                {errors["g-recaptcha-response"] && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors["g-recaptcha-response"]}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="password"
-                                    className="font-monda font-bold mt-8"
-                                >
-                                    Password:
-                                </label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    placeholder="Masukkan password kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <button
+                  type="submit"
+                  className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4"
+                >
+                  Login
+                </button>
+              </form>
 
-                                <div
-                                    className="g-recaptcha mt-4"
-                                    data-sitekey={
-                                        usePage().props.config
-                                            .google_recaptcha_key
-                                    }
-                                ></div>
-                                {errors["g-recaptcha-response"] && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors["g-recaptcha-response"]}
-                                    </div>
-                                )}
-
-                                <button
-                                    type="submit"
-                                    className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 mt-4"
-                                >
-                                    Login
-                                </button>
-                            </form>
-
-                            <Link
-                                href="/daftar"
-                                className="bg-[#fff] text-[#C70039] font-medium text-base px-4 py-1 rounded-md font-monda border-[2px] border-[#C70039] hover:border-[#d50a43] active:border-[#bb073a] mt-4 text-center"
-                            >
-                                Daftar
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+              <Link
+                href="/daftar"
+                className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:border-[#d50a43] tw-active:border-[#bb073a] tw-mt-4 tw-text-center"
+              >
+                Daftar
+              </Link>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }

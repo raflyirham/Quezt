@@ -10,23 +10,23 @@ export default function Tentang() {
 
             <Navbar />
 
-            <div className="flex flex-col justify-center items-center mt-[100px] px-4 pt-10 pb-20 min-h-screen">
-                <div className="w-[50%]">
-                    <h1 className="font-monda font-bold text-4xl text-[#C70039]">
+            <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-mt-[100px] tw-px-4 tw-pt-10 tw-pb-20 tw-min-h-screen">
+                <div className="tw-w-[50%]">
+                    <h1 className="tw-font-monda tw-font-bold tw-text-4xl tw-text-[#C70039]">
                         Syarat dan Ketentuan
                     </h1>
 
-                    <div className="flex flex-col gap-y-6 w-[100%] shadow-lg px-8 py-8">
+                    <div className="tw-flex tw-flex-col tw-gap-y-6 tw-w-[100%] tw-shadow-lg tw-px-8 tw-py-8">
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Syarat dan Ketentuan Quezt
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Syarat dan ketentuan ini menguraikan aturan dan
                                 peraturan untuk penggunaan Situs Web Quezt.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Dengan mengakses situs web ini, kami menganggap
                                 Anda menerima syarat dan ketentuan ini. Jangan
                                 terus menggunakan Quezt jika Anda tidak setuju
@@ -34,7 +34,7 @@ export default function Tentang() {
                                 tertera di halaman ini.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Terminologi berikut ini berlaku untuk Syarat dan
                                 Ketentuan ini, Pernyataan Privasi dan
                                 Pemberitahuan Penafian dan semua Perjanjian:
@@ -61,16 +61,16 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Cookie
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg mt-2">
                                 Kami menggunakan penggunaan cookie. Dengan
                                 mengakses Quezt, Anda setuju untuk menggunakan
                                 cookie sesuai dengan Kebijakan Privasi Quezt.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Sebagian besar situs web interaktif menggunakan
                                 cookie agar kami dapat mengambil detail pengguna
                                 untuk setiap kunjungan. Cookie digunakan oleh
@@ -83,10 +83,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Lisensi
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kecuali dinyatakan lain, Quezt dan/atau pemberi
                                 lisensinya memiliki hak kekayaan intelektual
                                 untuk semua materi di Quezt. Semua hak kekayaan
@@ -98,10 +98,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Anda tidak boleh:
                             </h2>
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg mt-2">
                                 <li>Menerbitkan ulang materi dari Quezt</li>
                                 <li>
                                     Menjual, menyewakan, atau mensublisensikan
@@ -118,7 +118,7 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Bagian dari situs web ini menawarkan kesempatan
                                 bagi pengguna untuk memposting dan bertukar
                                 pendapat dan informasi di area tertentu di situs
@@ -137,7 +137,7 @@ export default function Tentang() {
                                 situs web ini.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className=" tw-font-monda tw-text-lg tw-mt-2">
                                 Quezt berhak untuk memantau semua Komentar dan
                                 menghapus Komentar apa pun yang dapat dianggap
                                 tidak pantas, menyinggung, atau menyebabkan
@@ -146,10 +146,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Anda menjamin dan menyatakan hal di bawah ini:
                             </h2>
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg tw-mt-2">
                                 <li>
                                     Anda berhak untuk memposting Komentar di
                                     situs web kami dan memiliki semua lisensi
@@ -175,7 +175,7 @@ export default function Tentang() {
                                     melanggar hukum
                                 </li>
                             </ul>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Anda dengan ini memberikan Quezt lisensi
                                 non-eksklusif untuk menggunakan, mereproduksi,
                                 mengedit, dan mengizinkan orang lain untuk
@@ -185,15 +185,15 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Menautkan ke Konten kami
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Organisasi berikut ini dapat menautkan ke Situs
                                 Web kami tanpa persetujuan tertulis sebelumnya:
                             </p>
 
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg tw-mt-2">
                                 <li>Mesin pencari</li>
                                 <li>Organisasi berita</li>
                                 <li>
@@ -211,7 +211,7 @@ export default function Tentang() {
                                 </li>
                             </ul>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Organisasi-organisasi ini dapat menautkan ke
                                 halaman beranda kami, ke publikasi, atau ke
                                 informasi Situs Web lainnya selama tautan
@@ -222,12 +222,12 @@ export default function Tentang() {
                                 pihak yang menautkan.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kami dapat mempertimbangkan dan menyetujui
                                 permintaan tautan lain dari jenis organisasi
                                 berikut:
                             </p>
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg tw-mt-2">
                                 <li>
                                     sumber informasi konsumen dan/atau bisnis
                                     yang sudah dikenal umum
@@ -245,7 +245,7 @@ export default function Tentang() {
                                 </li>
                             </ul>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kami akan menyetujui permintaan tautan dari
                                 organisasi-organisasi ini jika kami memutuskan
                                 bahwa (a) tautan tersebut tidak akan membuat
@@ -258,7 +258,7 @@ export default function Tentang() {
                                 dalam konteks informasi sumber daya umum.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Organisasi-organisasi ini dapat menautkan ke
                                 halaman beranda kami selama tautan tersebut: (a)
                                 tidak menipu dengan cara apa pun; (b) tidak
@@ -268,7 +268,7 @@ export default function Tentang() {
                                 pihak yang menautkan.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Jika Anda adalah salah satu organisasi yang
                                 tercantum dalam paragraf 2 di atas dan tertarik
                                 untuk menautkan ke situs web kami, Anda harus
@@ -281,12 +281,12 @@ export default function Tentang() {
                                 mendapatkan tanggapan.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Organisasi yang disetujui dapat membuat
                                 hyperlink ke Situs Web kami sebagai berikut:
                             </p>
 
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg tw-mt-2">
                                 <li>
                                     Dengan menggunakan nama perusahaan kami;
                                     atau
@@ -303,7 +303,7 @@ export default function Tentang() {
                                 </li>
                             </ul>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Tidak ada penggunaan logo Quezt atau karya seni
                                 lainnya yang diizinkan untuk ditautkan jika
                                 tidak ada perjanjian lisensi merek dagang.
@@ -311,10 +311,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 iFrames
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Tanpa persetujuan sebelumnya dan izin tertulis,
                                 Anda tidak boleh membuat bingkai di sekitar
                                 Halaman Web kami yang mengubah presentasi visual
@@ -323,10 +323,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Kewajiban Konten
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kami tidak bertanggung jawab atas konten apa pun
                                 yang muncul di Situs Web Anda. Anda setuju untuk
                                 melindungi dan membela kami dari semua klaim
@@ -340,10 +340,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Hak Cipta
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kami berhak meminta Anda untuk menghapus semua
                                 tautan atau tautan tertentu ke Situs Web kami.
                                 Anda menyetujui untuk segera menghapus semua
@@ -357,10 +357,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Penghapusan tautan dari situs web kami
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Jika Anda menemukan tautan apa pun di Situs Web
                                 kami yang menyinggung dengan alasan apa pun,
                                 Anda bebas untuk menghubungi dan memberi tahu
@@ -370,7 +370,7 @@ export default function Tentang() {
                                 menanggapi Anda secara langsung.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kami tidak memastikan bahwa informasi di situs
                                 web ini benar, kami tidak menjamin kelengkapan
                                 atau keakuratannya; kami juga tidak berjanji
@@ -381,10 +381,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Penafian
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Sejauh diizinkan oleh hukum yang berlaku, kami
                                 mengecualikan semua pernyataan, jaminan, dan
                                 ketentuan yang berkaitan dengan situs web kami
@@ -392,7 +392,7 @@ export default function Tentang() {
                                 penafian ini yang akan:
                             </p>
 
-                            <ul className="list-disc list-inside font-monda text-lg mt-2">
+                            <ul className="tw-list-disc tw-list-inside tw-font-monda tw-text-lg tw-mt-2">
                                 <li>
                                     membatasi atau mengecualikan tanggung jawab
                                     kami atau Anda atas kematian atau cedera
@@ -415,7 +415,7 @@ export default function Tentang() {
                                 </li>
                             </ul>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Batasan dan larangan tanggung jawab yang
                                 ditetapkan dalam Bagian ini dan di tempat lain
                                 dalam penafian ini: (a) tunduk pada paragraf
@@ -426,7 +426,7 @@ export default function Tentang() {
                                 kewajiban hukum.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Selama situs web dan informasi serta layanan di
                                 situs web disediakan secara gratis, kami tidak
                                 akan bertanggung jawab atas kehilangan atau

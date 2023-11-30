@@ -7,178 +7,178 @@ import { useRecaptcha } from "../Composables/ReCaptcha";
 import { usePage } from "@inertiajs/react";
 
 export default function Register({ csrf_token }) {
-    const { errors } = usePage().props;
-    useRecaptcha();
+  const { errors } = usePage().props;
+  useRecaptcha();
 
-    return (
-        <>
-            <Head title="Daftar | Quezt" />
+  return (
+    <>
+      <Head title="Daftar | Quezt" />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="flex flex-row min-h-screen">
-                <div
-                    className="flex flex-col justify-center
-                 bg-[#C70039] min-h-screen w-[50%] p-4 max-lg:hidden"
+      <div className="tw-flex tw-flex-row tw-min-h-screen">
+        <div
+          className="tw-flex tw-flex-col tw-justify-center
+         tw-bg-[#C70039] tw-min-h-screen tw-w-[50%] tw-p-4 tw-max-lg:hidden"
+        >
+          <img src="assets/img/daftar/illustration.png" />
+        </div>
+
+        <div className="tw-flex tw-flex-col tw-mt-40 tw-px-16 tw-py-4 tw-w-[50%] tw-max-lg:w-[100%] tw-max-lg:mt-32 tw-max-lg:px-4">
+          <h1 className="tw-font-monda tw-font-bold tw-text-3xl tw-text-[#C70039]">
+            Daftar ke Quezt
+          </h1>
+          <div className="tw-flex tw-flex-col tw-p-8 tw-shadow-lg tw-w-[100%] tw-mt-4">
+            <div className="tw-flex tw-flex-col tw-mt-4">
+              <form
+                action="/daftar"
+                method="POST"
+                className="tw-flex tw-flex-col"
+              >
+                <input
+                  type="hidden"
+                  name="_token"
+                  value={csrf_token}
+                />
+
+                <label
+                  htmlFor="name"
+                  className="tw-font-monda tw-font-bold"
                 >
-                    <img src="assets/img/daftar/illustration.png" />
-                </div>
+                  Nama:
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Masukkan nama kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                <div className="flex flex-col mt-40 px-16 py-4 w-[50%] max-lg:w-[100%] max-lg:mt-32 max-lg:px-4">
-                    <h1 className="font-monda font-bold text-3xl text-[#C70039]">
-                        Daftar ke Quezt
-                    </h1>
-                    <div className="flex flex-col p-8 shadow-lg w-[100%] mt-4">
-                        <div className="flex flex-col mt-4">
-                            <form
-                                action="/daftar"
-                                method="POST"
-                                className="flex flex-col"
-                            >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value={csrf_token}
-                                />
+                {errors.name && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors.name}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="name"
-                                    className="font-monda font-bold"
-                                >
-                                    Nama:
-                                </label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    placeholder="Masukkan nama kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <label
+                  htmlFor="username"
+                  className="tw-font-monda tw-font-bold tw-mt-8"
+                >
+                  Username:
+                </label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  placeholder="Masukkan username kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                                {errors.name && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors.name}
-                                    </div>
-                                )}
+                {errors.username && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors.username}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="username"
-                                    className="font-monda font-bold mt-8"
-                                >
-                                    Username:
-                                </label>
-                                <input
-                                    id="username"
-                                    name="username"
-                                    type="text"
-                                    placeholder="Masukkan username kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <label
+                  htmlFor="email"
+                  className="tw-font-monda tw-font-bold tw-mt-8"
+                >
+                  Email:
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Masukkan email kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                                {errors.username && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors.username}
-                                    </div>
-                                )}
+                {errors.email && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors.email}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="email"
-                                    className="font-monda font-bold mt-8"
-                                >
-                                    Email:
-                                </label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Masukkan email kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <label
+                  htmlFor="password"
+                  className="tw-font-monda tw-font-bold tw-mt-8"
+                >
+                  Password:
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Masukkan password kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                                {errors.email && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors.email}
-                                    </div>
-                                )}
+                {errors.password && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors.password}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="password"
-                                    className="font-monda font-bold mt-8"
-                                >
-                                    Password:
-                                </label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    placeholder="Masukkan password kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <label
+                  htmlFor="password_confirmation"
+                  className="tw-font-monda tw-font-bold tw-mt-8"
+                >
+                  Konfirmasi Password:
+                </label>
+                <input
+                  id="password_confirmation"
+                  name="password_confirmation"
+                  type="password"
+                  placeholder="Masukkan kembali password kamu..."
+                  required
+                  className="tw-mt-2 tw-border-[1px] tw-border-[#000] tw-p-2 tw-rounded"
+                ></input>
 
-                                {errors.password && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors.password}
-                                    </div>
-                                )}
+                {errors.confirmPassword && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors.confirmPassword}
+                  </div>
+                )}
 
-                                <label
-                                    htmlFor="password_confirmation"
-                                    className="font-monda font-bold mt-8"
-                                >
-                                    Konfirmasi Password:
-                                </label>
-                                <input
-                                    id="password_confirmation"
-                                    name="password_confirmation"
-                                    type="password"
-                                    placeholder="Masukkan kembali password kamu..."
-                                    required
-                                    className="mt-2 border-[1px] border-[#000] p-2 rounded"
-                                ></input>
+                <div
+                  className="g-recaptcha tw-mt-4"
+                  data-sitekey={
+                    usePage().props.config
+                      .google_recaptcha_key
+                  }
+                ></div>
+                {errors["g-recaptcha-response"] && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors["g-recaptcha-response"]}
+                  </div>
+                )}
 
-                                {errors.confirmPassword && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors.confirmPassword}
-                                    </div>
-                                )}
+                <button
+                  type="submit"
+                  className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4"
+                >
+                  Daftar
+                </button>
+              </form>
 
-                                <div
-                                    className="g-recaptcha mt-4"
-                                    data-sitekey={
-                                        usePage().props.config
-                                            .google_recaptcha_key
-                                    }
-                                ></div>
-                                {errors["g-recaptcha-response"] && (
-                                    <div className="font-monda text-[#C70039]">
-                                        {errors["g-recaptcha-response"]}
-                                    </div>
-                                )}
-
-                                <button
-                                    type="submit"
-                                    className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200 mt-4"
-                                >
-                                    Daftar
-                                </button>
-                            </form>
-
-                            <Link
-                                href="/masuk"
-                                className="bg-[#fff] text-[#C70039] font-medium text-base px-4 py-1 rounded-md font-monda border-[2px] border-[#C70039] hover:border-[#d50a43] active:border-[#bb073a] mt-4 text-center"
-                            >
-                                Masuk
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+              <Link
+                href="/masuk"
+                className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-border-[2px] tw-border-[#C70039] tw-hover:border-[#d50a43] tw-active:border-[#bb073a] tw-mt-4 tw-text-center"
+              >
+                Masuk
+              </Link>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }

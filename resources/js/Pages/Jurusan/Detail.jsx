@@ -6,53 +6,53 @@ import MataKuliah from "../../Components/MataKuliahCard/MataKuliahCard";
 import Pagination from "../../Components/Pagination/Pagination";
 
 export default function Index({ major, courses }) {
-    return (
-        <>
-            <Head title={`Jurusan ${major.MajorName} | Quezt`} />
+  return (
+    <>
+      <Head title={`Jurusan ${major.MajorName} | Quezt`} />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="p-4 mt-40 min-h-screen">
-                <div>
-                    <p className="font-monda font-bold text-xl">Jurusan</p>
-                    <h1 className="font-jacques font-bold text-4xl text-[#C70039]">
-                        {major.MajorName}
-                    </h1>
+      <div className="tw-p-4 tw-mt-40 tw-min-h-screen">
+        <div>
+          <p className="tw-font-monda tw-font-bold tw-text-xl">Jurusan</p>
+          <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
+            {major.MajorName}
+          </h1>
 
-                    <p className="font-monda text-lg mt-3">
-                        {major.MajorDescription}
-                    </p>
-                </div>
+          <p className="tw-font-monda tw-text-lg tw-mt-3">
+            {major.MajorDescription}
+          </p>
+        </div>
 
-                <div className="mt-10">
-                    <h2 className="font-monda font-bold text-2xl text-[#C70039]">
-                        Mata Kuliah
-                    </h2>
+        <div className="tw-mt-10">
+          <h2 className="tw-font-monda tw-font-bold tw-text-2xl tw-text-[#C70039]">
+            Mata Kuliah
+          </h2>
 
-                    <p className="font-monda">{`Terdapat ${courses.total} mata kuliah pada jurusan ini.`}</p>
-                </div>
+          <p className="tw-font-monda">{`Terdapat ${courses.total} mata kuliah pada jurusan ini.`}</p>
+        </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3 max-lg:grid-cols-1">
-                    {courses.total == 0 ? (
-                        <p className="font-monda">Tidak ada mata kuliah.</p>
-                    ) : (
-                        <>
-                            {courses.data.map((course) => (
-                                <MataKuliah
-                                    mata_kuliah={course.CourseName}
-                                    deskripsi={course.CourseDescription}
-                                    slug={course.CourseSlug}
-                                    key={course.CourseID}
-                                />
-                            ))}
-                        </>
-                    )}
-                </div>
+        <div className="tw-mt-6 tw-grid tw-grid-cols-3 tw-gap-3 tw-max-lg:tw-grid-cols-1">
+          {courses.total == 0 ? (
+            <p className="tw-font-monda">Tidak ada mata kuliah.</p>
+          ) : (
+            <>
+              {courses.data.map((course) => (
+                <MataKuliah
+                  mata_kuliah={course.CourseName}
+                  deskripsi={course.CourseDescription}
+                  slug={course.CourseSlug}
+                  key={course.CourseID}
+                />
+              ))}
+            </>
+          )}
+        </div>
 
-                <Pagination links={courses.links} />
-            </div>
+        <Pagination links={courses.links} />
+      </div>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }

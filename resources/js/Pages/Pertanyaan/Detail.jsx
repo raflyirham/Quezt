@@ -28,34 +28,37 @@ export default function Detail({ pertanyaan }) {
 
             <Navbar />
 
-            <div className="flex flex-col items-center py-16 px-4 mt-16 min-h-screen w-[100%]">
-                <div className="mb-4 fixed bottom-0 right-0 mr-4 after:hidden duration-700">
+            <div className="tw-flex tw-flex-col tw-items-center tw-py-16 tw-px-4 tw-mt-16 tw-min-h-screen tw-w-[100%]">
+                <div className="tw-mb-4 tw-fixed tw-bottom-0 tw-right-0 tw-mr-4 tw-after:hidden tw-duration-700">
                     {usePage().props.flash.success && (
-                        <div className="py-2 px-3 bg-green-500 text-white font-monda font-bold rounded mt-2">
+                        <div
+                            classN
+                            ame="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2"
+                        >
                             {usePage().props.flash.success}
                         </div>
                     )}
                     {usePage().props.flash.error && (
-                        <div className="py-2 px-3 bg-red-500 text-white font-monda font-bold rounded mt-2">
+                        <div className="tw-py-2 tw-px-3 tw-bg-red-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2">
                             {usePage().props.flash.error}
                         </div>
                     )}
                 </div>
-                <div className="px-8 py-8 shadow-lg w-[80%] h-fit max-lg:w-[100%]">
+                <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit tw-max-lg:w-[100%]">
                     <div>
-                        <h1 className="font-monda font-bold text-2xl text-[#C70039]">
+                        <h1 className="tw-font-monda tw-font-bold tw-text-2xl tw-text-[#C70039]">
                             {pertanyaan.questiondetail.QuestionTitle}
                         </h1>
 
-                        <p className="font-monda text-lg mt-4 break-all">
+                        <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
                             {pertanyaan.questiondetail.QuestionDetail}
                         </p>
                     </div>
 
-                    <div className="flex flex-row justify-between items-center mt-4 max-lg:flex-col max-lg:justify-start max-lg:items-start">
-                        <p className="font-monda font-bold text-sm text-[#C70039]">{`${pertanyaan.course.CourseName} | ${pertanyaan.course.major.MajorName}`}</p>
+                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 tw-max-lg:flex-col tw-max-lg:justify-start tw-max-lg:items-start">
+                        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${pertanyaan.course.CourseName} | ${pertanyaan.course.major.MajorName}`}</p>
 
-                        <p className="font-monda mt-2 text-sm">
+                        <p className="tw-font-monda tw-mt-2 tw-text-sm">
                             {convertDate(
                                 pertanyaan.questiondetail.QuestionDate
                             )}
@@ -63,28 +66,28 @@ export default function Detail({ pertanyaan }) {
                     </div>
                 </div>
 
-                <div className="mt-14 w-[80%] max-lg:w-[100%]">
-                    <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                <div className="tw-mt-14 tw-w-[80%] tw-max-lg:w-[100%]">
+                    <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                         Jawaban
                     </h2>
 
-                    <div className="flex flex-col gap-x-4 mt-6">
+                    <div className="tw-flex tw-flex-col tw-gap-x-4 tw-mt-6">
                         {pertanyaan.questionanswers.length == 0 ? (
-                            <p className="font-monda text-sm">
+                            <p className="tw-font-monda tw-text-sm">
                                 Pertanyaan ini belum dijawab oleh tutor.
                             </p>
                         ) : (
                             <>
-                                <div className="flex flex-col gap-y-6">
+                                <div className="tw-flex tw-flex-col tw-gap-y-6">
                                     {pertanyaan.questionanswers.map(
                                         (jawaban, index) => (
                                             <div key={index}>
                                                 <div
-                                                    className="px-8 py-8 shadow-lg h-fit"
+                                                    className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
                                                     key={jawaban.AnswerID}
                                                 >
                                                     <div>
-                                                        <p className="font-monda text-lg mt-4 break-all">
+                                                        <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
                                                             {
                                                                 jawaban
                                                                     .answerheader
@@ -94,10 +97,10 @@ export default function Detail({ pertanyaan }) {
                                                         </p>
                                                     </div>
 
-                                                    <div className="flex flex-row justify-between items-center mt-4 max-lg:flex-col max-lg:justify-start max-lg:items-start">
-                                                        <p className="font-monda font-bold text-sm text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                                                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 tw-max-lg:flex-col tw-max-lg:justify-start tw-max-lg:items-start">
+                                                        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
 
-                                                        <p className="font-monda text-sm">
+                                                        <p className="tw-font-monda tw-text-sm">
                                                             {convertDate(
                                                                 jawaban
                                                                     .answerheader
@@ -108,7 +111,7 @@ export default function Detail({ pertanyaan }) {
                                                     </div>
                                                 </div>
 
-                                                <div className="mt-3">
+                                                <div className="tw-mt-3">
                                                     {usePage().props
                                                         .user_data &&
                                                         usePage().props
@@ -149,7 +152,7 @@ export default function Detail({ pertanyaan }) {
                                                                         }
                                                                     />
 
-                                                                    <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-1 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
+                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
                                                                         Hapus
                                                                         Jawaban
                                                                     </button>
@@ -169,8 +172,8 @@ export default function Detail({ pertanyaan }) {
                 {usePage().props.user_data &&
                     usePage().props.user_data.RoleID === 2 && (
                         <>
-                            <div className="px-8 py-8 shadow-lg w-[80%] h-fit mt-10 max-lg:w-[100%]">
-                                <h3 className="font-monda font-bold text-lg">
+                            <div className="tw-px-8 tw-py-8 tw-shadow-lg tw-w-[80%] tw-h-fit tw-mt-10 tw-max-lg:w-[100%]">
+                                <h3 className="tw-font-monda tw-font-bold tw-text-lg">
                                     Jawab Pertanyaan
                                 </h3>
 
@@ -192,30 +195,30 @@ export default function Detail({ pertanyaan }) {
                                         id="jawab"
                                         cols="30"
                                         rows="10"
-                                        className="w-full mt-4 py-4 px-4 border-2 rounded resize-none"
+                                        className="tw-w-full tw-mt-4 tw-py-4 tw-px-4 tw-border-2 tw-rounded tw-resize-none"
                                         required
                                     ></textarea>
 
                                     {usePage().props.errors.jawab && (
-                                        <div className="font-monda text-[#C70039]">
+                                        <div className="tw-font-monda tw-text-[#C70039]">
                                             {usePage().props.errors.jawab}
                                         </div>
                                     )}
 
                                     <div
-                                        className="g-recaptcha mt-4"
+                                        className="tw-g-recaptcha tw-mt-4"
                                         data-sitekey={
                                             usePage().props.config
                                                 .google_recaptcha_key
                                         }
                                     ></div>
                                     {errors["g-recaptcha-response"] && (
-                                        <div className="font-monda text-[#C70039]">
+                                        <div className="tw-font-monda tw-text-[#C70039]">
                                             {errors["g-recaptcha-response"]}
                                         </div>
                                     )}
 
-                                    <button className="bg-[#C70039] text-white font-medium text-base px-4 py-1 rounded-md mt-4 font-monda border-[2px] border-[#C70039] hover:bg-[#d50a43] active:bg-[#bb073a] duration-200">
+                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
                                         Kirim Jawaban
                                     </button>
                                 </form>

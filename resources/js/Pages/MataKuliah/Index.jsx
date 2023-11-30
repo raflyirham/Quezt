@@ -7,42 +7,42 @@ import Pagination from "../../Components/Pagination/Pagination";
 import MataKuliah from "../../Components/MataKuliahCard/MataKuliahCard";
 
 export default function Index({ courses }) {
-    return (
-        <>
-            <Head title="Mata Kuliah | Quezt" />
+  return (
+    <>
+      <Head title="Mata Kuliah | Quezt" />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="p-4 mt-40 min-h-screen">
-                <div>
-                    <h1 className="font-jacques font-bold text-4xl text-[#C70039]">
-                        Mata Kuliah
-                    </h1>
-                </div>
+      <div className="tw-p-4 tw-mt-40 tw-min-h-screen">
+        <div>
+          <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
+            Mata Kuliah
+          </h1>
+        </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3 max-lg:grid-cols-1">
-                    {courses.length == 0 ? (
-                        <p className="font-monda">
-                            Tidak ada data mata kuliah.
-                        </p>
-                    ) : (
-                        <>
-                            {courses.data.map((course) => (
-                                <MataKuliah
-                                    key={course.CourseID}
-                                    mata_kuliah={course.CourseName}
-                                    deskripsi={course.CourseDescription}
-                                    slug={course.CourseSlug}
-                                />
-                            ))}
-                        </>
-                    )}
-                </div>
+        <div className="tw-mt-6 tw-grid tw-grid-cols-3 tw-gap-3 tw-max-lg:tw-grid-cols-1">
+          {courses.length == 0 ? (
+            <p className="tw-font-monda">
+              Tidak ada data mata kuliah.
+            </p>
+          ) : (
+            <>
+              {courses.data.map((course) => (
+                <MataKuliah
+                  key={course.CourseID}
+                  mata_kuliah={course.CourseName}
+                  deskripsi={course.CourseDescription}
+                  slug={course.CourseSlug}
+                />
+              ))}
+            </>
+          )}
+        </div>
 
-                <Pagination links={courses.links} />
-            </div>
+        <Pagination links={courses.links} />
+      </div>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }

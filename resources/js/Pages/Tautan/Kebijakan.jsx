@@ -10,18 +10,18 @@ export default function Tentang() {
 
             <Navbar />
 
-            <div className="flex flex-col justify-center items-center mt-[100px] px-4 pt-10 pb-20 min-h-screen">
-                <div className="w-[50%]">
-                    <h1 className="font-monda font-bold text-4xl text-[#C70039]">
+            <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-mt-[100px] tw-px-4 tw-pt-10 tw-pb-20 tw-min-h-screen">
+                <div className="tw-w-[50%]">
+                    <h1 className="tw-font-monda tw-font-bold tw-text-4xl tw-text-[#C70039]">
                         Kebijakan Privasi
                     </h1>
 
-                    <div className="flex flex-col gap-y-6 w-[100%] shadow-lg px-8 py-8">
+                    <div className="tw-flex tw-flex-col tw-gap-y-6 tw-w-[100%] tw-shadow-lg tw-px-8 tw-py-8">
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Kebijakan Privasi untuk Quezt
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Di Quezt, salah satu prioritas utama kami adalah
                                 privasi pengunjung kami. Dokumen Kebijakan
                                 Privasi ini berisi jenis informasi yang
@@ -34,10 +34,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 File Log
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Quezt mengikuti prosedur standar dalam
                                 menggunakan file log. File-file ini mencatat
                                 pengunjung ketika mereka mengunjungi situs web.
@@ -59,10 +59,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Cookie dan Web Beacon
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Seperti situs web lainnya, Quezt menggunakan
                                 "cookie". Cookies ini digunakan untuk menyimpan
                                 informasi termasuk preferensi pengunjung, dan
@@ -73,7 +73,7 @@ export default function Tentang() {
                                 jenis browser pengunjung dan / atau informasi
                                 lainnya.
                             </p>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Server iklan pihak ketiga atau jaringan iklan
                                 menggunakan teknologi seperti cookie,
                                 JavaScript, atau Web Beacon yang digunakan di
@@ -87,7 +87,7 @@ export default function Tentang() {
                                 Anda kunjungi.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Perhatikan bahwa Quezt tidak memiliki akses atau
                                 kontrol atas cookie ini yang digunakan oleh
                                 pengiklan pihak ketiga.
@@ -95,10 +95,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Kebijakan Privasi Pihak Ketiga
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kebijakan Privasi Quezt tidak berlaku untuk
                                 pengiklan atau situs web lain. Karenanya, kami
                                 menyarankan Anda untuk berkonsultasi dengan
@@ -109,7 +109,7 @@ export default function Tentang() {
                                 opsi tertentu.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Anda dapat memilih untuk menonaktifkan cookie
                                 melalui opsi browser Anda masing-masing. Untuk
                                 mengetahui informasi lebih rinci tentang
@@ -120,10 +120,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Informasi Anak-Anak
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Bagian lain dari prioritas kami adalah
                                 menambahkan perlindungan bagi anak-anak saat
                                 menggunakan internet. Kami mendorong orang tua
@@ -132,7 +132,7 @@ export default function Tentang() {
                                 online mereka.
                             </p>
 
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Quezt tidak dengan sengaja mengumpulkan
                                 Informasi Identifikasi Pribadi apa pun dari
                                 anak-anak di bawah usia 13 tahun. Jika Anda
@@ -146,10 +146,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Hanya Kebijakan Privasi Online
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Kebijakan Privasi ini hanya berlaku untuk
                                 aktivitas online kami dan berlaku untuk
                                 pengunjung situs web kami sehubungan dengan
@@ -162,10 +162,10 @@ export default function Tentang() {
                         </div>
 
                         <div>
-                            <h2 className="font-monda font-bold text-xl text-[#C70039]">
+                            <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                                 Persetujuan
                             </h2>
-                            <p className="font-monda text-lg mt-2">
+                            <p className="tw-font-monda tw-text-lg tw-mt-2">
                                 Dengan menggunakan situs web kami, Anda dengan
                                 ini menyetujui Kebijakan Privasi kami dan
                                 menyetujui Syarat dan Ketentuannya.
