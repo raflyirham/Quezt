@@ -54,113 +54,92 @@ export default function Index({ course, questions, user }) {
             Pertanyaan dan Materi
           </h2>
 
-          {user?.RoleID == 1 &&
-            user?.membership.MembershipTypeID != 1 && (
-              <>
-                <button
-                  className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-5 tw-py-2 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-w-fit max-lg:tw-mt-2 tw-max-lg:mb-2"
-                  onClick={showPertanyaanForm}
-                >
-                  {pertanyaanTitle}
-                </button>
-              </>
-            )}
-        </div>
-
-        {user?.RoleID == 1 &&
-          user?.membership.MembershipTypeID != 1 && (
+          {user?.RoleID == 1 && user?.membership.MembershipTypeID != 1 && (
             <>
-              <div
-                ref={pertanyaanRef}
-                className="tw-p-6 tw-shadow-lg tw-mb-8 tw-hidden"
-              >
-                <form
-                  action={`/mata-kuliah/${course.CourseSlug}/tanya-materi`}
-                  method="POST"
-                  className="tw-flex tw-flex-col tw-gap-y-6"
-                >
-                  <input
-                    type="hidden"
-                    name="_token"
-                    value={
-                      usePage().props.csrf_token
-                        .csrf_token
-                    }
-                  />
-
-                  <div className="tw-flex tw-flex-col">
-                    <label
-                      htmlFor="judul_pertanyaan"
-                      className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                    >
-                      Judul Pertanyaan
-                    </label>
-                    <input
-                      id="judul_pertanyaan"
-                      name="judul_pertanyaan"
-                      placeholder="Masukkan judul pertanyaan kamu..."
-                      type="text"
-                      className="tw-p-2 tw-border-[1px] tw-border-[#000] tw-rounded tw-mt-2"
-                      required
-                    />
-                    {usePage().props.errors
-                      .judul_pertanyaan && (
-                      <div className="tw-font-monda tw-text-[#C70039]">
-                        {
-                          usePage().props.errors
-                            .judul_pertanyaan
-                        }
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="tw-flex tw-flex-col">
-                    <label
-                      htmlFor="detail_pertanyaan"
-                      className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                    >
-                      Detail Pertanyaan
-                    </label>
-                    <textarea
-                      name="detail_pertanyaan"
-                      id="detail_pertanyaan"
-                      cols="30"
-                      rows="10"
-                      className="tw-w-full tw-mt-4 tw-py-4 tw-px-4 tw-border-[1px] tw-border-[#000] tw-rounded tw-resize-none"
-                      placeholder="Masukkan detail pertanyaan kamu..."
-                      required
-                    ></textarea>
-                    {usePage().props.errors
-                      .detail_pertanyaan && (
-                      <div className="tw-font-monda tw-text-[#C70039]">
-                        {
-                          usePage().props.errors
-                            .detail_pertanyaan
-                        }
-                      </div>
-                    )}
-                  </div>
-
-                  <div
-                    className="tw-g-recaptcha tw-mt-4"
-                    data-sitekey={
-                      usePage().props.config
-                        .google_recaptcha_key
-                    }
-                  ></div>
-                  {errors["g-recaptcha-response"] && (
-                    <div className="tw-font-monda tw-text-[#C70039]">
-                      {errors["g-recaptcha-response"]}
-                    </div>
-                  )}
-
-                  <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
-                    Kirim Pertanyaan
-                  </button>
-                </form>
-              </div>
+              <button
+                className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-5 tw-py-2 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-w-fit max-lg:tw-mt-2 tw-max-lg:mb-2"
+                onClick={showPertanyaanForm}>
+                {pertanyaanTitle}
+              </button>
             </>
           )}
+        </div>
+
+        {user?.RoleID == 1 && user?.membership.MembershipTypeID != 1 && (
+          <>
+            <div
+              ref={pertanyaanRef}
+              className="tw-p-6 tw-shadow-lg tw-mb-8 tw-hidden">
+              <form
+                action={`/mata-kuliah/${course.CourseSlug}/tanya-materi`}
+                method="POST"
+                className="tw-flex tw-flex-col tw-gap-y-6">
+                <input
+                  type="hidden"
+                  name="_token"
+                  value={usePage().props.csrf_token.csrf_token}
+                />
+
+                <div className="tw-flex tw-flex-col">
+                  <label
+                    htmlFor="judul_pertanyaan"
+                    className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
+                    Judul Pertanyaan
+                  </label>
+                  <input
+                    id="judul_pertanyaan"
+                    name="judul_pertanyaan"
+                    placeholder="Masukkan judul pertanyaan kamu..."
+                    type="text"
+                    className="tw-p-2 tw-border-[1px] tw-border-[#000] tw-rounded tw-mt-2"
+                    required
+                  />
+                  {usePage().props.errors.judul_pertanyaan && (
+                    <div className="tw-font-monda tw-text-[#C70039]">
+                      {usePage().props.errors.judul_pertanyaan}
+                    </div>
+                  )}
+                </div>
+
+                <div className="tw-flex tw-flex-col">
+                  <label
+                    htmlFor="detail_pertanyaan"
+                    className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
+                    Detail Pertanyaan
+                  </label>
+                  <textarea
+                    name="detail_pertanyaan"
+                    id="detail_pertanyaan"
+                    cols="30"
+                    rows="10"
+                    className="tw-w-full tw-mt-4 tw-py-4 tw-px-4 tw-border-[1px] tw-border-[#000] tw-rounded tw-resize-none"
+                    placeholder="Masukkan detail pertanyaan kamu..."
+                    required></textarea>
+                  {usePage().props.errors.detail_pertanyaan && (
+                    <div className="tw-font-monda tw-text-[#C70039]">
+                      {usePage().props.errors.detail_pertanyaan}
+                    </div>
+                  )}
+                </div>
+
+                <div
+                  className="tw-g-recaptcha tw-mt-4"
+                  data-sitekey={
+                    usePage().props.config.google_recaptcha_key
+                  }></div>
+                {errors["g-recaptcha-response"] && (
+                  <div className="tw-font-monda tw-text-[#C70039]">
+                    {errors["g-recaptcha-response"]}
+                  </div>
+                )}
+
+                <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                  Kirim Pertanyaan
+                </button>
+              </form>
+            </div>
+          </>
+        )}
 
         <div className="tw-fixed tw-bottom-0 tw-right-0 tw-mr-4 tw-mb-4">
           {usePage().props.flash.success && (
@@ -185,9 +164,7 @@ export default function Index({ course, questions, user }) {
               {questions.data.map((pertanyaan) => (
                 <PertanyaanCard
                   id={pertanyaan.questiondetail.QuestionID}
-                  pertanyaan={
-                    pertanyaan.questiondetail.QuestionTitle
-                  }
+                  pertanyaan={pertanyaan.questiondetail.QuestionTitle}
                   user={pertanyaan.user.UserName}
                   key={pertanyaan.questiondetail.QuestionID}
                 />
