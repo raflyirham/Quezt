@@ -5,29 +5,29 @@ import Footer from "@/Components/Footer/Footer";
 import DashboardSidebar from "@/Components/DashboardSidebar/DashboardSidebar";
 
 export default function Index({ children }) {
-    return (
-        <>
-            <Head title="Dashboard | Quezt" />
+  return (
+    <>
+      <Head title="Dashboard | Quezt" />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="min-h-screen p-4 max-lg:pb-16">
-                <div className="mt-[120px]">
-                    <h1 className="font-monda font-bold text-2xl text-[#C70039]">
-                        Dashboard
-                    </h1>
-                </div>
+      <div className="tw-min-h-screen tw-p-4 tw-max-lg:pb-16">
+        <div className="tw-mt-[120px]">
+          <h1 className="tw-font-monda tw-font-bold tw-text-2xl tw-text-[#C70039]">
+            Dashboard
+          </h1>
+        </div>
 
-                <div className="flex flex-row mt-6 gap-x-6 max-lg:flex-col">
-                    <div className="w-[30%] shadow-lg p-4 h-fit max-lg:w-[100%] max-lg:mb-8">
-                        <DashboardSidebar />
-                    </div>
+        <div className="tw-flex tw-flex-row tw-mt-6 tw-gap-x-6 tw-max-lg:flex-col">
+          <div className="tw-w-[30%] tw-shadow-lg tw-p-4 tw-h-fit tw-max-lg:w-[100%] tw-max-lg:mb-8">
+            <DashboardSidebar />
+          </div>
 
-                    {children}
-                </div>
-            </div>
+          {children}
+        </div>
+      </div>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }
