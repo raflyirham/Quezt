@@ -58,7 +58,7 @@ export default function Index({ course, questions, user }) {
             user?.membership.MembershipTypeID != 1 && (
               <>
                 <button
-                  className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-5 tw-py-2 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-w-fit max-lg:tw-mt-2 tw-max-lg:mb-2"
+                  className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-5 tw-py-2 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-w-fit max-lg:tw-mt-2 tw-max-lg:mb-2"
                   onClick={showPertanyaanForm}
                 >
                   {pertanyaanTitle}
@@ -154,7 +154,7 @@ export default function Index({ course, questions, user }) {
                     </div>
                   )}
 
-                  <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                  <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                     Kirim Pertanyaan
                   </button>
                 </form>

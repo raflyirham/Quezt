@@ -33,12 +33,12 @@ export default function Profile({ user }) {
                             {user.userroles
                                 .filter((role) => role.role.RoleName !== "User")
                                 .map((userrole) => (
-                                    <div className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-sm tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4 tw-select-none">
+                                    <div className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-sm tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4 tw-select-none">
                                         <p>{userrole.role.RoleName}</p>
                                     </div>
                                 ))}
 
-                            <div className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-sm tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4 tw-select-none">
+                            <div className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-sm tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4 tw-select-none">
                                 <p>
                                     {
                                         user.membership.membershiptype

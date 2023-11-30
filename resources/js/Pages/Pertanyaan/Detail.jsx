@@ -152,7 +152,7 @@ export default function Detail({ pertanyaan }) {
                                                                         }
                                                                     />
 
-                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                                                                         Hapus
                                                                         Jawaban
                                                                     </button>
@@ -218,7 +218,7 @@ export default function Detail({ pertanyaan }) {
                                         </div>
                                     )}
 
-                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-4 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                                         Kirim Jawaban
                                     </button>
                                 </form>
