@@ -4,7 +4,7 @@ import React from "react";
 export default function JurusanCard({ jurusan, deskripsi, slug }) {
     return (
         <Link href={`/jurusan/${slug}`}>
-            <div className="tw-bg-[#C70039] tw-px-5 tw-py-6 tw-hover:bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-cursor-pointer tw-w-full tw-h-full">
+            <div className="tw-bg-[#C70039] tw-px-5 tw-py-6 hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-cursor-pointer tw-w-full tw-h-full">
                 <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-white">
                     {jurusan}
                 </p>
