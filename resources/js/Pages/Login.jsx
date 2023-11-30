@@ -96,7 +96,7 @@ export default function Login({ csrf_token }) {
 
                                 <button
                                     type="submit"
-                                    className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4"
+                                    className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200 tw-mt-4"
                                 >
                                     Login
                                 </button>
@@ -104,7 +104,7 @@ export default function Login({ csrf_token }) {
 
                             <Link
                                 href="/daftar"
-                                className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] tw-hover:border-[#d50a43] tw-active:border-[#bb073a] tw-mt-4 tw-text-center"
+                                className="tw-bg-[#fff] tw-text-[#C70039] tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-border-[#d50a43] tw-active:border-[#bb073a] tw-mt-4 tw-text-center"
                             >
                                 Daftar
                             </Link>
