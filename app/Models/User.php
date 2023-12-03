@@ -26,6 +26,7 @@ class User extends Authenticatable
         'UserUsername',
         'password',
         'UserRegisteredDate',
+        'UserAvatar',
         'RoleID',
     ];
 
@@ -52,6 +53,11 @@ class User extends Authenticatable
     public function questionheaders()
     {
         return $this->hasMany(QuestionHeader::class, 'UserID', 'UserID');
+    }
+
+    public function answerheaders()
+    {
+        return $this->hasMany(AnswerHeader::class, 'UserID', 'UserID');
     }
 
     public function membership()

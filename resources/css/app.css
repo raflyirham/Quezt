@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.dropdown:hover .dropdown-menu {
+.q-dropdown:hover .q-dropdown-menu {
     display: block;
 }
 

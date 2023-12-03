@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -12,7 +13,7 @@ class UserController extends Controller
     //
     public function index()
     {
-        return redirect('/dashboard/detail');
+        return redirect('/pengaturan/detail');
     }
 
     public function detail()
@@ -46,7 +47,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect('/dashboard/change-email')->with('success', 'Email berhasil diubah.');
+        return redirect('/pengaturan/ubah-email')->with('success', 'Email berhasil diubah.');
     }
 
     public function change_password()
@@ -64,7 +65,7 @@ class UserController extends Controller
             'new_password' => ['required', 'min:5', 'max:255', 'confirmed'],
             'new_password_confirmation' => ['required', 'min:5', 'max:255'],
             'old_password' => ['required', 'min:5', 'max:255', function ($attribute, $value, $fail) use ($user) {
-                if (!\Hash::check($value, $user->password)) {
+                if (!Hash::check($value, $user->password)) {
                     return $fail(__('Password lama salah.'));
                 }
             }],
@@ -85,7 +86,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->new_password);
         $user->save();
 
-        return redirect('/dashboard/change-password')->with('success', 'Password berhasil diubah.');
+        return redirect('/pengaturan/ubah-password')->with('success', 'Password berhasil diubah.');
     }
 
     public function change_name()
@@ -112,7 +113,7 @@ class UserController extends Controller
         $user->UserName = $request->name;
         $user->save();
 
-        return redirect('/dashboard/change-name')->with('success', 'Nama berhasil diubah.');
+        return redirect('/pengaturan/ubah-nama')->with('success', 'Nama berhasil diubah.');
     }
 
     public function detail_role()
@@ -120,7 +121,7 @@ class UserController extends Controller
         $user = User::find(Auth::id());
 
         if ($user->userroles->count() < 2) {
-            return redirect('/dashboard/detail');
+            return redirect('/pengaturan/detail');
         }
 
         return Inertia::render('User/DetailRole', [
@@ -133,7 +134,7 @@ class UserController extends Controller
         $user = User::find(Auth::id());
 
         if ($user->userroles->count() < 2) {
-            return redirect('/dashboard/detail');
+            return redirect('/pengaturan/detail');
         }
 
         return Inertia::render('User/ChangeRole', [
@@ -146,7 +147,7 @@ class UserController extends Controller
         $user = User::find(Auth::id());
 
         if ($user->userroles->count() < 2) {
-            return redirect('/dashboard/detail');
+            return redirect('/pengaturan/detail');
         }
 
         $request->validate([
@@ -157,7 +158,7 @@ class UserController extends Controller
         ]);
 
         if ($user->role->RoleName == $request->role) {
-            return redirect('/dashboard/change-role')->with('error', 'Role tidak boleh sama.');
+            return redirect('/pengaturan/ubah-role')->with('error', 'Role tidak boleh sama.');
         }
 
         if ($request->role === 'User') {
@@ -170,12 +171,46 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('/dashboard/change-role')->with('success', 'Role berhasil diubah.');
+        return redirect('/pengaturan/ubah-role')->with('success', 'Role berhasil diubah.');
     }
 
-    public function profile(Request $request, $user)
+    public function change_avatar()
     {
-        // dd($user);
+        return Inertia::render('User/ChangeAvatar', [
+            'user' => User::find(Auth::id())->load('membership.membershiptype', 'userroles', 'userroles.role', 'role'),
+        ]);
+    }
+
+    public function change_avatar_post(Request $request)
+    {
+        $request->validate([
+            'avatar' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+        ], [
+            'avatar.required' => 'Avatar harus diisi.',
+            'avatar.image' => 'Avatar harus berupa gambar.',
+            'avatar.mimes' => 'Avatar harus berupa gambar.',
+            'avatar.max' => 'Ukuran avatar maksimal 2 MB.',
+        ]);
+
+        $user = User::find(Auth::id());
+
+        $avatarName = $user->UserID . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
+
+        $request->avatar->storePubliclyAs('public/avatars', $avatarName);
+
+        $user->UserAvatar = 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/avatars/' . $avatarName;
+        $user->save();
+
+        return redirect('/pengaturan/ubah-avatar')->with('success', 'Avatar berhasil diubah.');
+    }
+
+    public function profile($user)
+    {
+        return redirect('/profile/' . $user . '/pertanyaan');
+    }
+
+    public function pertanyaan(Request $request, $user)
+    {
         $u = User::all()->where('UserUsername', $user)->first();
 
         if ($u == null) {
@@ -184,8 +219,29 @@ class UserController extends Controller
             ])->toResponse($request)->setStatusCode(404);
         }
 
-        return Inertia::render('User/Profile', [
+        $questions = $u->questionheaders()->with('questiondetail', 'course', 'course.major')->paginate(10);
+
+        return Inertia::render('User/Profile/Question', [
             'user' => $u->load('membership.membershiptype', 'userroles', 'userroles.role', 'role'),
+            'questions' => $questions,
+        ]);
+    }
+
+    public function jawaban(Request $request, $user)
+    {
+        $u = User::all()->where('UserUsername', $user)->first();
+
+        if ($u == null) {
+            return Inertia::render('Error', [
+                'status' => 404,
+            ])->toResponse($request)->setStatusCode(404);
+        }
+
+        $answers = $u->answerheaders()->with('questionanswers', 'questionanswers.questionheader', 'questionanswers.questionheader.questiondetail', 'questionanswers.questionheader.course', 'questionanswers.questionheader.course.major', 'answerdetail')->paginate(10);
+
+        return Inertia::render('User/Profile/Answer', [
+            'user' => $u->load('membership.membershiptype', 'userroles', 'userroles.role', 'role'),
+            'answers' => $answers,
         ]);
     }
 }
