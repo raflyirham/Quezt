@@ -30,16 +30,14 @@ export default function ChangeName({ user }) {
                     <div className="tw-flex tw-flex-col tw-mt-3">
                         <label
                             htmlFor="role"
-                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                        >
+                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
                             Pilih Role:
                         </label>
 
                         <select
                             name="role"
                             id="role"
-                            className="tw-p-2 tw-border-[2px] tw-rounded tw-mt-1"
-                        >
+                            className="tw-p-2 tw-border-[2px] tw-rounded tw-mt-1">
                             {user.userroles.map((role, index) => (
                                 <option value={role.role.RoleName} key={index}>
                                     {role.role.RoleName}
@@ -56,8 +54,7 @@ export default function ChangeName({ user }) {
                     <div className="tw-mt-3">
                         <button
                             type="submit"
-                            className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200"
-                        >
+                            className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
                             Ubah Role
                         </button>
                     </div>

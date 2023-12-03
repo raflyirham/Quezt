@@ -22,14 +22,12 @@ export default function Tentang() {
                 Apa itu Quezt?
               </h2>
               <p className="tw-font-monda tw-text-lg tw-mt-2">
-                Quezt adalah sebuah platform pendidikan
-                revolusioner yang didedikasikan untuk membantu
-                mahasiswa mengatasi tantangan dalam memahami dan
-                menguasai materi perkuliahan. Sebagai website
-                yang berfokus pada tanya-jawab mahasiswa, Quezt
-                bertujuan memberikan solusi yang mudah diakses,
-                interaktif, dan berkualitas untuk memperdalam
-                pemahaman materi kuliah.
+                Quezt adalah sebuah platform pendidikan revolusioner yang
+                didedikasikan untuk membantu mahasiswa mengatasi tantangan dalam
+                memahami dan menguasai materi perkuliahan. Sebagai website yang
+                berfokus pada tanya-jawab mahasiswa, Quezt bertujuan memberikan
+                solusi yang mudah diakses, interaktif, dan berkualitas untuk
+                memperdalam pemahaman materi kuliah.
               </p>
             </div>
 
@@ -38,14 +36,12 @@ export default function Tentang() {
                 Inovasi Pembelajaran Interaktif
               </h2>
               <p className="tw-font-monda tw-text-lg tw-mt-2">
-                Quezt tidak hanya sekadar platform tanya-jawab
-                konvensional; itu adalah ekosistem pembelajaran
-                interaktif yang memanfaatkan kekuatan teknologi
-                untuk memberikan pengalaman belajar yang lebih
-                kaya dan terlibat. Dengan antarmuka yang
-                intuitif dan ramah pengguna, mahasiswa dapat
-                dengan mudah menavigasi dan menemukan jawaban
-                untuk pertanyaan mereka.
+                Quezt tidak hanya sekadar platform tanya-jawab konvensional; itu
+                adalah ekosistem pembelajaran interaktif yang memanfaatkan
+                kekuatan teknologi untuk memberikan pengalaman belajar yang
+                lebih kaya dan terlibat. Dengan antarmuka yang intuitif dan
+                ramah pengguna, mahasiswa dapat dengan mudah menavigasi dan
+                menemukan jawaban untuk pertanyaan mereka.
               </p>
             </div>
 
@@ -54,13 +50,11 @@ export default function Tentang() {
                 Tutor Berkualitas Tinggi
               </h2>
               <p className="tw-font-monda tw-text-lg tw-mt-2">
-                Salah satu keunggulan utama Quezt adalah
-                kehadiran tutor yang berkompeten. Jawaban yang
-                diberikan di website ini berasal dari tutor yang
-                memiliki kredensial dan pengetahuan mendalam
-                sesuai dengan aturan dan standar website ini.
-                Mahasiswa dapat yakin bahwa informasi yang
-                diberikan adalah akurat dan diperoleh dari
+                Salah satu keunggulan utama Quezt adalah kehadiran tutor yang
+                berkompeten. Jawaban yang diberikan di website ini berasal dari
+                tutor yang memiliki kredensial dan pengetahuan mendalam sesuai
+                dengan aturan dan standar website ini. Mahasiswa dapat yakin
+                bahwa informasi yang diberikan adalah akurat dan diperoleh dari
                 sumber yang terpercaya.
               </p>
             </div>
@@ -70,13 +64,11 @@ export default function Tentang() {
                 Pilihan Mata Kuliah yang Luas
               </h2>
               <p className="tw-font-monda tw-text-lg tw-mt-2">
-                Quezt menyediakan ruang untuk diskusi dan
-                tanya-jawab untuk berbagai mata kuliah. Dari
-                ilmu sosial hingga ilmu alam, mahasiswa dapat
-                menemukan sumber daya yang relevan dengan bidang
-                studi mereka. Ini menciptakan lingkungan belajar
-                yang inklusif dan mendukung bagi mahasiswa dari
-                berbagai disiplin ilmu.
+                Quezt menyediakan ruang untuk diskusi dan tanya-jawab untuk
+                berbagai mata kuliah. Dari ilmu sosial hingga ilmu alam,
+                mahasiswa dapat menemukan sumber daya yang relevan dengan bidang
+                studi mereka. Ini menciptakan lingkungan belajar yang inklusif
+                dan mendukung bagi mahasiswa dari berbagai disiplin ilmu.
               </p>
             </div>
           </div>

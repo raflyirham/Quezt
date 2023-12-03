@@ -23,8 +23,7 @@ export default function ChangePassword() {
                     <div className="tw-flex tw-flex-col tw-mt-3">
                         <label
                             htmlFor="new_password"
-                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                        >
+                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
                             Password Lama:
                         </label>
 
@@ -46,8 +45,7 @@ export default function ChangePassword() {
                     <div className="tw-flex tw-flex-col tw-mt-3">
                         <label
                             htmlFor="new_password"
-                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                        >
+                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
                             Password Baru:
                         </label>
 
@@ -69,8 +67,7 @@ export default function ChangePassword() {
                     <div className="tw-flex tw-flex-col tw-mt-3">
                         <label
                             htmlFor="new_password_confirmation"
-                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
-                        >
+                            className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]">
                             Konfirmasi Password Baru:
                         </label>
 
@@ -92,8 +89,7 @@ export default function ChangePassword() {
                     <div className="tw-mt-3">
                         <button
                             type="submit"
-                            className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200"
-                        >
+                            className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] tw-active:bg-[#bb073a] tw-duration-200">
                             Ubah Password
                         </button>
                     </div>

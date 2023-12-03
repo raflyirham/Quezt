@@ -22,9 +22,7 @@ export default function Detail({ pertanyaan }) {
 
     return (
         <>
-            <Head
-                title={`${pertanyaan.questiondetail.QuestionTitle} | Quezt`}
-            />
+            <Head title={`${pertanyaan.questiondetail.QuestionTitle} | Quezt`} />
 
             <Navbar />
 
@@ -33,8 +31,7 @@ export default function Detail({ pertanyaan }) {
                     {usePage().props.flash.success && (
                         <div
                             classN
-                            ame="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2"
-                        >
+                            ame="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2">
                             {usePage().props.flash.success}
                         </div>
                     )}
@@ -59,9 +56,7 @@ export default function Detail({ pertanyaan }) {
                         <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${pertanyaan.course.CourseName} | ${pertanyaan.course.major.MajorName}`}</p>
 
                         <p className="tw-font-monda tw-mt-2 tw-text-sm">
-                            {convertDate(
-                                pertanyaan.questiondetail.QuestionDate
-                            )}
+                            {convertDate(pertanyaan.questiondetail.QuestionDate)}
                         </p>
                     </div>
                 </div>
@@ -79,92 +74,78 @@ export default function Detail({ pertanyaan }) {
                         ) : (
                             <>
                                 <div className="tw-flex tw-flex-col tw-gap-y-6">
-                                    {pertanyaan.questionanswers.map(
-                                        (jawaban, index) => (
-                                            <div key={index}>
-                                                <div
-                                                    className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
-                                                    key={jawaban.AnswerID}
-                                                >
-                                                    <div>
-                                                        <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
-                                                            {
-                                                                jawaban
-                                                                    .answerheader
-                                                                    .answerdetail
-                                                                    .AnswerDetail
-                                                            }
-                                                        </p>
-                                                    </div>
-
-                                                    <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
-                                                        <Link href={`/profile/${jawaban.answerheader.user.UserUsername}`}>
-                                                            <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
-                                                        </Link>
-
-                                                        <p className="tw-font-monda tw-text-sm">
-                                                            {convertDate(
-                                                                jawaban
-                                                                    .answerheader
-                                                                    .answerdetail
-                                                                    .AnswerDate
-                                                            )}
-                                                        </p>
-                                                    </div>
+                                    {pertanyaan.questionanswers.map((jawaban, index) => (
+                                        <div key={index}>
+                                            <div
+                                                className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
+                                                key={jawaban.AnswerID}>
+                                                <div>
+                                                    <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
+                                                        {jawaban.answerheader.answerdetail.AnswerDetail}
+                                                    </p>
                                                 </div>
 
-                                                <div className="tw-mt-3">
-                                                    {usePage().props
-                                                        .user_data &&
-                                                        usePage().props
-                                                            .user_data
-                                                            .RoleID === 2 &&
-                                                        jawaban.answerheader
-                                                            .UserID ===
-                                                        usePage().props
-                                                            .user_data
-                                                            .UserID && (
-                                                            <>
-                                                                <form
-                                                                    action={`/pertanyaan/${pertanyaan.QuestionID}/hapus-jawaban`}
-                                                                    method="POST"
-                                                                >
-                                                                    <input
-                                                                        type="hidden"
-                                                                        name="_token"
-                                                                        value={
-                                                                            usePage()
-                                                                                .props
-                                                                                .csrf_token
-                                                                                .csrf_token
-                                                                        }
-                                                                    />
+                                                <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
+                                                    <Link href={`/profile/${jawaban.answerheader.user.UserUsername}`}>
+                                                        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                                                    </Link>
 
-                                                                    <input
-                                                                        type="hidden"
-                                                                        name="_method"
-                                                                        value="delete"
-                                                                    />
-
-                                                                    <input
-                                                                        type="hidden"
-                                                                        name="jawaban_id"
-                                                                        value={
-                                                                            jawaban.AnswerID
-                                                                        }
-                                                                    />
-
-                                                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
-                                                                        Hapus
-                                                                        Jawaban
-                                                                    </button>
-                                                                </form>
-                                                            </>
+                                                    <p className="tw-font-monda tw-text-sm">
+                                                        {convertDate(
+                                                            jawaban.answerheader.answerdetail.AnswerDate,
                                                         )}
+                                                    </p>
                                                 </div>
                                             </div>
-                                        )
-                                    )}
+
+                                            <div className="tw-mt-3">
+                                                {usePage().props
+                                                    .user_data &&
+                                                    usePage().props
+                                                        .user_data
+                                                        .RoleID === 2 &&
+                                                    jawaban.answerheader
+                                                        .UserID ===
+                                                    usePage().props
+                                                        .user_data
+                                                        .UserID && (
+                                                        <>
+                                                            <form
+                                                                action={`/pertanyaan/${pertanyaan.QuestionID}/hapus-jawaban`}
+                                                                method="POST"
+                                                            >
+                                                                <input
+                                                                    type="hidden"
+                                                                    name="_token"
+                                                                    value={
+                                                                        usePage()
+                                                                            .props
+                                                                            .csrf_token
+                                                                            .csrf_token
+                                                                    }
+                                                                />
+
+                                                                <input
+                                                                    type="hidden"
+                                                                    name="_method"
+                                                                    value="delete"
+                                                                />
+
+                                                                <input
+                                                                    type="hidden"
+                                                                    name="jawaban_id"
+                                                                    value={jawaban.AnswerID}
+                                                                />
+
+                                                                <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                                                                    Hapus Jawaban
+                                                                </button>
+                                                            </form>
+                                                        </>
+                                                    )}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </>
                         )}
@@ -181,15 +162,11 @@ export default function Detail({ pertanyaan }) {
 
                                 <form
                                     action={`/pertanyaan/${pertanyaan.QuestionID}`}
-                                    method="POST"
-                                >
+                                    method="POST">
                                     <input
                                         type="hidden"
                                         name="_token"
-                                        value={
-                                            usePage().props.csrf_token
-                                                .csrf_token
-                                        }
+                                        value={usePage().props.csrf_token.csrf_token}
                                     />
 
                                     <textarea
@@ -198,8 +175,7 @@ export default function Detail({ pertanyaan }) {
                                         cols="30"
                                         rows="10"
                                         className="tw-w-full tw-mt-4 tw-py-4 tw-px-4 tw-border-2 tw-rounded tw-resize-none"
-                                        required
-                                    ></textarea>
+                                        required></textarea>
 
                                     {usePage().props.errors.jawab && (
                                         <div className="tw-font-monda tw-text-[#C70039]">

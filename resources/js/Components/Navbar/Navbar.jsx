@@ -126,24 +126,21 @@ export default function Navbar() {
                 <div className="tw-flex tw-flex-row tw-justify-evenly tw-items-center tw-px-6 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">
                     <Link
                         href="/"
-                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500"
-                    >
+                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
                         <i className="fa-solid fa-house fa-2xl"></i>
                         <p className="tw-mt-1">Beranda</p>
                     </Link>
 
                     <Link
                         href="/jurusan"
-                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500"
-                    >
+                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
                         <i className="fa-solid fa-graduation-cap fa-2xl"></i>
                         <p className="tw-mt-1">Jurusan</p>
                     </Link>
 
                     <Link
                         href="/mata-kuliah"
-                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500"
-                    >
+                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
                         <i className="fa-solid fa-book fa-2xl"></i>
                         <p className="tw-mt-1">Mata Kuliah</p>
                     </Link>
