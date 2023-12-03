@@ -98,7 +98,9 @@ export default function Detail({ pertanyaan }) {
                                                     </div>
 
                                                     <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
-                                                        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                                                        <Link href={`/profile/${jawaban.answerheader.user.UserUsername}`}>
+                                                            <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                                                        </Link>
 
                                                         <p className="tw-font-monda tw-text-sm">
                                                             {convertDate(
@@ -119,9 +121,9 @@ export default function Detail({ pertanyaan }) {
                                                             .RoleID === 2 &&
                                                         jawaban.answerheader
                                                             .UserID ===
-                                                            usePage().props
-                                                                .user_data
-                                                                .UserID && (
+                                                        usePage().props
+                                                            .user_data
+                                                            .UserID && (
                                                             <>
                                                                 <form
                                                                     action={`/pertanyaan/${pertanyaan.QuestionID}/hapus-jawaban`}
@@ -206,7 +208,7 @@ export default function Detail({ pertanyaan }) {
                                     )}
 
                                     <div
-                                        className="tw-g-recaptcha tw-mt-4"
+                                        className="g-recaptcha tw-mt-4"
                                         data-sitekey={
                                             usePage().props.config
                                                 .google_recaptcha_key

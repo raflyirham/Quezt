@@ -7,7 +7,7 @@ import { usePage } from "@inertiajs/react";
 export default function DetailRole({ user }) {
     return (
         <Index>
-            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full">
+            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full tw-h-fit">
                 <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                     Detail Role
                 </h2>

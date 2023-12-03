@@ -50,6 +50,7 @@ class RegisterController extends Controller
             'UserUsername' => $request->username,
             'UserRegisteredDate' => now(),
             'RoleID' => 1,
+            'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
         ]);
 
         Membership::create([

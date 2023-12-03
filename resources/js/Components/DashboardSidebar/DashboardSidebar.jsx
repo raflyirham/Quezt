@@ -12,8 +12,8 @@ export default function DashboardSidebar() {
                 </h2>
 
                 <div className="tw-flex tw-flex-col tw-mt-2 tw-gap-y-1">
-                    <Link href="/dashboard/detail">
-                        {usePage().url === "/dashboard/detail" ? (
+                    <Link href="/pengaturan/detail">
+                        {usePage().url === "/pengaturan/detail" ? (
                             <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                 Detail Akun
                             </p>
@@ -24,9 +24,9 @@ export default function DashboardSidebar() {
                         )}
                     </Link>
 
-                    <Link href="/dashboard/change-email">
+                    <Link href="/pengaturan/ubah-email">
                         {usePage().props.uri.uri.includes(
-                            "dashboard/change-email"
+                            "pengaturan/ubah-email"
                         ) ? (
                             <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                 Ubah Email
@@ -38,9 +38,9 @@ export default function DashboardSidebar() {
                         )}
                     </Link>
 
-                    <Link href="/dashboard/change-password">
+                    <Link href="/pengaturan/ubah-password">
                         {usePage().props.uri.uri.includes(
-                            "dashboard/change-password"
+                            "pengaturan/ubah-password"
                         ) ? (
                             <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                 Ubah Password
@@ -52,9 +52,9 @@ export default function DashboardSidebar() {
                         )}
                     </Link>
 
-                    <Link href="/dashboard/change-name">
+                    <Link href="/pengaturan/ubah-nama">
                         {usePage().props.uri.uri.includes(
-                            "dashboard/change-name"
+                            "pengaturan/ubah-nama"
                         ) ? (
                             <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                 Ubah Nama
@@ -62,6 +62,20 @@ export default function DashboardSidebar() {
                         ) : (
                             <p className="tw-font-monda tw-text-base tw-p-2 hover:tw-bg-[#C70039] hover:tw-text-white hover:tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                 Ubah Nama
+                            </p>
+                        )}
+                    </Link>
+
+                    <Link href="/pengaturan/ubah-avatar">
+                        {usePage().props.uri.uri.includes(
+                            "pengaturan/ubah-avatar"
+                        ) ? (
+                            <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
+                                Ubah Avatar
+                            </p>
+                        ) : (
+                            <p className="tw-font-monda tw-text-base tw-p-2 hover:tw-bg-[#C70039] hover:tw-text-white hover:tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
+                                Ubah Avatar
                             </p>
                         )}
                     </Link>
@@ -78,9 +92,9 @@ export default function DashboardSidebar() {
                             </h2>
 
                             <div className="tw-flex tw-flex-col tw-mt-2 tw-gap-y-1">
-                                <Link href="/dashboard/detail-role">
+                                <Link href="/pengaturan/detail-role">
                                     {usePage().props.uri.uri.includes(
-                                        "dashboard/detail-role"
+                                        "pengaturan/detail-role"
                                     ) ? (
                                         <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                             Detail Role
@@ -92,9 +106,9 @@ export default function DashboardSidebar() {
                                     )}
                                 </Link>
 
-                                <Link href="/dashboard/change-role">
+                                <Link href="/pengaturan/ubah-role">
                                     {usePage().props.uri.uri.includes(
-                                        "dashboard/change-role"
+                                        "pengaturan/ubah-role"
                                     ) ? (
                                         <p className="tw-font-monda tw-text-base tw-p-2 tw-bg-[#98042e] tw-text-white tw-rounded tw-duration-300 tw-w-full tw-border-b-[1px] tw-border-[#C70039]">
                                             Ubah Role

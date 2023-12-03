@@ -20,24 +20,27 @@ class UserSeeder extends Seeder
             'UserUsername' => 'queztuser',
             'UserRegisteredDate' => now(),
             'RoleID' => 1,
+            'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
         ]);
 
         DB::table('users')->insert([
             'email' => 'tutor@quezt.com',
             'password' => bcrypt('12345'),
             'UserName' => 'Quezt Tutor',
-            'UserUsername' => 'queztutor',
+            'UserUsername' => 'quezttutor',
             'UserRegisteredDate' => now(),
             'RoleID' => 1,
+            'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
         ]);
 
         DB::table('users')->insert([
             'email' => 'premium@quezt.com',
             'password' => bcrypt('12345'),
             'UserName' => 'Quezt Premium',
-            'UserUsername' => 'quezpremium',
+            'UserUsername' => 'queztpremium',
             'UserRegisteredDate' => now(),
             'RoleID' => 1,
+            'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
         ]);
     }
 }

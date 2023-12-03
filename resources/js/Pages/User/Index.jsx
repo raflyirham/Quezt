@@ -7,7 +7,7 @@ import DashboardSidebar from "@/Components/DashboardSidebar/DashboardSidebar";
 export default function Index({ children }) {
     return (
         <>
-            <Head title="Dashboard | Quezt" />
+            <Head title="Pengaturan | Quezt" />
 
             <Navbar />
 

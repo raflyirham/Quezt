@@ -8,12 +8,12 @@ export default function ChangePassword() {
 
     return (
         <Index>
-            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full">
+            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full tw-h-fit">
                 <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                     Ubah Password
                 </h2>
 
-                <form action="change-password" method="POST">
+                <form action="ubah-password" method="POST">
                     <input
                         type="hidden"
                         name="_token"

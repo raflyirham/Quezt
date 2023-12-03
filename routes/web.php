@@ -7,10 +7,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
-
-use Inertia\Inertia;
-
 use function Termwind\render;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +23,8 @@ use function Termwind\render;
  */
 
 //! Testing Purpose Only, DELETE LATER
-Route::get('/Admin', function(){
-  return Inertia::render('Admin/Index');
+Route::get('/Admin', function () {
+    return Inertia::render('Admin/Index');
 });
 
 Route::get('/', [PageController::class, 'index']);
@@ -55,27 +54,29 @@ Route::prefix('profile')->group(function () {
     Route::get('/{user}', [UserController::class, 'profile']);
     Route::get('/{user}/pertanyaan', [UserController::class, 'pertanyaan']);
     Route::get('/{user}/jawaban', [UserController::class, 'jawaban']);
-    Route::get('/{user}/materi', [UserController::class, 'materi']);
 });
 
 // Dashboard
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'pengaturan', 'middleware' => ['auth']], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('/detail', [UserController::class, 'detail']);
 
-    Route::get('/change-email', [UserController::class, 'change_email']);
-    Route::post('/change-email', [UserController::class, 'change_email_post']);
+    Route::get('/ubah-email', [UserController::class, 'change_email']);
+    Route::post('/ubah-email', [UserController::class, 'change_email_post']);
 
-    Route::get('/change-password', [UserController::class, 'change_password']);
-    Route::post('/change-password', [UserController::class, 'change_password_post']);
+    Route::get('/ubah-password', [UserController::class, 'change_password']);
+    Route::post('/ubah-password', [UserController::class, 'change_password_post']);
 
-    Route::get('/change-name', [UserController::class, 'change_name']);
-    Route::post('/change-name', [UserController::class, 'change_name_post']);
+    Route::get('/ubah-nama', [UserController::class, 'change_name']);
+    Route::post('/ubah-nama', [UserController::class, 'change_name_post']);
+
+    Route::get('/ubah-avatar', [UserController::class, 'change_avatar']);
+    Route::post('/ubah-avatar', [UserController::class, 'change_avatar_post']);
 
     Route::get('/detail-role', [UserController::class, 'detail_role']);
 
-    Route::get('/change-role', [UserController::class, 'change_role']);
-    Route::post('/change-role', [UserController::class, 'change_role_post']);
+    Route::get('/ubah-role', [UserController::class, 'change_role']);
+    Route::post('/ubah-role', [UserController::class, 'change_role_post']);
 });
 
 // Pertanyaan

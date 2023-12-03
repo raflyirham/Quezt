@@ -8,7 +8,7 @@ export default function ChangeName({ user }) {
 
     return (
         <Index>
-            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full">
+            <div className="tw-w-[70%] tw-shadow-lg tw-p-8 max-lg:tw-w-full tw-h-fit">
                 <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#C70039]">
                     Ubah Nama
                 </h2>
@@ -20,7 +20,7 @@ export default function ChangeName({ user }) {
                     <p className="tw-font-monda tw-uppercase">{user.UserName}</p>
                 </div>
 
-                <form action="change-name" method="POST">
+                <form action="ubah-nama" method="POST">
                     <input
                         type="hidden"
                         name="_token"

@@ -82,7 +82,7 @@ export default function Login({ csrf_token }) {
                                 ></input>
 
                                 <div
-                                    className="tw-g-recaptcha tw-mt-4"
+                                    className="g-recaptcha tw-mt-4"
                                     data-sitekey={
                                         usePage().props.config
                                             .google_recaptcha_key

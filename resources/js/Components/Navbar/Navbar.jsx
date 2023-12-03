@@ -46,7 +46,7 @@ export default function Navbar() {
                     {usePage().props.user_data ? (
                         <>
                             <div>
-                                <div className="tw-dropdown tw-inline-block tw-relative">
+                                <div className="q-dropdown tw-inline-block tw-relative">
                                     <button className="tw-bg-[#C70039] tw-text-white tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
                                         <span className="tw-mr-1 tw-uppercase">
                                             {usePage().props.user_data.UserName}
@@ -59,15 +59,7 @@ export default function Navbar() {
                                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                                         </svg>
                                     </button>
-                                    <ul className="tw-dropdown-menu tw-absolute tw-hidden tw-text-white tw-pt-1 tw-shadow-lg">
-                                        <li>
-                                            <Link
-                                                className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
-                                                href="/dashboard"
-                                            >
-                                                Dashboard
-                                            </Link>
-                                        </li>
+                                    <ul className="q-dropdown-menu tw-absolute tw-hidden tw-text-white tw-pt-1 tw-shadow-lg">
                                         <li>
                                             <Link
                                                 className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
@@ -76,6 +68,14 @@ export default function Navbar() {
                                                     }`}
                                             >
                                                 Profile
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
+                                                href="/pengaturan"
+                                            >
+                                                Pengaturan
                                             </Link>
                                         </li>
                                         <li>
