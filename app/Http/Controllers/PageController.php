@@ -66,4 +66,23 @@ class PageController extends Controller
         ]);
     }
 
+    public function produk()
+    {
+        return Inertia::render('Produk/Index');
+    }
+
+    public function quezt_premium()
+    {
+        return Inertia::render('Produk/Premium');
+    }
+
+    public function quezt_pro()
+    {
+        return Inertia::render('Produk/Pro');
+    }
+
+    public function tutorin()
+    {
+        return Inertia::render('Produk/Tutorin');
+    }
 }

@@ -94,4 +94,12 @@ Route::get('/syarat-ketentuan', [PageController::class, 'syarat']);
 Route::get('/cari', [PageController::class, 'cari'])->name('cari');
 // Route::post('/cari', [PageController::class, 'cari']);
 
+// Product
+Route::group(['prefix' => 'produk'], function () {
+    Route::get('/', [PageController::class, 'produk']);
+    Route::get('/quezt-premium', [PageController::class, 'quezt_premium']);
+    Route::get('/quezt-pro', [PageController::class, 'quezt_pro']);
+    Route::get('/tutorin', [PageController::class, 'tutorin']);
+});
+
 Route::any('{catchall}', [PageController::class, 'notFound'])->where('catchall', '.*');
