@@ -38,7 +38,6 @@ export default function ChangeAvatar({ user }) {
                             Ganti Avatar:
                         </label>
 
-
                         <input id="avatar" name="avatar" type="file" accept="image/*" required />
                         {errors.avatar && (
                             <div className="tw-font-monda tw-text-[#C70039]">

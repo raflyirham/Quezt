@@ -1,10 +1,31 @@
 import { Link } from "@inertiajs/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { usePage } from "@inertiajs/react";
 
 export default function Navbar() {
-    // console.log(usePage().props.user);
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const controlNavbar = () => {
+        if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+            setShow(false);
+        } else { // if scroll up show the navbar
+            setShow(true);
+        }
+
+        // remember current page location to use in the next move
+        setLastScrollY(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar);
+
+        // cleanup function
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [lastScrollY]);
 
     return (
         <>
@@ -122,7 +143,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className="tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] max-lg:tw-block">
+            <div className={`tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] ${show ? 'max-lg:tw-block' : 'max-lg:tw-hidden'} tw-duration-300`}>
                 <div className="tw-flex tw-flex-row tw-justify-evenly tw-items-center tw-px-6 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">
                     <Link
                         href="/"
