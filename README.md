@@ -1,15 +1,12 @@
-
 ![Logo](https://i.ibb.co/M9x1K3r/quezt-logo-header.png)
 
 # Quezt
 
 Quezt merupakan website untuk belajar dan tanya jawab materi perkuliahan. Jawaban yang diberikan pada website ini merupakan tutor yang memiliki kompetensi sesuai dengan aturan dan standar website ini.
 
-
 ## Live Preview
 
 https://quezt.live/
-
 
 ## Installation
 
@@ -67,6 +64,7 @@ To run this project, you will need to add the following environment variables to
 This project uses Google's ReCaptcha V2 to prevent bots, and Amazon Simple Storage Service (S3) to store images.
 
 You may still able to run the project without Amazon S3, but some feature such as avatar image upload may not be available.
+
 ## Features
 
 - Ask question
@@ -81,16 +79,16 @@ You may still able to run the project without Amazon S3, but some feature such a
 
 ## Todo
 
-- [ ]  WYSIWYG text editor
-- [ ]  Find tutors
-- [ ]  Product page
-
+- [ ] WYSIWYG text editor
+- [ ] Find tutors
+- [ ] Product page
 
 ## Built With
 
-* [![Laravel][Laravel]][Laravel-url]
-* [![React][React.js]][React-url]
-* [![Tailwind][TailwindCSS]][TailwindURL]
+- [![Laravel][Laravel]][Laravel-url]
+- [![React][React.js]][React-url]
+- [![Tailwind][TailwindCSS]][TailwindURL]
+- [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 [Laravel]: https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com/

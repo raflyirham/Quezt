@@ -7,6 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use function Termwind\render;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,9 +24,22 @@ use Inertia\Inertia;
  */
 
 //! Testing Purpose Only, DELETE LATER
-Route::get('/Admin', function () {
+Route::prefix('/Admin')->group(function(){
+  Route::get('/', function(){
     return Inertia::render('Admin/Index');
+  });
+  Route::get('/Course', [AdminController::class, 'index']);
+  Route::get('/Profile', function(){
+    return Inertia::render('Admin/Profile');
+  });
+  Route::get('/Question', function(){
+    return Inertia::render('Admin/Question');
+  });
+  Route::get('/Tutor', function(){
+    return Inertia::render('Admin/Tutor');
+  });
 });
+
 
 Route::get('/', [PageController::class, 'index']);
 Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
