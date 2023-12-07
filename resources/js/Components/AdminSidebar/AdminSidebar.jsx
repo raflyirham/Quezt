@@ -24,6 +24,14 @@ export default function AdminSidebar() {
             <Link
               className="p-0 tw-text-left nav-link active"
               aria-current="page"
+              href="/">
+              Home
+            </Link>
+          </li>
+          <li className="tw-py-4 tw-px-8 lg:tw-pr-14 lg:tw-pl-4 nav-item">
+            <Link
+              className="p-0 tw-text-left nav-link active"
+              aria-current="page"
               href="/Admin">
               Dashboard
             </Link>
