@@ -86,6 +86,15 @@ export default function Navbar() {
                                         </svg>
                                     </button>
                                     <ul className="q-dropdown-menu tw-absolute tw-hidden tw-text-white tw-pt-1 tw-shadow-lg">
+                                        {usePage().props.user_data.RoleID === 3 ?
+                                            (<li>
+                                                <Link
+                                                    className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
+                                                    href="/Admin">
+                                                    Dashboard
+                                                </Link>
+                                            </li>) : <></>
+                                        }
                                         <li>
                                             <Link
                                                 className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"

@@ -5,13 +5,12 @@ import Pagination from "../../../Components/Pagination/Pagination";
 import ProfileContentCard from "../../../Components/ProfileContentCard/ProfileContentCard";
 
 export default function Answer({ user, answers }) {
-
     const answerSlice = (answer) => {
         if (answer.length > 200) {
             return answer.slice(0, 200) + "...";
         }
         return answer;
-    }
+    };
 
     const convertDate = (date) => {
         const event = new Date(date);
@@ -53,7 +52,6 @@ export default function Answer({ user, answers }) {
                         Belum ada jawaban yang dijawab oleh pengguna ini.
                     </div>
                 )}
-
             </div>
         </Index>
     );

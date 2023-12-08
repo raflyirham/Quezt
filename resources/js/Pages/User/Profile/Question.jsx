@@ -6,13 +6,12 @@ import Pagination from "../../../Components/Pagination/Pagination";
 import ProfileContentCard from "../../../Components/ProfileContentCard/ProfileContentCard";
 
 export default function Question({ user, questions }) {
-
     const questionSlice = (question) => {
         if (question.length > 200) {
             return question.slice(0, 200) + "...";
         }
         return question;
-    }
+    };
 
     const convertDate = (date) => {
         const event = new Date(date);
@@ -54,7 +53,6 @@ export default function Question({ user, questions }) {
                         Belum ada pertanyaan yang ditanyakan oleh pengguna ini.
                     </div>
                 )}
-
             </div>
         </Index>
     );
