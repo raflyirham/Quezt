@@ -25,6 +25,12 @@ export default function Answer({ user, answers }) {
         return event.toLocaleDateString("id-ID", options);
     };
 
+    const deleteHTMLTag = (text) => {
+        const regex = /(<([^>]+)>)/gi;
+        const result = text.replace(regex, " ");
+        return result;
+    }
+
     return (
         <Index user={user}>
             <div className="tw-flex tw-flex-col tw-gap-y-4 tw-mt-4">
@@ -33,7 +39,7 @@ export default function Answer({ user, answers }) {
                         {
 
                             answers.data.map((answer, index) => (
-                                <ProfileContentCard key={index} link={`/pertanyaan/${answer.questionanswers[0].questionheader.QuestionID}`} title={""} detail={answerSlice(answer.answerdetail.AnswerDetail)} courseName={answer.questionanswers[0].questionheader.course.CourseName} majorName={answer.questionanswers[0].questionheader.course.major.MajorName} date={convertDate(
+                                <ProfileContentCard key={index} link={`/pertanyaan/${answer.questionanswers[0].questionheader.QuestionID}`} title={""} detail={answerSlice(deleteHTMLTag(answer.answerdetail.AnswerDetail))} courseName={answer.questionanswers[0].questionheader.course.CourseName} majorName={answer.questionanswers[0].questionheader.course.major.MajorName} date={convertDate(
                                     answer.answerdetail.AnswerDate
                                 )} description={"Lihat Jawaban >"} />
                             )

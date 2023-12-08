@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Head, Link, usePage } from "@inertiajs/react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+
 import { useRecaptcha } from "@/Composables/ReCaptcha";
+
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import { Base64UploadAdapter } from '@ckeditor/ckeditor5-upload';
+
+import parse from 'html-react-parser';
+// import Editor from "../../Components/TextEditor/TextEditor";
 
 export default function Detail({ pertanyaan }) {
     const { errors } = usePage().props;
@@ -20,18 +28,21 @@ export default function Detail({ pertanyaan }) {
         return event.toLocaleDateString("id-ID", options);
     };
 
+    const [jawab, setJawab] = useState("");
+
     return (
         <>
             <Head title={`${pertanyaan.questiondetail.QuestionTitle} | Quezt`} />
 
             <Navbar />
 
+
             <div className="tw-flex tw-flex-col tw-items-center tw-py-16 tw-px-4 tw-mt-16 tw-min-h-screen tw-w-[100%]">
+
                 <div className="tw-mb-4 tw-fixed tw-bottom-0 tw-right-0 tw-mr-4 tw-after:hidden tw-duration-700">
                     {usePage().props.flash.success && (
                         <div
-                            classN
-                            ame="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2">
+                            className="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2 ">
                             {usePage().props.flash.success}
                         </div>
                     )}
@@ -47,9 +58,10 @@ export default function Detail({ pertanyaan }) {
                             {pertanyaan.questiondetail.QuestionTitle}
                         </h1>
 
-                        <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
-                            {pertanyaan.questiondetail.QuestionDetail}
-                        </p>
+                        <div className="post-container tw-font-monda tw-mt-4 tw-break-all">
+                            {parse(pertanyaan.questiondetail.QuestionDetail)}
+                        </div>
+
                     </div>
 
                     <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
@@ -79,10 +91,11 @@ export default function Detail({ pertanyaan }) {
                                             <div
                                                 className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
                                                 key={jawaban.AnswerID}>
-                                                <div>
-                                                    <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
-                                                        {jawaban.answerheader.answerdetail.AnswerDetail}
-                                                    </p>
+                                                <div className="post-container tw-font-monda tw-mt-4 tw-break-all">
+                                                    {parse(jawaban.answerheader.answerdetail.AnswerDetail)}
+                                                    {/* <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
+                                                        {parse(jawaban.answerheader.answerdetail.AnswerDetail)}
+                                                    </p> */}
                                                 </div>
 
                                                 <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
@@ -160,6 +173,9 @@ export default function Detail({ pertanyaan }) {
                                     Jawab Pertanyaan
                                 </h3>
 
+
+
+
                                 <form
                                     action={`/pertanyaan/${pertanyaan.QuestionID}`}
                                     method="POST">
@@ -169,7 +185,42 @@ export default function Detail({ pertanyaan }) {
                                         value={usePage().props.csrf_token.csrf_token}
                                     />
 
-                                    <textarea
+                                    <input type="hidden" name="jawab" value={jawab} />
+
+                                    <div className="mt-2">
+                                        <CKEditor
+                                            id="jawab"
+                                            name="jawab"
+                                            editor={ClassicEditor}
+                                            data=""
+                                            onChange={(event, editor) => {
+                                                const data = editor.getData();
+                                                setJawab(data);
+                                            }}
+
+                                            config={{
+                                                toolbar: ['undo', 'redo', '|', 'bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote'],
+                                                heading: {
+                                                    options: [
+                                                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                                                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                                                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                                                    ]
+                                                }
+                                            }}
+
+                                        />
+
+                                        {/* <Editor /> */}
+                                    </div>
+                                    {usePage().props.errors.jawab && (
+                                        <div className="tw-font-monda tw-text-[#C70039]">
+                                            {usePage().props.errors.jawab}
+                                        </div>
+                                    )}
+
+
+                                    {/* <textarea
                                         name="jawab"
                                         id="jawab"
                                         cols="30"
@@ -181,7 +232,7 @@ export default function Detail({ pertanyaan }) {
                                         <div className="tw-font-monda tw-text-[#C70039]">
                                             {usePage().props.errors.jawab}
                                         </div>
-                                    )}
+                                    )} */}
 
                                     <div
                                         className="g-recaptcha tw-mt-4"

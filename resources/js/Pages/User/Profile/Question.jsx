@@ -26,6 +26,12 @@ export default function Question({ user, questions }) {
         return event.toLocaleDateString("id-ID", options);
     };
 
+    const deleteHTMLTag = (text) => {
+        const regex = /(<([^>]+)>)/gi;
+        const result = text.replace(regex, " ");
+        return result;
+    }
+
     return (
         <Index user={user}>
             <div className="tw-flex tw-flex-col tw-gap-y-4 tw-mt-4">
@@ -34,7 +40,7 @@ export default function Question({ user, questions }) {
                         {
 
                             questions.data.map((question, index) => (
-                                <ProfileContentCard key={index} link={`/pertanyaan/${question.QuestionID}`} title={question.questiondetail.QuestionTitle} detail={questionSlice(question.questiondetail.QuestionDetail)} courseName={question.course.CourseName} majorName={question.course.major.MajorName} date={convertDate(
+                                <ProfileContentCard key={index} link={`/pertanyaan/${question.QuestionID}`} title={question.questiondetail.QuestionTitle} detail={questionSlice(deleteHTMLTag(question.questiondetail.QuestionDetail))} courseName={question.course.CourseName} majorName={question.course.major.MajorName} date={convertDate(
                                     question.questiondetail.QuestionDate
                                 )} description={"Lihat Pertanyaan >"} />
                             )

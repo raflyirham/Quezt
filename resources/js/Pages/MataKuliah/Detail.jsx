@@ -7,12 +7,17 @@ import PertanyaanCard from "../../Components/PertanyaanCard/PertanyaanCard";
 import Pagination from "../../Components/Pagination/Pagination";
 import { useRecaptcha } from "@/Composables/ReCaptcha";
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 export default function Index({ course, questions, user }) {
     const { errors } = usePage().props;
     useRecaptcha();
 
     const [pertanyaanTitle, setPertanyaanTitle] = useState("Tanya Materi");
     const pertanyaanRef = useRef(null);
+
+    const [tanya, setTanya] = useState("");
 
     const showPertanyaanForm = () => {
         if (pertanyaanRef.current.classList.contains("tw-hidden")) {
@@ -115,30 +120,40 @@ export default function Index({ course, questions, user }) {
                                     </div>
 
                                     <div className="tw-flex tw-flex-col">
+                                        <input type="hidden" name="tanya" value={tanya} />
                                         <label
-                                            htmlFor="detail_pertanyaan"
+                                            htmlFor="tanya"
                                             className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039]"
                                         >
                                             Detail Pertanyaan
                                         </label>
-                                        <textarea
-                                            name="detail_pertanyaan"
-                                            id="detail_pertanyaan"
-                                            cols="30"
-                                            rows="10"
-                                            className="tw-w-full tw-mt-4 tw-py-4 tw-px-4 tw-border-[1px] tw-border-[#000] tw-rounded tw-resize-none"
-                                            placeholder="Masukkan detail pertanyaan kamu..."
-                                            required
-                                        ></textarea>
-                                        {usePage().props.errors
-                                            .detail_pertanyaan && (
-                                                <div className="tw-font-monda tw-text-[#C70039]">
-                                                    {
-                                                        usePage().props.errors
-                                                            .detail_pertanyaan
-                                                    }
-                                                </div>
-                                            )}
+                                        <CKEditor
+                                            id="tanya"
+                                            name="tanya"
+                                            editor={ClassicEditor}
+                                            data=""
+                                            onChange={(event, editor) => {
+                                                const data = editor.getData();
+                                                setTanya(data);
+                                            }}
+
+                                            config={{
+                                                toolbar: ['undo', 'redo', '|', 'bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote'],
+                                                heading: {
+                                                    options: [
+                                                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                                                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                                                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                                                    ]
+                                                }
+                                            }}
+
+                                        />
+                                        {usePage().props.errors.tanya && (
+                                            <div className="tw-font-monda tw-text-[#C70039]">
+                                                {usePage().props.errors.tanya}
+                                            </div>
+                                        )}
                                     </div>
 
                                     <div
@@ -154,7 +169,7 @@ export default function Index({ course, questions, user }) {
                                         </div>
                                     )}
 
-                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
+                                    <button className="tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-1 tw-rounded-md tw-mt-1 tw-font-monda tw-w-fit tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200">
                                         Kirim Pertanyaan
                                     </button>
                                 </form>

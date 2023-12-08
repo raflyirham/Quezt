@@ -27,12 +27,13 @@ class PertanyaanController extends Controller
 
     public function jawab_pertanyaan($id, Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'jawab' => ['required', 'min:50', 'max:5000'],
+            'jawab' => ['required', 'min:1', 'max:5000'],
             'g-recaptcha-response' => 'required|recaptcha',
         ], [
             'jawab.required' => 'Jawaban harus diisi.',
-            'jawab.min' => 'Jawaban minimal 50 karakter.',
+            'jawab.min' => 'Jawaban harus diisi.',
             'jawab.max' => 'Jawaban maksimal 5000 karakter.',
             'g-recaptcha-response.required' => 'Captcha harus diisi.',
             'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',

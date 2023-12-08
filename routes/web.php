@@ -6,6 +6,7 @@ use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TutorController;
 use App\Http\Controllers\UserController;
 use function Termwind\render;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::get('/Admin', function () {
 });
 
 Route::get('/', [PageController::class, 'index']);
+Route::post('/', [PageController::class, 'tanya']);
 Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
 Route::get('/masuk', [PageController::class, 'login'])->middleware('guest')->name('masuk');
 
@@ -100,6 +102,12 @@ Route::group(['prefix' => 'produk'], function () {
     Route::get('/quezt-premium', [PageController::class, 'quezt_premium']);
     Route::get('/quezt-pro', [PageController::class, 'quezt_pro']);
     Route::get('/tutorin', [PageController::class, 'tutorin']);
+});
+
+// Tutor
+Route::group(['prefix' => 'tutor'], function () {
+    Route::get('/', [TutorController::class, 'index']);
+    // Route::get('/{tutor}', [PageController::class, 'tutor_detail']);
 });
 
 Route::any('{catchall}', [PageController::class, 'notFound'])->where('catchall', '.*');

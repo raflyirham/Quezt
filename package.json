@@ -25,9 +25,17 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-autoformat": "^40.1.0",
+    "@ckeditor/ckeditor5-autosave": "^40.1.0",
+    "@ckeditor/ckeditor5-build-classic": "^40.1.0",
+    "@ckeditor/ckeditor5-code-block": "^40.1.0",
+    "@ckeditor/ckeditor5-react": "^6.2.0",
+    "@ckeditor/ckeditor5-upload": "^40.1.0",
+    "@ckeditor/ckeditor5-word-count": "^40.1.0",
     "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/react": "^1.0.14",
     "@vitejs/plugin-react": "^4.1.1",
+    "html-react-parser": "^5.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

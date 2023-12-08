@@ -65,17 +65,17 @@ class MataKuliahController extends Controller
 
         $request->validate([
             'judul_pertanyaan' => ['required', 'string', 'min:10', 'max:200'],
-            'detail_pertanyaan' => ['required', 'string', 'min:50', 'max:5000'],
+            'tanya' => ['required', 'string', 'min:10', 'max:5000'],
             'g-recaptcha-response' => 'required|recaptcha',
         ], [
             'judul_pertanyaan.required' => 'Judul pertanyaan tidak boleh kosong',
             'judul_pertanyaan.string' => 'Judul pertanyaan harus berupa string',
             'judul_pertanyaan.min' => 'Judul pertanyaan minimal 10 karakter',
             'judul_pertanyaan.max' => 'Judul pertanyaan maksimal 200 karakter',
-            'detail_pertanyaan.required' => 'Detail pertanyaan tidak boleh kosong',
-            'detail_pertanyaan.string' => 'Detail pertanyaan harus berupa string',
-            'detail_pertanyaan.min' => 'Detail pertanyaan minimal 50 karakter',
-            'detail_pertanyaan.max' => 'Detail pertanyaan maksimal 5000 karakter',
+            'tanya.required' => 'Detail pertanyaan tidak boleh kosong',
+            'tanya.string' => 'Detail pertanyaan harus berupa string',
+            'tanya.min' => 'Detail pertanyaan minimal 10 karakter',
+            'tanya.max' => 'Detail pertanyaan maksimal 5000 karakter',
             'g-recaptcha-response.required' => 'Captcha harus diisi.',
             'g-recaptcha-response.recaptcha' => 'Captcha tidak valid.',
         ]);
@@ -88,7 +88,7 @@ class MataKuliahController extends Controller
         QuestionDetail::create([
             'QuestionID' => $q->QuestionID,
             'QuestionTitle' => $request->judul_pertanyaan,
-            'QuestionDetail' => $request->detail_pertanyaan,
+            'QuestionDetail' => $request->tanya,
             'QuestionDate' => now(),
         ]);
 

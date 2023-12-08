@@ -60,6 +60,11 @@ export default function Navbar() {
                                 Mata Kuliah
                             </p>
                         </Link>
+                        <Link href="/tutor">
+                            <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+                                Tutor
+                            </p>
+                        </Link>
                     </div>
                 </div>
 
@@ -164,6 +169,12 @@ export default function Navbar() {
                         className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
                         <i className="fa-solid fa-book fa-2xl"></i>
                         <p className="tw-mt-1">Mata Kuliah</p>
+                    </Link>
+                    <Link
+                        href="/tutor"
+                        className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+                        <i className="fa-solid fa-chalkboard-user fa-2xl"></i>
+                        <p className="tw-mt-1">Tutor</p>
                     </Link>
                 </div>
             </div>
