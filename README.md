@@ -79,9 +79,10 @@ You may still able to run the project without Amazon S3, but some feature such a
 
 ## Todo
 
-- [ ] WYSIWYG text editor
-- [ ] Find tutors
+- [x] WYSIWYG text editor
+- [x] Find tutors
 - [ ] Product page
+- [ ] Admin dashboard
 
 ## Built With
 
