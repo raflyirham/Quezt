@@ -10,7 +10,7 @@ export default function Index() {
       <Head title="Admin Dashboard | Quezt" />
 
       <main className="">
-        <div className="d-flex flex-row justify-content-between align-items-start tw-mt-14">
+        <div className="d-flex flex-row justify-content-between align-items-start tw-mt-16 lg:ztw-divide-x-2 tw-divide-[#C70039]">
           <AdminSidebar />
           <div className="tw-py-4 tw-px-8 tw-min-h-screen w-full flex-fill">
             <div>

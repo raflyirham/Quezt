@@ -28,7 +28,11 @@ Route::prefix('/Admin')->group(function(){
   Route::get('/', function(){
     return Inertia::render('Admin/Index');
   });
-  Route::get('/Course', [AdminController::class, 'index']);
+  Route::prefix('/Lists')->group(function(){
+    Route::get('/', [AdminController::class, 'getMajorsandCourses']);
+    Route::get('/Majors', [AdminController::class, 'getMajors']);
+    Route::get('/Courses', [AdminController::class, 'getCourses']);
+  });
   Route::get('/Profile', function(){
     return Inertia::render('Admin/Profile');
   });

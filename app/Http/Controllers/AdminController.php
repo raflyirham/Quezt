@@ -9,28 +9,32 @@ use Inertia\Inertia;
 
 class AdminController extends Controller
 {
-  public function index()
-  {
+  public function getMajorsandCourses(){
+    $courses = Course::all();
     $majors = Major::all();
-    return Inertia::render('Admin/Course', [
+    return Inertia::render('Admin/Lists/Index', [
+      'courses' => $courses,
       'majors' => $majors,
     ]);
   }
-
-  public function detail($major)
-  {
-    $jurusan = Major::all()->where('MajorSlug', $major)->first();
-
-    if ($jurusan == null) {
-      return redirect('/jurusan');
-    }
-
-    $courses = $jurusan->courses()->paginate(6);
-    return Inertia::render('Jurusan/Detail', [
-      'major' => $jurusan,
+  public function getMajors(){
+    $courses = Course::all();
+    $majors = Major::all();
+    return Inertia::render('Admin/Lists/Majors', [
       'courses' => $courses,
+      'majors' => $majors,
     ]);
   }
+  public function getCourses(){
+    $courses = Course::all();
+    $majors = Major::all();
+    return Inertia::render('Admin/Lists/Courses', [
+      'courses' => $courses,
+      'majors' => $majors,
+    ]);
+  }
+  
+
 
   public function addCourse(Request $request)
   {

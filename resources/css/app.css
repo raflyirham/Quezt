@@ -6,9 +6,14 @@
 @tailwind utilities;
 
 .q-dropdown:hover .q-dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .disable-tailwind {
   all: unset;
 }
+
+/* ! TESTING PURPOSE ONLY, DELETE LATER */
+/* * {
+  border: solid 1px red;
+} */
