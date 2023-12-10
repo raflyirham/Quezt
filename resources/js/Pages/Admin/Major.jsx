@@ -17,7 +17,7 @@ export default function Major({ majors }) {
           <AdminSidebar />
           <div className="tw-py-4 tw-px-8 tw-min-h-screen w-full flex-fill">
             <div className="d-flex flex-column gap-4 justify-content-start align-items-start">
-              <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
+              <h1 className="tw-font-jacques tw-font-bold tw-text-5xl tw-text-[#C70039]">
                 List Jurusan
               </h1>
 

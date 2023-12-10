@@ -29,6 +29,7 @@ export default function AdminSidebar() {
             <Link
               className={
                 (url === "/admin" ? "tw-text-red-500" : "") +
+                (url === "/admin/" ? "tw-text-red-500" : "") +
                 " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin">
@@ -40,6 +41,7 @@ export default function AdminSidebar() {
             <Link
               className={
                 (url === "/admin/jurusan" ? "tw-text-red-500" : "") +
+                (url === "/admin/jurusan/" ? "tw-text-red-500" : "") +
                 " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
               }
               href="/admin/jurusan">
@@ -51,6 +53,7 @@ export default function AdminSidebar() {
             <Link
               className={
                 (url === "/admin/mata-kuliah" ? "tw-text-red-500" : "") +
+                (url === "/admin/mata-kuliah/" ? "tw-text-red-500" : "") +
                 " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
               }
               href="/admin/mata-kuliah">
@@ -62,6 +65,7 @@ export default function AdminSidebar() {
             <Link
               className={
                 (url === "/admin/tutor" ? "tw-text-red-500" : "") +
+                (url === "/admin/tutor/" ? "tw-text-red-500" : "") +
                 " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin/tutor">
@@ -73,6 +77,7 @@ export default function AdminSidebar() {
             <Link
               className={
                 (url === "/admin/pertanyaan" ? "tw-text-red-500" : "") +
+                (url === "/admin/pertanyaan/" ? "tw-text-red-500" : "") +
                 " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin/pertanyaan">

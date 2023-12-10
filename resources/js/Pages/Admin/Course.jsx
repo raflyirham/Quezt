@@ -17,7 +17,7 @@ export default function Course({ courses, majors }) {
           <AdminSidebar />
           <div className="tw-py-4 tw-px-8 tw-min-h-screen w-full flex-fill">
             <div className="d-flex flex-column gap-4 justify-content-start align-items-start">
-              <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
+              <h1 className="tw-font-jacques tw-font-bold tw-text-5xl tw-text-[#C70039]">
                 List Mata Kuliah
               </h1>
 
@@ -169,7 +169,7 @@ export default function Course({ courses, majors }) {
               )}
 
               <table className="table table-striped table-hover">
-                <thead>
+                <thead className="align-middle">
                   <tr>
                     <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
                       ID
