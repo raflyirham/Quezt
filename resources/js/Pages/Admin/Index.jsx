@@ -20,7 +20,7 @@ export default function Index({ users, courses, majors, questions }) {
               </h1>
             </div>
 
-            <div className="container mt-4">
+            <div className="container-fluid mt-4">
               <div className="row row-cols-2 gy-5">
                 <div className="col border p-4">
                   <h2 className="tw-text-xl tw-font-semibold">
