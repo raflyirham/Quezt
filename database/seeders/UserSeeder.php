@@ -42,5 +42,15 @@ class UserSeeder extends Seeder
             'RoleID' => 1,
             'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
         ]);
+
+        DB::table('users')->insert([
+            'email' => 'admin@quezt.com',
+            'password' => bcrypt('12345'),
+            'UserName' => 'Quezt Admin',
+            'UserUsername' => 'queztadmin',
+            'UserRegisteredDate' => now(),
+            'RoleID' => 3,
+            'UserAvatar' => 'https://quezt.s3.ap-southeast-1.amazonaws.com/public/Avatar.png',
+        ]);
     }
 }

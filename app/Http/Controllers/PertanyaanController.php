@@ -13,12 +13,14 @@ use Inertia\Inertia;
 class PertanyaanController extends Controller
 {
     //
-    public function detail($id)
+    public function detail(Request $request, $id)
     {
         $pertanyaan = QuestionHeader::all()->where('QuestionID', $id)->first();
 
         if ($pertanyaan == null) {
-            return redirect('/mata-kuliah');
+            return Inertia::render('Error', [
+                'status' => 404,
+            ])->toResponse($request)->setStatusCode(404);
         }
 
         return Inertia::render('Pertanyaan/Detail', [

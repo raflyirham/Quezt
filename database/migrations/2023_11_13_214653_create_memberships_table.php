@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('memberships', function (Blueprint $table) {
             $table->id('MembershipID');
-            $table->foreignId('UserID')->constrained('users', 'UserID');
-            $table->foreignId('MembershipTypeID')->constrained('membershiptypes', 'MembershipTypeID');
+            $table->foreignId('UserID')->constrained('users', 'UserID')->onDelete('cascade');
+            $table->foreignId('MembershipTypeID')->constrained('membershiptypes', 'MembershipTypeID')->onDelete('cascade');
             $table->timestamps();
         });
     }

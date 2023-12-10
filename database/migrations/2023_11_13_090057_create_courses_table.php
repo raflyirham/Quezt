@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('CourseName')->unique();
             $table->string('CourseSlug')->unique();
             $table->string('CourseDescription')->unique();
-            $table->foreignId('MajorID')->constrained('majors', 'MajorID');
+            $table->foreignId('MajorID')->constrained('majors', 'MajorID')->onDelete('cascade');
             $table->timestamps();
         });
     }

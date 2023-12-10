@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MataKuliahController;
@@ -8,10 +9,7 @@ use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
-use function Termwind\render;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,31 +22,35 @@ use Inertia\Inertia;
 |
  */
 
-//! Testing Purpose Only, DELETE LATER
-Route::prefix('/Admin')->group(function(){
-  Route::get('/', function(){
-    return Inertia::render('Admin/Index');
-  });
-  Route::get('/Course', [AdminController::class, 'index']);
-  Route::get('/Profile', function(){
-    return Inertia::render('Admin/Profile');
-  });
-  Route::get('/Question', function(){
-    return Inertia::render('Admin/Question');
-  });
-  Route::get('/Tutor', function(){
-    return Inertia::render('Admin/Tutor');
-  });
-});
+// Admin
+Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
+    Route::get('/', [AdminController::class, 'index']);
 
+    Route::get('/jurusan', [AdminController::class, 'jurusan']);
+    Route::post('/jurusan/add', [AdminController::class, 'jurusan_add']);
+    Route::post('/jurusan/delete/{MajorID}', [AdminController::class, 'jurusan_delete']);
+
+    Route::get('/mata-kuliah', [AdminController::class, 'mata_kuliah']);
+    Route::post('/mata-kuliah/add', [AdminController::class, 'mata_kuliah_add']);
+    Route::post('/mata-kuliah/delete/{CourseID}', [AdminController::class, 'mata_kuliah_delete']);
+
+    Route::get('/tutor', [AdminController::class, 'tutor']);
+    Route::post('/tutor/delete/{UserID}', [AdminController::class, 'tutor_delete']);
+
+    Route::get('/pertanyaan', [AdminController::class, 'question']);
+    Route::post('/pertanyaan/delete/{QuestionID}', [AdminController::class, 'question_delete']);
+
+    Route::get('/profile', [AdminController::class, 'profile']);
+
+});
 
 Route::get('/', [PageController::class, 'index']);
 Route::post('/', [PageController::class, 'tanya']);
 Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
 Route::get('/masuk', [PageController::class, 'login'])->middleware('guest')->name('masuk');
 
-Route::post('/daftar', [RegisterController::class, 'store']);
-Route::post('/masuk', [LoginController::class, 'authenticate']);
+Route::post('/daftar', [RegisterController::class, 'store'])->middleware('throttle:5,1');
+Route::post('/masuk', [LoginController::class, 'authenticate'])->middleware('throttle:5,1');
 Route::post('/keluar', [LoginController::class, 'logout']);
 
 // Jurusan
@@ -121,7 +123,6 @@ Route::group(['prefix' => 'produk'], function () {
 // Tutor
 Route::group(['prefix' => 'tutor'], function () {
     Route::get('/', [TutorController::class, 'index']);
-    // Route::get('/{tutor}', [PageController::class, 'tutor_detail']);
 });
 
 Route::any('{catchall}', [PageController::class, 'notFound'])->where('catchall', '.*');

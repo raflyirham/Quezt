@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('UserRegisteredDate');
-            $table->foreignId('RoleID')->constrained('roles', 'RoleID');
+            $table->foreignId('RoleID')->constrained('roles', 'RoleID')->onDelete('cascade');
             $table->string('UserAvatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

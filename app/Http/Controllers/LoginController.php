@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,17 +33,15 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if(Auth::user()->RoleID == 3){
-              return redirect()->intended('/Admin');
-            }
-            else{
-              return redirect()->intended('/');
+            if (Auth::user()->RoleID == 3) {
+                return redirect()->intended('/admin');
+            } else {
+                return redirect()->intended('/');
             }
         }
 
         return back()->with('error', 'Email atau password salah.');
     }
-
 
     public function logout(Request $request)
     {

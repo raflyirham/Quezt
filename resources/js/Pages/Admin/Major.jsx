@@ -5,13 +5,13 @@ import Pagination from '@/Components/Pagination/Pagination'
 
 import AdminSidebar from "../../Components/AdminSidebar/AdminSidebar";
 
-export default function Course({ courses, majors }) {
+export default function Major({ majors }) {
 
     const { errors } = usePage().props;
 
     return (
         <>
-            <Head title="Admin Dashboard | Mata Kuliah | Quezt" />
+            <Head title="Admin Dashboard | Jurusan | Quezt" />
 
             <main className="">
                 <div className="d-flex flex-row justify-content-between align-items-start tw-mt-14">
@@ -19,7 +19,7 @@ export default function Course({ courses, majors }) {
                     <div className="tw-py-4 tw-px-8 tw-min-h-screen w-full flex-fill">
                         <div className="d-flex flex-column gap-4 justify-content-start align-items-start">
                             <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
-                                List Mata Kuliah
+                                List Jurusan
                             </h1>
 
                             <button
@@ -27,7 +27,7 @@ export default function Course({ courses, majors }) {
                                 className="tw-rounded-full tw-flex tw-justify-items-center tw-gap-2 tw-bg-[#C70039] tw-text-white tw-font-medium tw-text-base tw-px-4 tw-py-2 tw-font-monda tw-w-fit tw-border-[2px] tw-border-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200"
                                 data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">
-                                <span className="material-symbols-rounded">add</span> Tambah Mata Kuliah
+                                <span className="material-symbols-rounded">add</span> Tambah Jurusan
                             </button>
                             <div
                                 className="modal fade"
@@ -41,7 +41,7 @@ export default function Course({ courses, majors }) {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                                                Tambah Mata Kuliah Baru
+                                                Tambah Jurusan Baru
                                             </h1>
                                             <button
                                                 type="button"
@@ -50,72 +50,49 @@ export default function Course({ courses, majors }) {
                                                 aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
-                                            <form action="/admin/mata-kuliah/add" method="POST">
+                                            <form action="/admin/jurusan/add" method="POST">
                                                 <input type="hidden" name="_token" value={usePage().props.csrf_token.csrf_token} />
 
                                                 <div className="mb-3">
-                                                    <label htmlFor="course_name" className="form-label">
-                                                        Nama Mata Kuliah
+                                                    <label htmlFor="major_name" className="form-label">
+                                                        Nama Jurusan
                                                     </label>
                                                     <input
                                                         type="text"
                                                         className="form-control"
-                                                        id="course_name"
-                                                        name="course_name"
+                                                        id="major_name"
+                                                        name="major_name"
                                                         aria-describedby="nameHelp"
                                                         required
                                                     />
-                                                    {errors["course_name"] && (
+                                                    {errors["major_name"] && (
                                                         <div className="tw-font-monda tw-text-[#C70039]">
-                                                            {errors["course_name"]}
+                                                            {errors["major_name"]}
                                                         </div>
                                                     )}
                                                     <div id="nameHelp" className="form-text">
-                                                        Masukkan nama mata kuliah.
+                                                        Masukkan nama jurusan.
                                                     </div>
                                                 </div>
                                                 <div className="mb-3">
-                                                    <label htmlFor="course_description" className="form-label">
+                                                    <label htmlFor="major_description" className="form-label">
                                                         Deskripsi
                                                     </label>
                                                     <input
                                                         type="text"
                                                         className="form-control"
-                                                        id="course_description"
-                                                        name="course_description"
+                                                        id="major_description"
+                                                        name="major_description"
                                                         aria-describedby="descHelp"
                                                         required
                                                     />
-                                                    {errors["course_description"] && (
+                                                    {errors["major_description"] && (
                                                         <div className="tw-font-monda tw-text-[#C70039]">
-                                                            {errors["course_description"]}
+                                                            {errors["major_description"]}
                                                         </div>
                                                     )}
                                                     <div id="descHelp" className="form-text">
-                                                        Masukkan deskripsi singkat mengenai mata kuliah.
-                                                    </div>
-                                                </div>
-
-                                                <div className="mb-3">
-                                                    <label htmlFor="course_major" className="form-label">
-                                                        Jurusan Mata Kuliah
-                                                    </label>
-
-                                                    <select className="form-control" id="course_major" name="course_major" defaultValue={"DEFAULT"} required>
-                                                        <option value="DEFAULT" hidden disabled>Pilih Jurusan</option>
-                                                        {majors.map((major, index) => (
-                                                            <option key={index} value={major.MajorID}>{major.MajorName}</option>
-                                                        )
-                                                        )}
-                                                    </select>
-
-                                                    {errors["course_major"] && (
-                                                        <div className="tw-font-monda tw-text-[#C70039]">
-                                                            {errors["course_major"]}
-                                                        </div>
-                                                    )}
-                                                    <div id="descHelp" className="form-text">
-                                                        Masukkan jurusan mata kuliah.
+                                                        Masukkan deskripsi singkat mengenai jurusan.
                                                     </div>
                                                 </div>
 
@@ -156,13 +133,13 @@ export default function Course({ courses, majors }) {
                                             ID
                                         </td>
                                         <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
-                                            Nama Mata Kuliah
+                                            Nama Jurusan
                                         </td>
                                         <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
                                             Deskripsi
                                         </td>
                                         <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
-                                            Jumlah Pertanyaan
+                                            Jumlah Mata Kuliah
                                         </td>
                                         <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
                                             Hapus
@@ -170,35 +147,35 @@ export default function Course({ courses, majors }) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {courses.data.map((course, index) => (
+                                    {majors.data.map((major, index) => (
                                         <tr className="" key={index}>
                                             <td className="tw-p-2 tw-text-center">
-                                                {course.CourseID}
+                                                {major.MajorID}
                                             </td>
-                                            <td className="tw-p-2">{course.CourseName}</td>
-                                            <td className="tw-p-2">{course.CourseDescription}</td>
-                                            <td className="tw-p-2">{course.questionheaders_count}</td>
+                                            <td className="tw-p-2">{major.MajorName}</td>
+                                            <td className="tw-p-2">{major.MajorDescription}</td>
+                                            <td className="tw-p-2">{major.courses.length}</td>
                                             <td className="tw-p-2 tw-px-4 tw-text-center">
                                                 <button
                                                     type="button"
                                                     className="btn btn-danger"
                                                     data-bs-toggle="modal"
-                                                    data-bs-target={`#staticBackdrop${course.CourseID}`}>
+                                                    data-bs-target={`#staticBackdrop${major.MajorID}`}>
                                                     Hapus
                                                 </button>
                                                 <div
                                                     className="modal fade"
-                                                    id={`staticBackdrop${course.CourseID}`}
+                                                    id={`staticBackdrop${major.MajorID}`}
                                                     data-bs-backdrop="static"
                                                     data-bs-keyboard="false"
                                                     tabIndex="-1"
-                                                    aria-labelledby={`staticBackdropLabel${course.CourseID}`}
+                                                    aria-labelledby={`staticBackdropLabel${major.MajorID}`}
                                                     aria-hidden="true">
                                                     <div className="modal-dialog">
                                                         <div className="modal-content">
                                                             <div className="modal-header">
-                                                                <h1 className="modal-title fs-5" id={`staticBackdropLabel${course.CourseID}`}>
-                                                                    Hapus Mata Kuliah
+                                                                <h1 className="modal-title fs-5" id={`staticBackdropLabel${major.MajorID}`}>
+                                                                    Hapus Jurusan
                                                                 </h1>
                                                                 <button
                                                                     type="button"
@@ -207,11 +184,11 @@ export default function Course({ courses, majors }) {
                                                                     aria-label="Close"></button>
                                                             </div>
                                                             <div className="modal-body">
-                                                                <form action={`/admin/mata-kuliah/delete/${course.CourseID}`} method="POST">
+                                                                <form action={`/admin/jurusan/delete/${major.MajorID}`} method="POST">
                                                                     <input type="hidden" name="_token" value={usePage().props.csrf_token.csrf_token} />
 
                                                                     <div className="mb-3">
-                                                                        <p className="tw-font-monda">{`Apakah kamu yakin ingin menghapus mata kuliah ${course.CourseName}?`}</p>
+                                                                        <p className="tw-font-monda">{`Apakah kamu yakin ingin menghapus jurusan ${major.MajorName}?`}</p>
                                                                     </div>
 
                                                                     <div className="d-flex gap-1">
@@ -238,7 +215,7 @@ export default function Course({ courses, majors }) {
                             </table>
                         </div>
 
-                        <Pagination links={courses.links} />
+                        <Pagination links={majors.links} />
                     </div>
                 </div>
             </main>

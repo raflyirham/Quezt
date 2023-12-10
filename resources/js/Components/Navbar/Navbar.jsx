@@ -90,7 +90,7 @@ export default function Navbar() {
                                             (<li>
                                                 <Link
                                                     className="tw-bg-[#C70039] hover:tw-bg-[#d50a43] active:tw-bg-[#bb073a] tw-duration-200 tw-py-2 tw-px-4 tw-block tw-whitespace-no-wrap"
-                                                    href="/Admin">
+                                                    href="/admin">
                                                     Dashboard
                                                 </Link>
                                             </li>) : <></>

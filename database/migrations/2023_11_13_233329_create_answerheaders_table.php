@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('answerheaders', function (Blueprint $table) {
             $table->id('AnswerID');
-            $table->foreignId('UserID')->constrained('users', 'UserID');
+            $table->foreignId('UserID')->constrained('users', 'UserID')->onDelete('cascade');
             $table->timestamps();
         });
     }
