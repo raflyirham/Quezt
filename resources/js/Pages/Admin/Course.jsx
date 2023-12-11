@@ -168,8 +168,8 @@ export default function Course({ courses, majors }) {
                 </div>
               )}
 
-              <table className="table table-striped table-hover">
-                <thead className="align-middle">
+              <table className="table table-striped table-hover align-middle">
+                <thead className="">
                   <tr>
                     <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">
                       ID

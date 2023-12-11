@@ -137,7 +137,7 @@ export default function Major({ majors }) {
                 </div>
               )}
 
-              <table className="table table-striped table-hover">
+              <table className="table table-striped table-hover align-middle">
                 <thead>
                   <tr>
                     <td className="tw-py-4 tw-font-bold tw-text-center tw-text-xl">

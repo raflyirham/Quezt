@@ -15,7 +15,7 @@ export default function AdminSidebar() {
         <span
           className="material-symbols-rounded tw-text-5xl tw-cursor-pointer hover:tw-text-[#C70039] active:tw-text-red-800 tw-duration-150 tw-ease-out"
           onClick={showSidebar}>
-          menu
+          {(sidebar ? "close" : "menu")}
         </span>
         <h1></h1>
       </div>
@@ -30,7 +30,7 @@ export default function AdminSidebar() {
               className={
                 (url === "/admin" ? "tw-text-red-600" : "") +
                 (url === "/admin/" ? "tw-text-red-600" : "") +
-                " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
+                " p-0 tw-flex tw-flex-row-reverse lg:tw-flex-row  tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin">
               <span
@@ -49,7 +49,7 @@ export default function AdminSidebar() {
               className={
                 (url === "/admin/jurusan" ? "tw-text-red-600" : "") +
                 (url === "/admin/jurusan/" ? "tw-text-red-600" : "") +
-                " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
+                " p-0 tw-flex tw-flex-row-reverse lg:tw-flex-row tw-items-center tw-justify-start gap-2 tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
               }
               href="/admin/jurusan">
               <span
@@ -68,7 +68,7 @@ export default function AdminSidebar() {
               className={
                 (url === "/admin/mata-kuliah" ? "tw-text-red-600" : "") +
                 (url === "/admin/mata-kuliah/" ? "tw-text-red-600" : "") +
-                " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
+                " p-0 tw-flex tw-flex-row-reverse lg:tw-flex-row  tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out tw-cursor-pointer"
               }
               href="/admin/mata-kuliah">
               <span
@@ -87,7 +87,7 @@ export default function AdminSidebar() {
               className={
                 (url === "/admin/tutor" ? "tw-text-red-600" : "") +
                 (url === "/admin/tutor/" ? "tw-text-red-600" : "") +
-                " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
+                " p-0 tw-flex tw-flex-row-reverse lg:tw-flex-row  tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin/tutor">
               <span
@@ -106,7 +106,7 @@ export default function AdminSidebar() {
               className={
                 (url === "/admin/pertanyaan" ? "tw-text-red-600" : "") +
                 (url === "/admin/pertanyaan/" ? "tw-text-red-600" : "") +
-                " p-0 tw-flex tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
+                " p-0 tw-flex tw-flex-row-reverse lg:tw-flex-row  tw-items-center tw-justify-start gap-2 tw-text-left tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               }
               href="/admin/pertanyaan">
               <span
@@ -122,7 +122,7 @@ export default function AdminSidebar() {
           </li>
           <li className="tw-py-4 tw-px-8 lg:tw-pr-14 lg:tw-pl-4 nav-item">
             <Link
-              className="p-0 tw-text-left tw-flex tw-items-center tw-justify-start gap-2 tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
+              className="p-0 tw-text-left tw-flex tw-flex-row-reverse lg:tw-flex-row  tw-items-center tw-justify-start gap-2 tw-font-semibold tw-text-lg hover:tw-text-red-700 tw-duration-200 tw-ease-out"
               aria-current="page"
               href="/">
               <span className=" material-symbols-rounded">home</span>
