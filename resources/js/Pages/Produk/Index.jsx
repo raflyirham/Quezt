@@ -17,7 +17,7 @@ export default function Index() {
           </h1>
         </div>
 
-        <div className="tw-grid tw-grid-cols-3 tw-gap-x-6 tw-mt-8">
+        <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-y-6 tw-gap-x-6 tw-mt-8">
           <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px]">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#000]">
               Quezt Basic
@@ -28,45 +28,50 @@ export default function Index() {
             </p>
 
             <ul className="tw-flex tw-flex-col tw-gap-y-3 tw-mt-8 tw-font-semibold">
-              <li>
-                <i class="fa-solid fa-check"></i> Lihat materi dan jawaban mata
-                kuliah (terbatas)
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Lihat
+                materi dan jawaban mata kuliah (terbatas)
               </li>
-              <li>
-                <i class="fa-solid fa-x"></i> Bertanya materi perkuliahan
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center tw-text-gray-400">
+                <span className="material-symbols-rounded">close</span> Bertanya
+                materi perkuliahan
               </li>
-              <li>
-                <i class="fa-solid fa-x"></i> Bebas iklan
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center tw-text-gray-400">
+                <span className="material-symbols-rounded">close</span> Bebas
+                iklan
               </li>
-              <li>
-                <i class="fa-solid fa-x"></i> Gratis Tutorin 1 sesi
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center tw-text-gray-400">
+                <span className="material-symbols-rounded">close</span> Gratis
+                Tutorin 1 sesi
               </li>
             </ul>
           </div>
 
-          <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358]">
+          <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-2xl tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358] tw-shadow-red-600">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#fff]">
               Quezt Basic
             </h2>
 
             <p className="tw-font-monda tw-font-bold tw-text-4xl tw-text-[#fff] tw-mt-8">
-              Rp50.000/bulan
+              Rp50.000<span className="tw-text-xl">/bulan</span>
             </p>
 
             <ul className="tw-flex tw-flex-col tw-gap-y-3 tw-mt-8 tw-font-semibold tw-text-[#fff]">
-              <li>
-                <i class="fa-solid fa-check"></i> Lihat materi dan jawaban mata
-                kuliah tanpa batas
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Lihat
+                materi dan jawaban mata kuliah tanpa batas
               </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Bertanya materi perkuliahan
-                (20 pertanyaan per hari)
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Bertanya
+                materi perkuliahan (20 pertanyaan per hari)
               </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Bebas iklan
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Bebas
+                iklan
               </li>
-              <li>
-                <i class="fa-solid fa-x"></i> Gratis Tutorin 1 sesi
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center tw-text-white/60">
+                <span className="material-symbols-rounded">close</span> Gratis
+                Tutorin 1 sesi
               </li>
             </ul>
 
@@ -89,23 +94,25 @@ export default function Index() {
             </h2>
 
             <p className="tw-font-monda tw-font-bold tw-text-4xl tw-text-[#C70039] tw-mt-8">
-              Rp100.000/bulan
+              Rp100.000<span className="tw-text-xl">/bulan</span>
             </p>
 
             <ul className="tw-flex tw-flex-col tw-gap-y-3 tw-mt-8 tw-font-semibold">
-              <li>
-                <i class="fa-solid fa-check"></i> Lihat materi dan jawaban mata
-                kuliah tanpa batas
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Lihat
+                materi dan jawaban mata kuliah tanpa batas
               </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Bertanya materi perkuliahan
-                tanpa batas
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Bertanya
+                materi perkuliahan tanpa batas
               </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Bebas iklan
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Bebas
+                iklan
               </li>
-              <li>
-                <i class="fa-solid fa-check"></i> Gratis Tutorin 1 sesi
+              <li className="tw-flex tw-flex-row tw-gap-2 tw-align-center">
+                <span className="material-symbols-rounded">done</span> Gratis
+                Tutorin 1 sesi
               </li>
             </ul>
 

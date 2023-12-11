@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Head, Link, usePage } from "@inertiajs/react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -108,8 +108,14 @@ export default function Detail({ pertanyaan }) {
                               />
                               <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
                             </Link>
+
                             {jawaban.answerheader.UserID == 2 ? (
-                              <span class="material-symbols-rounded tw-text-[#C70039]">
+                              <span
+                                className="material-symbols-rounded tw-text-[#C70039] tw-cursor-pointer"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-custom-className="custom-tooltip"
+                                data-bs-title="This top tooltip is themed via CSS variables.">
                                 verified
                               </span>
                             ) : (

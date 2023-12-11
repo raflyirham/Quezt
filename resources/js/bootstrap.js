@@ -1,3 +1,5 @@
+import { createPopper } from "@popperjs/core";
+
 import "bootstrap";
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -30,3 +32,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]',
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
+);
