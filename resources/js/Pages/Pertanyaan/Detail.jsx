@@ -12,7 +12,18 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import parse from "html-react-parser";
 // import Editor from "../../Components/TextEditor/TextEditor";
 
+import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 export default function Detail({ pertanyaan }) {
+  const tooltipRef = useRef();
+  useEffect(() => {
+    var tooltip = new Tooltip(tooltipRef.current, {
+      title: "Verified Answer",
+      placement: "top",
+      trigger: "hover",
+      customClass: "custom-tooltip",
+    });
+  }, []);
+
   const { errors } = usePage().props;
   useRecaptcha();
 
@@ -112,10 +123,7 @@ export default function Detail({ pertanyaan }) {
                             {jawaban.answerheader.UserID == 2 ? (
                               <span
                                 className="material-symbols-rounded tw-text-[#C70039] tw-cursor-pointer"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables.">
+                                ref={tooltipRef}>
                                 verified
                               </span>
                             ) : (

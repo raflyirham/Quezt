@@ -18,7 +18,7 @@ export default function Index() {
         </div>
 
         <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-y-6 tw-gap-x-6 tw-mt-8">
-          <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px]">
+          <div className="tw-flex tw-flex-col tw-justify-start tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px]">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#000]">
               Quezt Basic
             </h2>
@@ -47,7 +47,7 @@ export default function Index() {
             </ul>
           </div>
 
-          <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-2xl tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358] tw-shadow-red-600">
+          <div className="tw-flex tw-flex-col tw-justify-startr tw-items-center tw-shadow-2xl tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358] tw-shadow-red-600">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#fff]">
               Quezt Basic
             </h2>
@@ -88,7 +88,7 @@ export default function Index() {
             </Link>
           </div>
 
-          <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px]">
+          <div className="tw-flex tw-flex-col tw-justify-start tw-items-center tw-shadow-lg tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px]">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#000]">
               Quezt Pro
             </h2>
