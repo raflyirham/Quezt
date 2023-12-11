@@ -16,10 +16,10 @@ import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 export default function Detail({ pertanyaan }) {
   const tooltipRef = useRef();
   useEffect(() => {
+    if (!tooltipRef.current) return;
     var tooltip = new Tooltip(tooltipRef.current, {
       title: "Verified Answer",
       placement: "top",
-      trigger: "hover",
       customClass: "custom-tooltip",
     });
   }, []);
@@ -96,7 +96,12 @@ export default function Detail({ pertanyaan }) {
                   {pertanyaan.questionanswers.map((jawaban, index) => (
                     <div key={index}>
                       <div
-                        className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
+                        className={
+                          (jawaban.answerheader.UserID == 2
+                            ? "tw-border-2 tw-border-[#C70039]"
+                            : "tw-border-0") +
+                          " tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit tw-border-2"
+                        }
                         key={jawaban.AnswerID}>
                         <div className="post-container tw-font-monda tw-mt-4 tw-break-all">
                           {parse(
@@ -117,7 +122,7 @@ export default function Detail({ pertanyaan }) {
                                 alt="User Profile Picture"
                                 className="tw-h-6 tw-rounded-full"
                               />
-                              <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                              <p className="tw-font-monda tw-font-bold tw-text-md tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
                             </Link>
 
                             {jawaban.answerheader.UserID == 2 ? (
