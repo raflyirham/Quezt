@@ -97,10 +97,24 @@ export default function Detail({ pertanyaan }) {
                         </div>
 
                         <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
-                          <Link
-                            href={`/profile/${jawaban.answerheader.user.UserUsername}`}>
-                            <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
-                          </Link>
+                          <div className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
+                            <Link
+                              href={`/profile/${jawaban.answerheader.user.UserUsername}`} className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
+                              <img
+                                src={jawaban.answerheader.user.UserAvatar}
+                                alt="User Profile Picture"
+                                className="tw-h-6 tw-rounded-full"
+                              />
+                              <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                            </Link>
+                            {jawaban.answerheader.UserID == 2 ? (
+                              <span class="material-symbols-rounded tw-text-[#C70039]">
+                                verified
+                              </span>
+                            ) : (
+                              <></>
+                            )}
+                          </div>
 
                           <p className="tw-font-monda tw-text-sm">
                             {convertDate(
