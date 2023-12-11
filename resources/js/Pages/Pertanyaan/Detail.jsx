@@ -99,7 +99,8 @@ export default function Detail({ pertanyaan }) {
                         <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
                           <div className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
                             <Link
-                              href={`/profile/${jawaban.answerheader.user.UserUsername}`} className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
+                              href={`/profile/${jawaban.answerheader.user.UserUsername}`}
+                              className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
                               <img
                                 src={jawaban.answerheader.user.UserAvatar}
                                 alt="User Profile Picture"
