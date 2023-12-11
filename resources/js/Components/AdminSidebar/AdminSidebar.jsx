@@ -77,7 +77,7 @@ export default function AdminSidebar() {
                   (url === "/admin/mata-kuliah/" ? "material-fill" : "") +
                   " material-symbols-rounded"
                 }>
-                local_library
+                book_2
               </span>
               Mata&nbsp;Kuliah
             </Link>
