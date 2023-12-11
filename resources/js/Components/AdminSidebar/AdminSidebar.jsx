@@ -96,7 +96,7 @@ export default function AdminSidebar() {
                   (url === "/admin/tutor/" ? "material-fill" : "") +
                   " material-symbols-rounded"
                 }>
-                groups
+                interactive_space
               </span>
               Tutor
             </Link>

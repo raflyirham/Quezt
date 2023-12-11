@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { usePage } from "@inertiajs/react";
 
 export default function Navbar() {
+  const { url, component } = usePage();
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -48,22 +49,22 @@ export default function Navbar() {
 
           <div className="tw-flex tw-flex-row tw-gap-x-6 tw-justify-center tw-items-center tw-ml-4 max-lg:tw-hidden">
             <Link href="/">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
                 Beranda
               </p>
             </Link>
             <Link href="/jurusan">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
                 Jurusan
               </p>
             </Link>
             <Link href="/mata-kuliah">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
                 Mata Kuliah
               </p>
             </Link>
             <Link href="/tutor">
-              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
+              <p className="tw-font-monda tw-font-bold tw-text-lg tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
                 Tutor
               </p>
             </Link>
@@ -151,35 +152,59 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`tw-z-50 tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] ${
+        className={`tw-z-50 tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[90%] ${
           show ? "max-lg:tw-block" : "max-lg:tw-hidden"
         } tw-duration-300`}>
-        <div className="tw-flex tw-flex-row tw-justify-evenly tw-items-center tw-px-6 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">
+        <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-px-4 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">
           <Link
             href="/"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
-            <i className="fa-solid fa-house fa-2xl"></i>
-            <p className="tw-mt-1">Beranda</p>
+            className="tw-w-1/4 tw-flex tw-flex-col tw-justify-end tw-items-center tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
+            <span
+              className={
+                (url === "/" ? "material-fill" : "") +
+                " material-symbols-rounded tw-text-3xl"
+              }>
+              home
+            </span>
+            <p className="tw-mt-1 tw-text-center">Beranda</p>
           </Link>
 
           <Link
             href="/jurusan"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
-            <i className="fa-solid fa-graduation-cap fa-2xl"></i>
-            <p className="tw-mt-1">Jurusan</p>
+            className="tw-w-1/4 tw-flex tw-flex-col tw-justify-end tw-items-center tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
+            <span
+              className={
+                (url === "/jurusan" ? "material-fill" : "") +
+                " material-symbols-rounded tw-text-3xl"
+              }>
+              school
+            </span>
+            <p className="tw-mt-1 tw-text-center">Jurusan</p>
           </Link>
 
           <Link
             href="/mata-kuliah"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
-            <i className="fa-solid fa-book fa-2xl"></i>
-            <p className="tw-mt-1">Mata Kuliah</p>
+            className="tw-w-1/4 tw-flex tw-flex-col tw-justify-end tw-items-center tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
+            <span
+              className={
+                (url === "/mata-kuliah" ? "material-fill" : "") +
+                " material-symbols-rounded tw-text-3xl"
+              }>
+              book_2
+            </span>
+            <p className="tw-mt-1 tw-text-center">Mata Kuliah</p>
           </Link>
           <Link
             href="/tutor"
-            className="tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] hover:tw-underline active:tw-text-[#bb073a] tw-duration-500">
-            <i className="fa-solid fa-chalkboard-user fa-2xl"></i>
-            <p className="tw-mt-1">Tutor</p>
+            className="tw-w-1/4 tw-flex tw-flex-col tw-justify-end tw-items-center tw-text-center tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039] hover:tw-text-[#d50a43] active:tw-text-[#bb073a] tw-duration-500">
+            <span
+              className={
+                (url === "/tutor" ? "material-fill" : "") +
+                " material-symbols-rounded tw-text-3xl"
+              }>
+              interactive_space
+            </span>
+            <p className="tw-mt-1 tw-text-center">Tutor</p>
           </Link>
         </div>
       </div>
