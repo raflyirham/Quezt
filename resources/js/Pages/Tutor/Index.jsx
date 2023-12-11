@@ -29,7 +29,7 @@ export default function Index({ tutors }) {
                   <div className="tw-rounded tw-shadow" key={index}>
                     <img
                       src={tutor.UserAvatar}
-                      className="tw-w-full tw-h-[250px]"
+                      className="tw-w-full tw-max-h-[250px] tw-h-auto"
                     />
 
                     <div className="px-3 py-3">

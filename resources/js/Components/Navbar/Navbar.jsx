@@ -151,7 +151,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] ${
+        className={`tw-z-50 tw-hidden tw-fixed tw-bottom-4 tw-left-1/2 tw-translate-x-[-50%] tw-min-w-[80%] ${
           show ? "max-lg:tw-block" : "max-lg:tw-hidden"
         } tw-duration-300`}>
         <div className="tw-flex tw-flex-row tw-justify-evenly tw-items-center tw-px-6 tw-py-3 tw-bg-white tw-shadow-2xl tw-border-[1px] tw-border-[#C70039] tw-rounded-full">

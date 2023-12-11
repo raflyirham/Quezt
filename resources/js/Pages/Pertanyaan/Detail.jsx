@@ -114,7 +114,7 @@ export default function Detail({ pertanyaan }) {
                                 className="material-symbols-rounded tw-text-[#C70039] tw-cursor-pointer"
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
-                                data-bs-custom-className="custom-tooltip"
+                                data-bs-custom-class="custom-tooltip"
                                 data-bs-title="This top tooltip is themed via CSS variables.">
                                 verified
                               </span>
