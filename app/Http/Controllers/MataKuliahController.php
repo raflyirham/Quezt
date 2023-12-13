@@ -12,7 +12,6 @@ use Inertia\Inertia;
 
 class MataKuliahController extends Controller
 {
-    //
     public function index()
     {
         $courses = Course::orderBy('CourseName', 'asc')->paginate(6);

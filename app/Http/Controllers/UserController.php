@@ -10,7 +10,6 @@ use Inertia\Inertia;
 
 class UserController extends Controller
 {
-    //
     public function index()
     {
         return redirect('/pengaturan/detail');
@@ -82,7 +81,6 @@ class UserController extends Controller
             'old_password.max' => 'Password lama tidak boleh lebih dari 255 karakter.',
         ]);
 
-        // $user = User::find(Auth::id());
         $user->password = bcrypt($request->new_password);
         $user->save();
 

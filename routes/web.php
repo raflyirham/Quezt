@@ -40,16 +40,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/pertanyaan', [AdminController::class, 'question']);
     Route::post('/pertanyaan/delete/{QuestionID}', [AdminController::class, 'question_delete']);
 
-    Route::get('/profile', [AdminController::class, 'profile']);
-
 });
 
+// Beranda
 Route::get('/', [PageController::class, 'index']);
 Route::post('/', [PageController::class, 'tanya']);
-Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
-Route::get('/masuk', [PageController::class, 'login'])->middleware('guest')->name('masuk');
 
+// Register
+Route::get('/daftar', [PageController::class, 'register'])->middleware('guest');
 Route::post('/daftar', [RegisterController::class, 'store'])->middleware('throttle:5,1');
+
+// Login & Logout
+Route::get('/masuk', [PageController::class, 'login'])->middleware('guest')->name('masuk');
 Route::post('/masuk', [LoginController::class, 'authenticate'])->middleware('throttle:5,1');
 Route::post('/keluar', [LoginController::class, 'logout']);
 
@@ -74,7 +76,7 @@ Route::prefix('profile')->group(function () {
     Route::get('/{user}/jawaban', [UserController::class, 'jawaban']);
 });
 
-// Dashboard
+// Pengaturan
 Route::group(['prefix' => 'pengaturan', 'middleware' => ['auth']], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('/detail', [UserController::class, 'detail']);
@@ -109,8 +111,8 @@ Route::get('/tentang-kami', [PageController::class, 'tentang']);
 Route::get('/kebijakan-privasi', [PageController::class, 'kebijakan']);
 Route::get('/syarat-ketentuan', [PageController::class, 'syarat']);
 
+// Hasil Pencarian
 Route::get('/cari', [PageController::class, 'cari'])->name('cari');
-// Route::post('/cari', [PageController::class, 'cari']);
 
 // Product
 Route::group(['prefix' => 'produk'], function () {

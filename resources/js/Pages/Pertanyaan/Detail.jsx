@@ -7,10 +7,8 @@ import { useRecaptcha } from "@/Composables/ReCaptcha";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-// import { Base64UploadAdapter } from '@ckeditor/ckeditor5-upload';
 
 import parse from 'html-react-parser';
-// import Editor from "../../Components/TextEditor/TextEditor";
 
 export default function Detail({ pertanyaan }) {
     const { errors } = usePage().props;

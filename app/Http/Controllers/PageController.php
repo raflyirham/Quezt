@@ -10,7 +10,6 @@ use Inertia\Inertia;
 
 class PageController extends Controller
 {
-    //
     public function index()
     {
         $majors = Major::with('courses')->get();

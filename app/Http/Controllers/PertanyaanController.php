@@ -12,7 +12,6 @@ use Inertia\Inertia;
 
 class PertanyaanController extends Controller
 {
-    //
     public function detail(Request $request, $id)
     {
         $pertanyaan = QuestionHeader::all()->where('QuestionID', $id)->first();
@@ -29,7 +28,6 @@ class PertanyaanController extends Controller
 
     public function jawab_pertanyaan($id, Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'jawab' => ['required', 'min:1', 'max:5000'],
             'g-recaptcha-response' => 'required|recaptcha',

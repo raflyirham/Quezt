@@ -12,7 +12,6 @@ class MembershipSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         DB::table('memberships')->insert([
             'UserID' => 1,
             'MembershipTypeID' => 1,

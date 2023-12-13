@@ -225,33 +225,4 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Pertanyaan berhasil dihapus.');
     }
-
-    // public function detail($major)
-    // {
-    //     $jurusan = Major::all()->where('MajorSlug', $major)->first();
-
-    //     if ($jurusan == null) {
-    //         return redirect('/jurusan');
-    //     }
-
-    //     $courses = $jurusan->courses()->paginate(6);
-    //     return Inertia::render('Jurusan/Detail', [
-    //         'major' => $jurusan,
-    //         'courses' => $courses,
-    //     ]);
-    // }
-
-    // public function addCourse(Request $request)
-    // {
-    //     $validate_data = $request->validate([
-    //         'name' => 'required',
-    //         'description' => 'required',
-    //     ]);
-    //     $course = new Course();
-    //     $course->name = $request->input('name');
-    //     $course->description = $request->input('description');
-    //     $course->save();
-
-    //     return redirect()->back()->with('success', 'Course added successfully.');
-    // }
 }

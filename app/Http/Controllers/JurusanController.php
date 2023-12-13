@@ -7,7 +7,6 @@ use Inertia\Inertia;
 
 class JurusanController extends Controller
 {
-    //
     public function index()
     {
         $majors = Major::orderBy('MajorName', 'asc')->paginate(6);
