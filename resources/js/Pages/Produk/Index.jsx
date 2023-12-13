@@ -47,7 +47,9 @@ export default function Index() {
             </ul>
           </div>
 
-          <div className="tw-flex tw-flex-col tw-justify-startr tw-items-center tw-shadow-2xl tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358] tw-shadow-red-600">
+          <div
+            id="prem"
+            className="tw-flex tw-flex-col tw-justify-startr tw-items-center tw-shadow-2xl tw-rounded tw-px-8 tw-py-8 tw-min-h-[500px] tw-bg-gradient-to-b tw-from-[#C70039] tw-to-[#B23358] tw-shadow-red-600">
             <h2 className="tw-font-monda tw-font-bold tw-text-xl tw-text-[#fff]">
               Quezt Basic
             </h2>

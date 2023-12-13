@@ -15,7 +15,7 @@ export default function AdminSidebar() {
         <span
           className="material-symbols-rounded tw-text-5xl tw-cursor-pointer hover:tw-text-[#C70039] active:tw-text-red-800 tw-duration-150 tw-ease-out"
           onClick={showSidebar}>
-          {(sidebar ? "close" : "menu")}
+          {sidebar ? "close" : "menu"}
         </span>
         <h1></h1>
       </div>
