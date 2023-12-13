@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Head, Link, usePage } from "@inertiajs/react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
@@ -10,7 +10,18 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import parse from 'html-react-parser';
 
+import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 export default function Detail({ pertanyaan }) {
+    const tooltipRef = useRef();
+    useEffect(() => {
+        if (!tooltipRef.current) return;
+        var tooltip = new Tooltip(tooltipRef.current, {
+            title: "Verified Answer",
+            placement: "top",
+            customClass: "custom-tooltip",
+        });
+    }, []);
+
     const { errors } = usePage().props;
     useRecaptcha();
 
@@ -34,13 +45,10 @@ export default function Detail({ pertanyaan }) {
 
             <Navbar />
 
-
             <div className="tw-flex tw-flex-col tw-items-center tw-py-16 tw-px-4 tw-mt-16 tw-min-h-screen tw-w-[100%]">
-
                 <div className="tw-mb-4 tw-fixed tw-bottom-0 tw-right-0 tw-mr-4 tw-after:hidden tw-duration-700">
                     {usePage().props.flash.success && (
-                        <div
-                            className="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2 ">
+                        <div className="tw-py-2 tw-px-3 tw-bg-green-500 tw-text-white tw-font-monda tw-font-bold tw-rounded tw-mt-2 ">
                             {usePage().props.flash.success}
                         </div>
                     )}
@@ -59,7 +67,6 @@ export default function Detail({ pertanyaan }) {
                         <div className="post-container tw-font-monda tw-mt-4 tw-break-all">
                             {parse(pertanyaan.questiondetail.QuestionDetail)}
                         </div>
-
                     </div>
 
                     <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
@@ -87,20 +94,45 @@ export default function Detail({ pertanyaan }) {
                                     {pertanyaan.questionanswers.map((jawaban, index) => (
                                         <div key={index}>
                                             <div
-                                                className="tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit"
+                                                className={
+                                                    (jawaban.answerheader.UserID == 2
+                                                        ? "tw-border-2 tw-border-[#C70039]"
+                                                        : "tw-border-0") +
+                                                    " tw-px-8 tw-py-8 tw-shadow-lg tw-h-fit tw-border-2"
+                                                }
                                                 key={jawaban.AnswerID}>
                                                 <div className="post-container tw-font-monda tw-mt-4 tw-break-all">
-                                                    {parse(jawaban.answerheader.answerdetail.AnswerDetail)}
+                                                    {parse(
+                                                        jawaban.answerheader.answerdetail.AnswerDetail,
+                                                    )}
                                                     {/* <p className="tw-font-monda tw-text-lg tw-mt-4 tw-break-all">
                                                         {parse(jawaban.answerheader.answerdetail.AnswerDetail)}
                                                     </p> */}
                                                 </div>
 
                                                 <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-mt-4 max-lg:tw-flex-col max-lg:tw-justify-start max-lg:tw-items-start">
-                                                    <Link
-                                                        href={`/profile/${jawaban.answerheader.user.UserUsername}`}>
-                                                        <p className="tw-font-monda tw-font-bold tw-text-sm tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
-                                                    </Link>
+                                                    <div className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
+                                                        <Link
+                                                            href={`/profile/${jawaban.answerheader.user.UserUsername}`}
+                                                            className="tw-flex tw-flex-row tw-gap-2 tw-items-center">
+                                                            <img
+                                                                src={jawaban.answerheader.user.UserAvatar}
+                                                                alt="User Profile Picture"
+                                                                className="tw-h-6 tw-rounded-full"
+                                                            />
+                                                            <p className="tw-font-monda tw-font-bold tw-text-md tw-text-[#C70039]">{`${jawaban.answerheader.user.UserName}`}</p>
+                                                        </Link>
+
+                                                        {jawaban.answerheader.UserID == 2 ? (
+                                                            <span
+                                                                className="material-symbols-rounded tw-text-[#C70039] tw-cursor-pointer"
+                                                                ref={tooltipRef}>
+                                                                verified
+                                                            </span>
+                                                        ) : (
+                                                            <></>
+                                                        )}
+                                                    </div>
 
                                                     <p className="tw-font-monda tw-text-sm">
                                                         {convertDate(
@@ -160,9 +192,6 @@ export default function Detail({ pertanyaan }) {
                                     Jawab Pertanyaan
                                 </h3>
 
-
-
-
                                 <form
                                     action={`/pertanyaan/${pertanyaan.QuestionID}`}
                                     method="POST">
@@ -184,18 +213,42 @@ export default function Detail({ pertanyaan }) {
                                                 const data = editor.getData();
                                                 setJawab(data);
                                             }}
-
                                             config={{
-                                                toolbar: ['undo', 'redo', '|', 'bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote'],
+                                                toolbar: [
+                                                    "undo",
+                                                    "redo",
+                                                    "|",
+                                                    "bold",
+                                                    "italic",
+                                                    "|",
+                                                    "link",
+                                                    "|",
+                                                    "bulletedList",
+                                                    "numberedList",
+                                                    "blockQuote",
+                                                ],
                                                 heading: {
                                                     options: [
-                                                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                                                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                                                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-                                                    ]
-                                                }
+                                                        {
+                                                            model: "paragraph",
+                                                            title: "Paragraph",
+                                                            class: "ck-heading_paragraph",
+                                                        },
+                                                        {
+                                                            model: "heading1",
+                                                            view: "h1",
+                                                            title: "Heading 1",
+                                                            class: "ck-heading_heading1",
+                                                        },
+                                                        {
+                                                            model: "heading2",
+                                                            view: "h2",
+                                                            title: "Heading 2",
+                                                            class: "ck-heading_heading2",
+                                                        },
+                                                    ],
+                                                },
                                             }}
-
                                         />
 
                                         {/* <Editor /> */}
@@ -205,7 +258,6 @@ export default function Detail({ pertanyaan }) {
                                             {usePage().props.errors.jawab}
                                         </div>
                                     )}
-
 
                                     {/* <textarea
                                         name="jawab"

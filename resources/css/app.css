@@ -13,6 +13,21 @@
   all: unset;
 }
 
+.material-symbols-rounded {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 700,
+    "GRAD" 200,
+    "opsz" 48;
+}
+.material-fill {
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 700,
+    "GRAD" 200,
+    "opsz" 48;
+}
+
 .post-container .post-container > blockquote,
 .post-container > dl,
 .post-container > dd,
@@ -93,4 +108,52 @@
 
 .ck-editor__editable {
   min-height: 200px;
+}
+
+@property --angle {
+  inherits: true;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+#prem {
+  --angle: 0;
+  animation: rotate-gradient 2s infinite linear;
+  animation-play-state: running;
+}
+
+#prem:hover {
+  animation-play-state: running;
+}
+
+#prem {
+  --gradient: conic-gradient(
+    from calc(180deg + var(--angle)),
+    white 0deg,
+    #c70039 90deg,
+    white 1turn
+  );
+}
+
+@keyframes rotate-gradient {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+#prem {
+  color: hsl(0 0% 92%);
+  background:
+    linear-gradient(#c70039, #b23358) padding-box,
+    var(--gradient) border-box;
+  border: 7px solid transparent;
+}
+
+p {
+  text-align: left;
+  margin: 0;
 }

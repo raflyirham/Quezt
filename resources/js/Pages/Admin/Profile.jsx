@@ -14,7 +14,7 @@ export default function Index() {
           <AdminSidebar />
           <div className="tw-py-4 tw-px-8 tw-min-h-screen w-full flex-fill">
             <div>
-              <h1 className="tw-font-jacques tw-font-bold tw-text-4xl tw-text-[#C70039]">
+              <h1 className="tw-font-jacques tw-font-bold tw-text-5xl tw-text-[#C70039]">
                 Profile
               </h1>
             </div>
