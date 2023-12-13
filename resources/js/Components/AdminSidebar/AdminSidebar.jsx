@@ -19,7 +19,7 @@ export default function AdminSidebar() {
       </div>
       <nav
         className={
-          "tw-h-full tw-w-full lg:tw-w-auto nav flex-column tw-duration-300 tw-fixed lg:tw-sticky tw-top-16 tw-bg-white tw-shadom-sm lg:tw-shadow-none max-lg:tw-border-2 tw-border-red-700 "
+          "tw-h-full tw-w-auto nav flex-column tw-duration-300 tw-sticky tw-top-16 tw-bg-white tw-shadow-sm tw-border-red-700 "
         }>
         <ul className="tw-w-full tw-flex tw-flex-col tw-justify-start tw-items-end lg:tw-items-start">
           <li className="tw-py-6 tw-px-8 lg:tw-pr-14 lg:tw-pl-4 nav-item">
